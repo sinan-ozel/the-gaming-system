@@ -1,0 +1,381 @@
+\documentclass{LegrandOrangeTufteBook}
+
+% Add some TODO notes for the writer's own use.
+\usepackage[disable]{todonotes}
+
+% This package combines longtable and tabularx
+\usepackage{xltabular}
+
+% Add the highlighted notes that appear when the reader hovers
+\usepackage{acro}
+\usepackage{pdfcomment}
+
+% Get some nice pre-defined colors.
+% Start here: https://ctan.math.ca/tex-archive/macros/latex/contrib/xkcdcolors/xkcdcolors-manual.pdf
+% See the git page: https://github.com/Rmano/xkcdcolors
+% See the full list here: https://xkcd.com/color/rgb/
+% See here for the story: https://blog.xkcd.com/2010/05/03/color-survey-results/
+\usepackage{xkcdcolors}
+
+% Define coloring related to terms
+% I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
+\definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
+
+\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
+\newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
+
+\definecolor{colorTerm}{RGB}{196, 70, 1}
+\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
+
+% Add the nice side tabs on the tables.
+% Usage: Put into the rightmost cell in a tabularx environment.
+% Example: \sideTab{LightBlue}{Modern}
+\newcommand{\sideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+
+% Add color to table cells
+% See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
+\usepackage{colortbl}
+
+% Style the bullets in itemized lists
+% https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
+\renewcommand\labelitemi{\textbullet}
+\renewcommand\labelitemii{\normalfont\bfseries \textendash}
+\renewcommand\labelitemiii{\textasteriskcentered}
+\renewcommand\labelitemiv{\textperiodcentered}
+
+
+% Make it easy to create the core competencies of a character sheet
+\newcommand{\coreCompetencyTable}[9]{
+	\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{cr|cr|cr|}
+			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social} \\
+			\hline
+			Reasoning & #1			& 	Coordination & #4			& 	Communication & #7 \\
+			Situational Awareness & #2	& 	Constitution & #5			& 	Empathy & #8 \\
+			Focus & #3				& 	Reflexes & #6			& 	Social Awareness & #9 \\
+		\end{tabular}
+	}
+	\end{center}
+}
+
+\newenvironment{character}{}
+
+\newcommand{\hover}[2]{
+	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
+}
+
+% End of the common part of the preamble.
+
+\newcommand{\listUniversalSkills}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Animal Handling (...)\footnote{Small mammals, large mammals, small reptiles, large reptiles, small birds, birds of prey}
+		\item Assertion
+		\item Baking
+		\item Beekeeping
+		\item Brewing
+		\item Carpentry
+		\item Ceramics
+		\item Cooking
+		\item Embroidery
+		\item Knitting
+		\item Language (...)
+		\item Listening
+		\item Roof tiling
+		\item Sailing
+		\item Shoemaking
+		\item Wheelwrighting
+		\item Winemaking
+		\item Tailoring
+	\end{itemize}
+}
+
+\newcommand{\listUniversalTraining}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Acting
+		\item Artistic Painting
+		\item Deception
+		\item Drawing
+		\item Knife Fighting
+		\item Musical Instrument (...)
+		\item Skepticism
+		\item Sleight of Hand
+		\item Swimming
+		\item Taurascatics
+	\end{itemize}
+}
+
+\newcommand{\listUniversalExpertise}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Accounting / Bookkeeping
+		\item Algebra
+		\item Astronomy
+		\item Bodybuilding / Strength
+		\item Calculus
+		\item Fashion (Current)
+		\item Herbology
+		\item Human Anatomy
+		\item Philosophy
+		\item Physics
+		\item Politics
+		\item Theology (...)
+	\end{itemize}
+}
+
+
+
+\newcommand{\listModernSkills}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Clinical Skills
+		\item Construction Equipment (...)
+		\item Driving (Cars)
+		\item Firefighting
+		\item First Aid
+		\item Massage
+		\item Medical Equipment (...)
+		\item Photography
+		\item Plumbing
+		\item Riding (Motorcycle)
+	\end{itemize}
+}
+
+\newcommand{\listModernTraining}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Bouldering
+		\item Dancing (...)\footnote{Ballroom, Capoeira, Hiphop, Latin, Tango}
+		\item Defensive Martial Art (...)
+		\item Gymnastics
+		\item Kickboxing
+		\item Offensive Martial Art (...)
+		\item Wrestling
+	\end{itemize}
+}
+
+\newcommand{\listModernExpertise}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Algebra
+		\item Architecture
+		\item Art History
+		\item Astronomy
+		\item Biology
+		\item Calculus
+		\item Cinema
+		\item Computer Art
+		\item Computing Concepts
+		\item Criminal Law
+		\item Economics\footnote{Macro, unless otherwise specified.}
+		\item Electrical Engineering
+		\item Electronics
+		\item Music Theory
+		\item Computer Networks
+		\item Physics
+		\item Psychology
+		\item Sociology
+		\item Theatre
+		\item World History
+		\item Writing
+	\end{itemize}
+}
+
+\newcommand{\listMedievalSkills}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Blacksmithing
+		\item Locksmithing
+		\item Riding (Horse)
+		\item Riding (Camel)
+		\item Tanning
+	\end{itemize}
+}
+
+\newcommand{\listMedievalTraining}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Archery
+		\item Maces
+		\item Swords
+		\item Off-hand Dagger Use
+	\end{itemize}
+}
+
+\newcommand{\listMedievalExpertise}{
+}
+
+\newcommand{\listFantasySkills}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Animal Handling (...)\footnote{Gigantic birds, gigantic arachnids, etc...}
+		\item Potion-making
+		\item Riding (Griffin)
+		\item Riding (Dragon)
+	\end{itemize}
+}
+
+\newcommand{\listFantasyTraining}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Clairvoyance
+		\item Mediumship
+		\item Psychokinesis
+		\item Pyrokinesis
+	\end{itemize}
+}
+
+\newcommand{\listFantasyExpertise}{
+	\begin{itemize}[leftmargin=.5cm]
+		\item Alchemy
+		\item Astrology
+		\item Curses \& Hexes
+		\item Demonology
+		\item Necromancy
+		\item Oneiromancy
+		\item Summoning Rituals
+		\item Tarot
+		\item Thaumaturgy
+	\end{itemize}
+}
+
+\begin{document}
+
+\chapterimage{image/baby_faces.jpg}
+\chapterspaceabove{2.75cm}
+\chapterspacebelow{5.25cm}
+
+
+\chapter*{Character Creation}
+
+Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core competencies}. Then based on their years of experience, list their \term{skills}, \term{talent} and \term{knowledge}. Finally, list their \term{assets} (?).
+
+\section*{Core Competencies}
+
+\term{Core competencies} are the strength \& weaknesses. They determine the dice roll.
+
+\coreCompetencyTable{2d6}{d4 + d6}{2d6}{2d4}{2d6}{2d6}{d4 + d6}{d4 + d6}{2d4}
+
+Guidelines to create a mortal character:
+\marginpar{
+	\footnotesize
+	\input{inc/core_competencies_dicepool_guide.tex}
+}
+if you want your character to be exceptional at a \term{core competency}, assign 2d6. If you want them to be bad at it, assign 2d4 - this is where you find role play opportunities. If you think that they are average, or if you do not know how good they are, or if you are simply undecided, assign d4 + d6. Finally, if you want them to be teenagers, figuratively or literally, assign just d6 to the relevant \term{core competency}, or all \term{core competencies}.\footnote{
+ 	Larger dice (d8, d10, ...) are reserved for heroes, superheroes and supernatural characters.
+ 	These are action movie protoganists, villains, comic book heroes, vampires.
+ 	The largest dice are for divine beings and legendary characters.
+ 	A \term{third dice} is for representing creativity, but also dangerous, forbidden magic and alien technology:
+ 	they increase the sum, but also the risk of rolling \term{double one}s.
+}
+
+
+
+\section*{Skills, Talents \& Knowledge}
+
+\term{Skills, talents \&kKnowledge} are bonuses added to dice rolls. Assign these bonuses based on the character's background: Bonus equals the years of experience, and after the tenth year, count each decade as one point. Less than six months counts as half-year, round up or down as desired. Flesh out as much as desired, extend the \term{skill}s, \term{talent}s and \term{knowledge} depending on the setting and the focus of the campaign. There is no pool of allocated points, but it needs to make sense to \emph{all} other players when you are introducing your character.\\
+
+\marginpar{
+	\footnotesize
+	\input{inc/years_of_experience_bonus.tex}
+}
+
+
+\newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \term{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
+\newcommand{\explainEcon}{The character took multiple classes during the master's degree. I decided that this sums up 2 or 3, and went with the lower number.}
+\newcommand{\explainFinance}{Two years of classes on finance and no work experience.}
+\newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
+\newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
+\newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
+\newcommand{\explainSkepticism}{The character grew up in a scientifically-minded household, went to a school with classes on theory of knowledge. Furthermore, when work started, they found themselves in situations where they need to understand when people are being deceptive, and they lacked other social skills. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
+
+
+\begin{center}
+	\begin{tabular}{lr|lr|lr|}
+		\multicolumn{2}{c}{Skills}					&	\multicolumn{2}{c}{Talents}			&	\multicolumn{2}{c}{Knowledge} \\
+		\hline
+		Driving (Car) & \hover{+5}{\explainDriving}		& 	Cycling & \hover{+3}{\explainCycling}		& 	Electrical Engineering & \hover{+6}{\explainEE} \\
+		Programming & \hover{+10}{\explainProgramming}	& 	Latin Dancing & +3					& 	Economics & \hover{+2}{\explainEcon} \\
+		Linux & +10							& 	Skepticism &  \hover{+5}{\explainSkepticism}	& 	Marketing & +1 \\
+		 	& 							& 	 &  							& 	Finance & \hover{+2}{\explainFinance} \\
+	\end{tabular}
+\end{center}
+
+
+
+% \footnote{
+% 	If worked on something more than half of a year, that's a full year, round up. If less than a year (for instance, summers only) divide the total number of years by half.
+% }
+
+
+The character develops \term{skill}s through taking a course, apprenticeship, and actively using the skill professionally. They are a mixture of theoretical knowledge and gained experience. \term{Talent} is for everything that cannot be learned from a book. These are learned by training or by doing. They include physical activities - you could hire a coach. They also include self-taught abilities, such as lying, deceiving, but also seeing through deception. \term{Knowledge} refers to pure theory. This distinction is purely to make it easy to formulate, from a game mechanics perspective, they are all bonuses to the results of dice rolls. \\
+
+\section*{Character in Gameplay}
+
+\subsection*{Character Example}
+
+\begin{character}
+\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{lr|lr|lr|}
+			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social} \\
+			\hline
+			Abstract Thinking & 2d6		& 	Coordination & 2d4			& 	Communication & d4 + d6 \\
+			Situational Awareness & d4 + d6	& 	Constitution & 2d6			& 	Empathy & d4 + d6 \\
+			Focus & 2d6				& 	Reflexes & 2d6			& 	Social Awareness & 2d4 \\
+			\multicolumn{6}{c}{} \\
+			\multicolumn{2}{c}{Skills}		&	\multicolumn{2}{c}{Talents}	&	\multicolumn{2}{c}{Knowledge} \\
+			\hline
+			Driving (Car) & +5			& 	Cycling & +3				& 	Electrical Engineering & +6 \\
+			Programming & +10			& 	Latin Dancing & +3			& 	Economics & +2 \\
+			Linux & +10				& 	Swimming & +2 			& 	Marketing & +1 \\
+			 & 					& 	Skepticism & +5 			& 	Finance & +2 \\
+			& 					& 	 &  					& 	Accounting  & +1 \\
+			& 					& 	 &  					& 	Reasoning  & +1 \\
+			& 					& 	 &  					& 	Philosophy  & +1 \\
+			& 					& 	 &  					& 	Physics  & +1 \\
+			& 					& 	 &  					& 	Chemistry  & +1 \\
+			& 					& 	 &  					& 	Computer Networks & +3 \\
+		\end{tabular}
+	}
+\end{center}
+\end{character}
+
+\subsection*{Dice Roll Examples}
+
+This character is a technically proficient young professional. The following are a list of situations and the rolls that the character above would need to make.
+
+\begin{center}
+	\begin{xltabular}{\textwidth}{Xll}
+				Situation												& Challenge 								& Roll \\
+\rowcolor{xkcdEggShell}	They need to find a solution to an engineering problem at work.				& \termCore{Abstract Thinking} + Electrical Engineering	& 2d6 + 6 \\
+				They want to meet someone at a party.								& \termCore{Social Awareness}					& 2d4 \\
+\rowcolor{xkcdEggShell}	They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 		& d4 + d6 + 0 \\
+		 		See through deception during conversation							& \termCore{Empathy} + Skepticism				& d4 + d6 + 5 \\
+\rowcolor{xkcdEggShell}	Deceive during conversation 									& \termCore{Delivery} + Deception				& d4 + d6 + 0 \\
+	\end{xltabular}
+\end{center}
+
+
+\section*{List of Skills, Training \& Knowledge}
+
+Feel free to mix different eras as you see fit to the campaign.
+One of the goals is to create a system that can be used in different campaigns and settings.
+
+\begin{center}
+	\begin{xltabular}{\textwidth}{XXXl}
+		Skills					& Talents					& Knowledge & \\
+		\hline
+		\footnotesize \listUniversalSkills	&\footnotesize \listUniversalTraining	& \footnotesize \listUniversalExpertise & \sideTab{xkcdCloudyBlue}{All Settings} \\
+		\footnotesize \listModernSkills	&\footnotesize \listModernTraining	& \footnotesize \listModernExpertise & \sideTab{xkcdPowderBlue}{Modern Setting} \\
+		\footnotesize \listMedievalSkills	&\footnotesize \listMedievalTraining	& \footnotesize \listMedievalExpertise & \sideTab{xkcdSandy}{Medieval Setting} \\
+		\footnotesize \listFantasySkills	&\footnotesize \listFantasyTraining	& \footnotesize \listFantasyExpertise & \sideTab{xkcdSpearmint}{Fantasy Elements} \\
+	\end{xltabular}
+\end{center}
+
+\section*{Adding Skills, Training \& Knowledge}
+If it is a 100-level course, something that you can take lessons for, or something that you can apprentice to learn, it is a \term{skill} or \term{knowledge}. If it is something that you learn by doing, it is a \term(talent).
+
+200-level courses (for example, differential equations) are too specific. Degrees are too broard, unless they have an introductory course. For instance, Law is too broad, but Criminal Law is good, because it will have a 100-level introductory course. As a \term{talent}, consider this: you will not find specific cha-cha classes, so that is too specific. Prefer Dancing (Latin), which will include cha-cha along with other dances. However, Capoeira will have its own classes, so Dancing (Capoeira) is a \term{talent}. For skills, also consider 100-level classes, but also night-time classes.\\
+
+If something involves only knowledge, list it under \term{expertise}, if it imvolves only muscle memory or mental habits, list it under \term{talent} and if it involves some of both, list it as a skill. Some of these may be more difficult to categorize: Consider "Medieval Warfare". If the character is an officer in a medieval army, then this is one of their \term{skill}s. However, if the character is a historian in the modern era, studying medieval warfare, this an an area of \term{expertise}. Dancing is also difficult: it includes some technical knowledge and you can take courses. I still categorized them as \term{talent}, because the amount of theoretical knowledge is very limited and the classes are mostly for getting a time and space to dance yourself.
+
+As you go out of the modern setting, consider the equivalents of 100-level courses in other settings. For instance, a \term{skill}s would be gained through apprenticeship. \term{knowledge} would similarly be learned in colleges, or by studying with a master. If you can make a living out of it in the medieval era, it is a \term{skill}. For fantasy settings, consider the following: does the name make sense as a 100-level course in a college of magic? If it does, list it as \term{knowledge}..
+
+
+
+
+
+\end{document}
