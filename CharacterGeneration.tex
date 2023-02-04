@@ -48,15 +48,32 @@
 
 
 % Make it easy to create the core competencies of a character sheet
-\newcommand{\coreCompetencyTable}[9]{
+\newcommand{\coreCompetencyTableOld}[8]{
 	\begin{center}
 	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|lr|lr|}
-			\multicolumn{2}{c}{Knowledge}	&	\multicolumn{2}{c}{Skills}	&	\multicolumn{2}{c}{Talents} \\
+		\begin{tabular}{lr|lr|lr|lr}
+			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social}	& \multicolumn{2}{c}{Innate} \\
 			\hline
-			Reasoning & #1			& 	Coordination & #4			& 	Communication & #7 \\
-			Focus & #2				& 	Constitution & #5			& 	Creativity & #8 \\
-			???? & #3				& 	Situational Awareness & #6	& 	Social Awareness & #9 \\
+			Reasoning & #1			& 	Coordination & #3			& 	Communication & #5 	& Focus & #7 \\
+			Situational Awareness & #2	& 	Constitution & #4			& 	Social Awareness & #6 	& Creativity & #8 	\\
+		\end{tabular}
+	}
+	\end{center}
+}
+
+\newcommand{\coreCompetencyTable}[8]{
+	\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{lr|clr|}
+			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+			\cline{1-2} \cline{4-5}
+			Reasoning & #1				&& 	Coordination & #3 \\
+			Situational Awareness & #2	&& 	Constitution & #4 \\
+			\multicolumn{4}{c}{} \\
+			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
+			\cline{1-2} \cline{4-5}
+			Communication & #5 			&&	Focus & #7 \\
+			Social Awareness & #6 		&&	Creativity & #8 	\\
 		\end{tabular}
 	}
 	\end{center}
@@ -94,20 +111,19 @@
 		\item Sleight of Hand
 		\item Sailing
 		\item Shoemaking
+		\item Survival
 		\item Swimming
 		\item Winemaking
 		\item Tailoring
 	\end{itemize}
 }
 
-\newcommand{\listSocialSkills}{
+\newcommand{\listTalents}{
 	\begin{itemize}[leftmargin=.5cm]
 		\item Acting
 		\item Assertion
 		\item Deception
-		\item Fashion
 		\item Joking
-		\item Judgement
 		\item Listening
 		\item Skepticism
 		\item Taurascatics
@@ -142,9 +158,12 @@
 		\item Firefighting
 		\item First Aid
 		\item Gymnastics
+		\item Household Repair
+		\item Interior Design
 		\item Kickboxing
 		\item Knife Fighting
 		\item Medical Equipment (...)
+		\item Mixology
 		\item Offensive Martial Art (...)
 		\item Photography
 		\item Plumbing
@@ -179,7 +198,7 @@
 	\end{itemize}
 }
 
-\newcommand{\listModernSocialSkills}{
+\newcommand{\listModernTalents}{
 	\begin{itemize}[leftmargin=.5cm]
 		\item Fashion
 	\end{itemize}
@@ -212,17 +231,16 @@
 
 \newcommand{\listFantasyTalents}{
 	\begin{itemize}[leftmargin=.5cm]
+		\item Clairvoyance
 		\item Mediumship
+		\item Telekinesis
+		\item Pyrokinesis
 	\end{itemize}
 }
 
 \newcommand{\listFantasyTraining}{
 	\begin{itemize}[leftmargin=.5cm]
 		\item Animal Handling (...)\footnote{Gigantic birds, gigantic arachnids, etc...}
-		\item Clairvoyance
-		\item Potion-making
-		\item Psychokinesis
-		\item Pyrokinesis
 		\item Riding (Griffin)
 		\item Riding (Dragon)
 	\end{itemize}
@@ -251,30 +269,36 @@
 
 \chapter*{Character Creation}
 
-Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core competencies}. Then based on their years of experience, list their \term{skills}, \term{talent} and \term{knowledge}. Finally, list their \term{assets} (?).
+Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core competencies}. Then based on their years of experience, list their \term{skills}, \term{talent} and \term{knowledge}. Finally, list their \term{income} and \term{renown} based on their backstory. For characters beyond the \term{mundane}, you also choose powers and / or spells.
+\marginpar{
+	\footnotesize
+	\term{Mundane} characters are humans in a modern setting. Spells, powers \& overpowered core competencies take the character \term{beyond the mundane}.
+}
 
 \section*{Core Competencies}
 
-\term{Core competencies} are the strength \& weaknesses. They determine the dice roll.
+\term{Core competencies} are determine which dice to roll \& add to overcome challenges.
 
-\coreCompetencyTable{2d6}{d4 + d6}{2d6}{2d4}{2d6}{2d6}{d4 + d6}{d4 + d6}{2d4}
+\coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
 
-Guidelines to create a mortal character:
+To create a \term{mundane} character,
 \marginpar{
 	\footnotesize
 	\input{inc/core_competencies_dicepool_guide.tex}
 }
-if you want your character to be exceptional at a \term{core competency}, assign 2d6. If you want them to be bad at it, assign 2d4 - this is where you find role play opportunities. If you think that they are average, or if you do not know how good they are, or if you are simply undecided, assign d4 + d6. Finally, if you want them to be teenagers, figuratively or literally, assign just d6 to the relevant \term{core competency}, or all \term{core competencies}.\footnote{
+assign 2d4 if they are bad at a \term{core competency},
+2d6 if they are good, and d4 + d6 if they are average.
+d6 is for teenagers, literally or figuratively.\footnote{
  	Larger dice (d8, d10, ...) are reserved for heroes, superheroes and supernatural characters.
  	These are action movie protoganists, villains, comic book heroes, vampires.
  	The largest dice are for divine beings and legendary characters.
- 	A \term{third dice} is for representing creativity, but also dangerous, forbidden magic and alien technology:
- 	they increase the sum, but also the risk of rolling \term{double one}s.
+ 	A \term{third dice} is for representing dangerous, forbidden magic and alien technology:
+ 	they increase the sum, but also the risk of rolling double ones, which means that a \term{misfortune} happened.
 }
 
 \section*{Expertise}
 
-These are bonuses added to dice rolls. Assign these bonuses based on the character's background: Bonus equals the years of experience, and after the tenth year, count each decade as one point. Less than six months counts as half-year, round up or down as desired. Flesh out as much as desired, extend the \term{knowledge}, \term{skills} and \term{talents} depending on the setting and the focus of the campaign. There is no limit, but it needs to make sense to \emph{all} other players when you are introducing your character.\\
+These are bonuses added to dice rolls. Assign these bonuses based on the character's background: Bonus equals the years of experience, and after the tenth year, count each decade as one point. Less than six months counts as half-year. Flesh out as much as desired, extend the \term{knowledge}, \term{skills} and \term{talents} depending on the setting and the focus of the campaign. The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
 
 \marginpar{
 	\footnotesize
@@ -288,14 +312,14 @@ These are bonuses added to dice rolls. Assign these bonuses based on the charact
 \newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
 \newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
 \newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
-\newcommand{\explainSkepticism}{The character grew up in a scientifically-minded household, went to a school with classes on theory of knowledge. Furthermore, when they started work, they found themselves in situations where they need to understand when people are being deceptive, and they lacked other social skills. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
+\newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
 
 
 \begin{center}
 	\begin{tabular}{lr|lr|lr|}
-		\multicolumn{2}{c}{Knowledge}					&	\multicolumn{2}{c}{Skills}			&	\multicolumn{2}{c}{Talents} \\
+		\multicolumn{2}{c}{Knowledge}					&	\multicolumn{2}{c}{Skills}				&	\multicolumn{2}{c}{Talents} \\
 		\hline
-		Electrical Engineering & \hover{+6}{\explainEE}		& 	Cycling & \hover{+3}{\explainCycling}		& 	Skepticism &  \hover{+5}{\explainSkepticism} \\
+		Electrical Engineering & \hover{+6}{\explainEE}		& 	Cycling & \hover{+3}{\explainCycling}		& 	Skepticism &  \hover{+4}{\explainSkepticism} \\
 		Computing Concepts & \hover{+10}{\explainProgramming}	& 	Dancing (Latin) & +3				& 	 &  \\
 		Economics & \hover{+2}{\explainEcon}				& 	Driving (Car) & \hover{+5}{\explainDriving}	& 	& \\
 	\end{tabular}
@@ -309,33 +333,52 @@ These are bonuses added to dice rolls. Assign these bonuses based on the charact
 
 
 \term{Knowledge} is pure theory. In the modern setting, these are 100-level university courses. They can be purely academic, or they can be useful at high-income jobs.\\
-\term{Skills} are everything that you learn mainly by doing: 
+\term{Skills} are everything that you learn mainly by doing:
 they will have a technical component, and may require taking some classes, but to get beyond the basic, you need to keep using skills.
 In the modern setting, think of everything you would learn in night classes, or by working with an individual, or with a coach or a trainer.
 In other settings, they may be used through apprenticeship.
 These may be useful in a medium-income jobs.\\
-\term{Talents} cannot be easily taught, you have to learn these by doing. 
+\term{Talents} cannot be easily taught, you have to learn these by doing.
 In the modern setting, these are useful in social situations.
 However, in other settings, they can include any other talent that is innate or developed.
 They are transferrable across jobs and even different campaign settings.\\
+
+
+% \section*{Resources: Passive Income \& Renown}
+
+% House
+% Social Support
+% Work Network
+% Criminal Network?
+
 
 \section*{Character in Gameplay}
 
 \subsection*{Character Example}
 
+\marginpar{
+	\vspace{7cm}
+	\footnotesize
+	Any income to the chraracter that does not involve a job is \term{passive income}. This can be rent from a real estate, parental support, or from investments. (Exact score determination needs to be decided, this can be a dice or a bonus.)\\
+
+	\term{Renown} is the based on the number of you people who know of the character, without the character knowing them.
+	To determine the score, get the number of people who would know of the chracter, and count the number of digits.
+	For example, a researcher well known in their field could be 2 or even 3.
+	An modern-era influencer could go up to 4 (1000 followers or more), 5, (10000 followers or more).
+	A celebrity could be at 6 or 7, or even 8 if they are very famous.
+	Most people should have 0 or, perhaps 1 if they have an online presence.
+}
+
+
 \begin{character}
 \begin{center}
+	\coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
 	\resizebox{\columnwidth}{!}{
 		\begin{tabular}{lr|lr|lr|}
-			\multicolumn{2}{c}{Knowledge}	&	\multicolumn{2}{c}{Skills}		&	\multicolumn{2}{c}{Talents} \\
-			\hline
-			Reasoning & 2d6			& 	Coordination & 2d4			& 	Communication & d4 + d6 \\
-			Situational Awareness & d4 + d6	& 	Constitution & 2d6			& 	Creativity & d4 + d6 \\
-			???? & 2d6				& 	Situational Awareness & 2d6	& 	Social Awareness & 2d4 \\
+
 			\multicolumn{6}{c}{} \\
-% 			\multicolumn{2}{c}{Knowledge}	&	\multicolumn{2}{c}{Training}	&	\multicolumn{2}{c}{Talents} \\
 			\hline
-			Electrical Engineering & +6	& 	Cycling & +3				& 	Skepticism & +5 \\
+			Electrical Engineering & +6	& 	Cycling & +3				& 	Skepticism & +4 \\
 			Economics & +2			& 	Dancing (Latin) & +3		& 	& \\
 			Marketing & +1			& 	Swimming & +2 			& 	& \\
 			Finance & +2 			& 	Driving (Car) & +5			& 	& \\
@@ -344,49 +387,101 @@ They are transferrable across jobs and even different campaign settings.\\
 			Physics  & +1 			& 	 &  					& 	& \\
 			Chemistry  & +1  			& 	 &  					& 	& \\
 			Computing Concepts & +10  	& 	 &  					& 	& \\
+			\multicolumn{6}{c}{} \\
+ 			\multicolumn{2}{c}{Resources}	&	\multicolumn{2}{c}{Species Stats ??? (TBD)}&	\multicolumn{2}{c}{Items} \\
+			\hline
+			Passive Income & +1		& 	 &					&  Mobile Phone & \\
+			Renown & 				& 	 &					&  & \\
+			\multicolumn{6}{c}{} \\
+			\multicolumn{6}{c}{Powers} \\
+			\hline
+			\multicolumn{6}{c}{} \\
+			\multicolumn{6}{c}{Spellbook} \\
+			\hline
 		\end{tabular}
 	}
 \end{center}
 \end{character}
 
+
 \subsection*{Dice Roll Examples}
 
-This character is a technically proficient young professional. The following are a list of situations and the rolls that the character above would need to make. 
+This character is a technically proficient young professional. The following are a list of situations and the rolls that the character above would need to make.
 Some of these situations are in the modern setting, some of them are in fantasy settings. The same character can be used without modification in all of them.
-How successful they will be is another question.
+
+\subsubsection*{Mundane}
 
 \begin{center}
 	\begin{xltabular}{\textwidth}{Xll}
 				Situation												& Challenge 								& Roll \\
-\rowcolor{xkcdEggShell}	They need to find a solution to an engineering problem at work.				& \termCore{Abstract Thinking} + Electrical Engineering	& 2d6 + 6 \\
+\rowcolor{xkcdEggShell}	They need to find a solution to an engineering problem at work.				& \termCore{Reasoning} + Electrical Engineering		& 2d6 + 6 \\
 				They want to meet someone at a party.								& \termCore{Social Awareness}					& 2d4 \\
 \rowcolor{xkcdEggShell}	They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 		& d4 + d6 + 0 \\
-		 		See through deception during conversation							& \termCore{Empathy} + Skepticism				& d4 + d6 + 5 \\
-\rowcolor{xkcdEggShell}	Deceive someone during conversation 								& \termCore{Delivery} + Deception				& d4 + d6 + 0 \\
+		 		See through deception during conversation							& \termCore{Reasoning} + Skepticism				& d4 + d6 + 5 \\
+\rowcolor{xkcdEggShell}	Deceive someone during conversation 								& \termCore{Communication} + Deception			& d4 + d6 + 0 \\
+		 		Throw a fist at an unsuspecting individual							& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
+	\end{xltabular}
+\end{center}
+
+\subsubsection*{Beyond the Mundane}
+
+\begin{center}
+	\begin{xltabular}{\textwidth}{Xll}
+				Situation												& Challenge 								& Roll \\
 \rowcolor{xkcdEggShell}	They need to identify some potions through sight, smell \& taste. 				& \termCore{Situational Awareness} + Herbology		& d4 + d6 + 0 \\
 	\end{xltabular}
 \end{center}
 
-
 \section*{List of Expertise Areas}
-
-Feel free to mix different eras as you see fit to the character and the campaign.
-
-% \listUniversalTechnicalSkills	
 
 \begin{center}
 	\begin{xltabular}{\textwidth}{XXXl}
 		Knowledge 					& Skills					&  Talents & \\
 		\hline
-		\footnotesize \listUniversalKnowledge	&\footnotesize \listUniversalTraining	& \footnotesize \listSocialSkills  & \sideTab{xkcdCloudyBlue}{All Settings} \\
-		\footnotesize \listModernKnowledge	&\footnotesize \listModernTraining	& \footnotesize \listModernSocialSkills & \sideTab{xkcdPowderBlue}{Modern Setting} \\
-		\footnotesize \listMedievalKnowledge	&\footnotesize \listMedievalTraining	& \footnotesize  & \sideTab{xkcdSandy}{Medieval Setting} \\
-		\footnotesize \listFantasyKnowledge	&\footnotesize \listFantasyTraining	& \footnotesize  \listFantasyTalents & \sideTab{xkcdSpearmint}{Fantasy Elements} \\
+		\footnotesize \listUniversalKnowledge	&\footnotesize \listUniversalTraining	& \footnotesize \listTalents 	 	& \sideTab{xkcdCloudyBlue}{All Settings} \\
+		\footnotesize \listModernKnowledge	&\footnotesize \listModernTraining	& \footnotesize \listModernTalents	& \sideTab{xkcdPowderBlue}{Modern Setting} \\
+		\footnotesize \listMedievalKnowledge	&\footnotesize \listMedievalTraining	& \footnotesize  				& \sideTab{xkcdSandy}{Medieval Setting} \\
+		\footnotesize \listFantasyKnowledge	&\footnotesize \listFantasyTraining	& \footnotesize  \listFantasyTalents 	& \sideTab{xkcdSpearmint}{Fantasy Elements} \\
 	\end{xltabular}
 \end{center}
 
 
 
 
+\section*{Creating Characters for Different Campaigns}
+
+\subsection*{Mundane}
+\begin{center}
+	\begin{xltabular}{\textwidth}{XX}
+		Campaign & Character Creation \\
+		\hline
+\rowcolor{xkcdEggShell}    A group of high school friends come back to their home town when one of them passes away. As they mourn their friends' passing, they begin to suspect foulplay and a coverup... & Create characters as usual. \\
+				A band of volunteer soldiers find themselves in a war. & Create characters as usual. \\
+\rowcolor{xkcdEggShell}    In a longer campaign, a group of firegihters respond to crises in a particularly flammable \& dangerous city. & Create characters as usual. Obviously, the background should reflect their years in the firefighting force. \\
+	\end{xltabular}
+\end{center}
+
+
+\subsection*{Beyond the Mundane}
+\begin{center}
+	\begin{xltabular}{\textwidth}{XX}
+		Campaign & Character Creation \\
+		\hline
+\rowcolor{xkcdEggShell}    A band of talented teenagers investigate paranormal phenomenon. & Create teenagers with d6 in all \term{core competencies}, except for their one special talent, which is 2d8.\\
+   				Young group of friends are attending a secret school of magic. & Create kids with d4 in all \term{core competencies}. However, also add in the fantasy knowledge and talents. Add a spellbook. \\
+
+	\end{xltabular}
+\end{center}
+
+\section*{Balance}
+
+\subsection*{Balancing Gameplay}
+
+With this level of flexibility, finding the right difficulty for the challenges may be difficult. Look at the players' rolls, and find the maximum roll possible. For example, for an young professional,
+this number is likely going to be 18: This is going to be a roll with a \term{core competency} where they are particulary talented, so this is going to be 2d6. The highest possible roll is 12. They probably have at least five or six years of experience in their job, so this brings us up to 18. This is the character's \term{mundane level}.
+
+Plan a scene around one climatic challenge at this \term{difficulty level}, potentially for another \term{core competency} and another area of \term{expertise}. They should have a very low or zero probability of passing. However, using item bonuses, their \term{resources}, and planning, they should be able to bring this to a high probability event. There will still be the probability of a double-one, a \term{misfortune}. Even if they are very well prepared when they face the challenge, if they roll double ones, they may still pass, but a misfortune falls upon them.
+
 
 \end{document}
+

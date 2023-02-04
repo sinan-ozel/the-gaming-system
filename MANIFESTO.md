@@ -2,20 +2,24 @@
 
 ## What This Is
 
-This is a roleplaying mechanic to create relatable characters with depth for any setting ranging from the Medieval era to the Near-Future sci-fi campaigns.
+This is a role playing game mechanic designed for flexibility, consistency and relatability.
 
 ## Why Is This Happening?
 
-Typically, role playing games include characters the I cannot related to whose main vlaue to the world around them is their ability to deal damage.
-These mechanics are tailored for challenges that involve around violence, and a world view captures in the Good vs Evil dualism.
-However, these are only a small subset of the all challenges that humans face in their lives.
-I want to be able run & play campaigns that include violence only as one side of a multi-faceted dynamic, and 
-the conflicts are not explained through the boring old good vs evil duality.
+After years of playing D&D, I want something new: I want to be able to role play challenges
+other than massacring humanoids in dungeons. I want a system where social encounters 
+are a "first-class citizen", not an afterthought. I want a roleplay system where 
+teenagers are as easy to create as adults and elderly. I want a roleplay system
+where I can create a wide variety of characters, ranging from a medieval farmer 
+to a dragon. I want a roleplaying system where creating spells is designed into
+the system from the start.
+
 
 ## Guiding Principles
 
-The main premise is that the game mechanics should first allow for creating characters relatable to the modern human
-experience. After that, we can expand the rules to include other eras, fantasy elements and heroes.
+The main premise is that the game mechanics should first allow for creating mundane-but-relatable characters. 
+After that, we can expand the rules to include beyond the mundane - fantasy elements, superheroes, monsters,
+the supernatural.
 
 1. Easy: one page for basic encounters, one page for character creation, and that should be enough to play a one-shot game.
 2. Natural: Terminology should reflect the day-to-day meaning of expressions.
@@ -25,4 +29,4 @@ experience. After that, we can expand the rules to include other eras, fantasy e
 6. Adaptable: it should be expandable to historical and near-future periods, as well as fantasy and sci-fi elements.
 7. Coherent: Rules should not feel arbitrary. 
 8. Consistent: A spell called "fireball" and a modern accident that involves a gas leakage and a "fireball" should create the same result.
-
+9. Engaging: The rules should give incentive to the players to feel engaged.
