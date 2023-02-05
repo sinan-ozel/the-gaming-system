@@ -1,0 +1,146 @@
+\documentclass{LegrandOrangeTufteBook}
+
+% Add some TODO notes for the writer's own use.
+\usepackage[disable]{todonotes}
+
+% This package combines longtable and tabularx
+\usepackage{xltabular}
+
+% Add the highlighted notes that appear when the reader hovers
+\usepackage{acro}
+\usepackage{pdfcomment}
+
+% Get some nice pre-defined colors.
+% Start here: https://ctan.math.ca/tex-archive/macros/latex/contrib/xkcdcolors/xkcdcolors-manual.pdf
+% See the git page: https://github.com/Rmano/xkcdcolors
+% See the full list here: https://xkcd.com/color/rgb/
+% See here for the story: https://blog.xkcd.com/2010/05/03/color-survey-results/
+\usepackage{xkcdcolors}
+
+% Define coloring related to terms
+% I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
+\definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
+
+\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
+\newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
+
+\definecolor{colorTerm}{RGB}{196, 70, 1}
+\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
+
+% Add the nice side tabs on the tables.
+% Usage: Put into the rightmost cell in a tabularx environment.
+% Example: \sideTab{LightBlue}{Modern}
+\newcommand{\sideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+
+% Add color to table cells
+% See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
+\usepackage{colortbl}
+
+% Style the bullets in itemized lists
+% https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
+\renewcommand\labelitemi{\textbullet}
+\renewcommand\labelitemii{\normalfont\bfseries \textendash}
+\renewcommand\labelitemiii{\textasteriskcentered}
+\renewcommand\labelitemiv{\textperiodcentered}
+
+
+% Make it easy to create the core competencies of a character sheet
+\newcommand{\coreCompetencyTable}[8]{
+	\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{lr|lr|lr|lr}
+			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social}	& \multicolumn{2}{c}{Innate} \\
+			\hline
+			Reasoning & #1			& 	Coordination & #3			& 	Communication & #5 	& Focus & #7 \\
+			Situational Awareness & #2	& 	Constitution & #4			& 	Social Awareness & #6 	& Creativity & #8 	\\
+		\end{tabular}
+	}
+	\end{center}
+}
+
+\newenvironment{character}{}
+
+\newcommand{\hover}[2]{
+	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
+}
+
+% End of the common part of the preamble.
+
+\begin{document}
+
+\chapterimage{image/dice.jpg}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{11.25cm}
+
+
+\chapter*{Gameplay}
+
+\section*{The Fundamental Game Mechanic}
+
+For basic challenges, the player rolls a \term{core competency} to overcome a \term{difficulty level}. Often, but not always, they add a \term{skill}, \term{talent} or \term{knowledge} bonus. If the total is higher than the \term{difficulty level}, they win the challenge. The difference is their \term{points}.\\
+
+\marginpar{
+	\footnotesize
+	\input{inc/difficulty_levels.tex}
+}
+
+Double-one means that circumstance beyond the player's control caused some \term{misfortune}, even if they succeed.\footnote{With the bonus, they can be guaranteed to win, but you can roll it see if there is a misfortune.} Double-face, for example, double sixes on the d6, means a \term{stroke of luck}, whether the player succeeds or not. \footnote{A third die can be added to roleplay powerful but potentially dangerous magic, or creativity, or alien technology. In these cases, two rolls still count as \term{misfortunes} and \term{strokes of luck}. In these cases, a triple one is a \term{catastrophy}. This is an invitation to the GM to change the course of the adventure in response to this, perhaps through a discussion with the players.}\\
+
+For \term{conflicts} with NPCs and other players, compare the results of the dice roll, the higher is the winner, and the difference is the \term{points}. For \term{extended encounters}, the player collects \term{points} from multiple challenges to pass a threshold. For \term{cooperative challenges}, choose the largest dice from the players or the NPC. For \term{extended cooperative encounters}, sum the \term{points} from each characters' rolls to pass a threshold.
+
+\subsection*{Example Scene: Job Interview At High Tech}
+
+Alice wants to infiltrate a high tech company to investigate suspicious disappearances. She has some technical knowledge, so she thinks she has a shot going through multiple rounds of interviews.\\
+
+\todo{Write something about having assets and how they were able to get the job interview.}
+
+This is high tech, so there will be five rounds of interviews, some technical. The GM decides that these are best represented with multiple \term{challenges}. Alice will need to pass all of them, and her \term{score} is not going to matter so long as she passes.\\
+
+\begin{tabularx}{\columnwidth}{rXr}
+	Round	& Challenge 								& DL\\
+	\#1 	& \termCore{Social Awareness}					& 3 \\
+	\#2 	& \termCore{Abstract Thinking} + Computing Concepts	& 6 \\
+	\#3 	& \termCore{Abstract Thinking} + Computing Concepts	& 9 \\
+	\#4 	& \termCore{Abstract Thinking} + Computing Concepts	& 9 \\
+	\#5 	& \termCore{Abstract Thinking} + Computing Concepts 	& 9 \\
+\end{tabularx}
+
+\marginpar{
+	\termCore{Social Awareness} is one of the nine \term{Core Competencies}. Here is the full list:
+	\footnotesize
+	\input{inc/core_competencies_sidebar.tex}
+}
+The first interview is a 15-minute phone interview - she only has to answer some basic questions. She rolls \termCore{Social Awareness} against a difficulty of 3. If she rolls a double-one, the GM will come up with an \term{misfortune} that happened outside of her control as the reason of the loss. Otherwise, she will still have failed the roll and will need to find another way into the company. In this case, the player will explain how they fail. Say that Alice has d4 + d6 \termCore{Social Awareness} and rolls a 2 and a 3. She passes.  \\
+
+The first round of interview is a basic technical interview. Now she needs to solve a technical problem, and can rely on experience bonuses. The GM asks her to roll a \termCore{Abstract Thinking} + Computing Concepts against a \term{difficulty level} of 6. She has d4 + d6 +4. This means that she is guaranteed to pass. However, she still rolls - if she rolls a double-one, \emph{she will still pass}, but the GM will come up with a \termCore{misfortune} that will impact at some point during the the scene. In game mechanics, this is another basic \term{challenge}. For instance, her laptop has a malfunction that keeps interrupting, and she will have to roll another check to fix the laptop before the next encounter. \\
+
+For the third round of interview, the difficulty will be 9 - now they are testing very specific knowledge. The GM can easily calculate how likely they are to succeed: d4 + d6 +4 means that approximately half the time they will roll over 10.\footnote{The expected value of 2d4 is 5, d4 + d6 is 6 and 2d6 is 7. If you add the +4 bonus to 6, you get 10. The roll will be higher than 10 half of the time.} So this is a pivotal roll that may fail - the GM has a different storyline if they fail at this point. (TBC: I need to explain how to know that she is only 1/8 likely to pass, and what to do about that.)\\
+
+
+\subsection*{Example Scene: Date Night}
+
+THIS PART IS INCOMPLETE - I did not finish designing all of the mechanics for extended encounters yet.\\
+
+Daren, a player character, swiped right on Jennifer, an NPC. When asked, Daren's player says that Daren wants to
+impress Jennifer - that's their goal for the first date. The GM decides that Jennifer's goal is to \emph{assess} Daren
+- she is looking for a someone smart, funny and not a douchebag.
+ The player will try to collect points to impress Jennifer, and Jennifer will need to collect points to assess Daren. \\
+
+The GM runs the scene in three parts: a preparation with some challenges to see if anything goes wrong. The date night itself,
+a dinner and a conversation - this is going to be an extended encounter where the player wants to collect points to reach their
+goal. Finally, the ending scene.
+
+\paragraph*{Preparation}
+The GM asks the player what Daren does to prepare. He is going to shower, put on cologne and dress up. The GM
+decides to have Daren roll \termCore{Social Awareness} + Fashion Sense.
+Daren's \termCore{Social Awareness} is d4+d6, and Fashion Sense is 0.\termCore{Social Awareness}
+He rolls against a \term{difficulty level} of 6 and passes with a roll of 7. \\
+
+(TBD: I want to elaborate on what would have happened if he had failed, and what could have happened if they had failed with a \term{misfortune})
+
+\paragraph*{The Date - Extended Encounter}
+
+\todo{Write the encounter.}
+
+
+\end{document}
