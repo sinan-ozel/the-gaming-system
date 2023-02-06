@@ -36,6 +36,9 @@
 % See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
 \usepackage{colortbl}
 
+% Use this package to break up a list into multiple columns
+\usepackage{multicol}
+
 % Style the bullets in itemized lists
 % https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
 \renewcommand\labelitemi{\textbullet}
@@ -48,11 +51,16 @@
 \newcommand{\coreCompetencyTable}[8]{
 	\begin{center}
 	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|lr|lr|lr}
-			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social}	& \multicolumn{2}{c}{Innate} \\
-			\hline
-			Reasoning & #1			& 	Coordination & #3			& 	Communication & #5 	& Focus & #7 \\
-			Situational Awareness & #2	& 	Constitution & #4			& 	Social Awareness & #6 	& Creativity & #8 	\\
+		\begin{tabular}{lr|clr|}
+			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+			\cline{1-2} \cline{4-5}
+			Reasoning & #1				&& 	Coordination & #3 \\
+			Situational Awareness & #2	&& 	Constitution & #4 \\
+			\multicolumn{4}{c}{} \\
+			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
+			\cline{1-2} \cline{4-5}
+			Communication & #5 			&&	Focus & #7 \\
+			Social Awareness & #6 		&&	Creativity & #8 	\\
 		\end{tabular}
 	}
 	\end{center}
@@ -63,6 +71,8 @@
 \newcommand{\hover}[2]{
 	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
 }
+
+
 
 % End of the common part of the preamble.
 
