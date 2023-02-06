@@ -1,0 +1,174 @@
+\documentclass{LegrandOrangeTufteBook}
+
+% Add some TODO notes for the writer's own use.
+\usepackage[disable]{todonotes}
+
+% This package combines longtable and tabularx
+\usepackage{xltabular}
+
+% Add the highlighted notes that appear when the reader hovers
+\usepackage{acro}
+\usepackage{pdfcomment}
+
+% Get some nice pre-defined colors.
+% Start here: https://ctan.math.ca/tex-archive/macros/latex/contrib/xkcdcolors/xkcdcolors-manual.pdf
+% See the git page: https://github.com/Rmano/xkcdcolors
+% See the full list here: https://xkcd.com/color/rgb/
+% See here for the story: https://blog.xkcd.com/2010/05/03/color-survey-results/
+\usepackage{xkcdcolors}
+
+% Define coloring related to terms
+% I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
+\definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
+
+\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
+\newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
+
+\definecolor{colorTerm}{RGB}{196, 70, 1}
+\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
+
+\newcommand{\termClass}[1]{\textcolor{xkcdBlueGreen}{#1}}
+
+% Add the nice side tabs on the tables.
+% Usage: Put into the rightmost cell in a tabularx environment.
+% Example: \sideTab{LightBlue}{Modern}
+\newcommand{\sideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+
+% Add color to table cells
+% See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
+\usepackage{colortbl}
+
+% Use this package to break up a list into multiple columns
+\usepackage{multicol}
+
+% Style the bullets in itemized lists
+% https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
+\renewcommand\labelitemi{\textbullet}
+\renewcommand\labelitemii{\normalfont\bfseries \textendash}
+\renewcommand\labelitemiii{\textasteriskcentered}
+\renewcommand\labelitemiv{\textperiodcentered}
+
+
+% Make it easy to create the core competencies of a character sheet
+\newcommand{\coreCompetencyTable}[8]{
+	\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{lr|clr|}
+			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+			\cline{1-2} \cline{4-5}
+			Reasoning & #1				&& 	Coordination & #3 \\
+			Situational Awareness & #2	&& 	Constitution & #4 \\
+			\multicolumn{4}{c}{} \\
+			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
+			\cline{1-2} \cline{4-5}
+			Communication & #5 			&&	Focus & #7 \\
+			Social Awareness & #6 		&&	Creativity & #8 	\\
+		\end{tabular}
+	}
+	\end{center}
+}
+
+\newenvironment{character}{}
+
+\newcommand{\hover}[2]{
+	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
+}
+
+
+
+% End of the common part of the preamble.
+
+\begin{document}
+
+\chapterimage{image/dice.jpg}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{11.25cm}
+
+
+\chapter*{Going Beyond The Mundane}
+
+There are three game mechanics for going beyond the \term{mundane}.
+
+\begin{enumerate}
+    \item If you create a character (or advance them) with one of their \term{core competencies} above 2d6, that is going beyond the mundane. They are going to have an easier time passing challenges that are difficult for regular charactersm as their dice increases to d6 + d8, d6 + d10 or 2d8, and so on.
+    \item If you add a third die to one of the \term{core competencies}, this also takes the character beyond the mundane. This is more powerful than the previous option, but is also more penalizing, because it increases the probability of rolling a double one, a \term(misfortune).
+    \item Finally, you can add spellcasting or supernatural powers to the character.
+\end{enumerate}
+
+Any combination of these are possible. The following sections describe these in further detail.
+
+\section*{Increasing Core Competencies Beyond 2d6}
+
+This is the basic way of creating a character beyond the \term{mundane}.
+\marginpar{
+    \footnotesize
+    \input{inc/core_competencies_dicepool_transmundane.tex}
+}
+
+A typical talented adult will have a 2d6 in their best \term{core competency}.
+A slightly more powerful character can have d6 + d8.
+Going even further beyond, either the higher die or the lower die can be increased.\\
+
+This type of \term{transmundane} character is fit for superhero campaigns,
+and for creating enemies that are immensely powerful, such as ancient vampires.
+
+\todo{Add an example, and also show that the character's mundane level changes.}
+
+\todo{What are the rules for character advancement?}
+\todo{What is the significance of increasing the larger die rather than the smaller?}
+
+\section*{Adding a Third Die}
+
+This is how you create tragic characters, PC and NPC alike.
+This is a powerful way of making the character powerful, but with a cost.
+The character will have an easier time passing regular challenges,
+however, their probability of rolling a double one, therefore a \term{misfortune}
+will be increased.\\
+
+This is for roleplaying potentially dangerous or forbidden magic, alien technology and contracts with otherworldly entities.
+
+\section*{Spells and Powers}
+
+The purpose of this section is to give a consistent framework to give a way to create spells and powers to both players and GMs.
+For consistency, they are both part of the same mechanic.
+All spells \& powers have a desired effect, and a \term{difficulty level}.
+Depending on their \term{class}, the character uses a particular \term{core competency} \& \term{expertise} to determine the roll.
+Their \term{scoore} matters if another character needs to dispell or counteract the effect.
+
+\todo{Add a table of spells \& powers}
+
+\section*{Transmundane Classes}
+
+Classes are only for \term{transmundane} characters.\\
+
+To balance gameplay for \term{transmundane} player characters,
+sum the \term{difficulty level} of their \term{transmundane} powers.
+This is going to be their \term{transmundane level}.
+\todo{
+    Finish this thought.
+}\\
+
+\subsection*{Wizards}
+
+As a player roleplaying \termClass{wizard}, you can either choose your spells from the list below,
+or create your own spells by doing research (in real life), and convincing the party and the GM
+that the difficulty level is correct.
+
+\subsection*{Mages}
+
+\subsection*{Druids}
+
+\subsection*{Demonologists \& Summoners}
+
+\subsection*{Witches \& Warlocks}
+
+\subsection*{Sorcerors \& Sorceresses}
+
+\subsection*{Vampires}
+
+\subsection*{Werewolves}
+
+\subsection*{Superheroes}
+
+\end{document}
+
