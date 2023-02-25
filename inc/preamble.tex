@@ -39,6 +39,23 @@
 % Use this package to break up a list into multiple columns
 \usepackage{multicol}
 
+% Add styling to emphasized paragraphs and character sheets
+\usepackage{mdframed}
+
+\global\mdfdefinestyle{emphasisParagraphFrameStyle}{
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+	linecolor=xkcdBottleGreen,
+	linewidth=3pt,
+	leftmargin=0pt,
+	rightmargin=0pt,
+	innertopmargin=0pt,
+	innerbottommargin=0pt
+}
+
 % Style the bullets in itemized lists
 % https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
 \renewcommand\labelitemi{\textbullet}
@@ -80,3 +97,55 @@
 	}
 }
 
+\newenvironment{characterSheet}{
+	\begin{minipage}{\columnwidth}
+	\begin{center}
+}
+{
+	\end{center}
+	\end{minipage}
+}
+
+\newcommand{\expertiseTable}[3]{
+	\begin{tabular}{ccc}
+		\multicolumn{3}{c}{} \\
+		Knowledge & Skills & Talents \\
+		\hline
+		\begin{tabular}[t]{lr|}
+			#1
+		\end{tabular} &
+		\begin{tabular}[t]{lr|}
+			#2
+		\end{tabular} &
+		\begin{tabular}[t]{lr}
+			#3
+		\end{tabular} \\
+	\end{tabular}
+}
+
+\newcommand{\physiologyTable}[3]{
+	\begin{tabular}{ccc}
+		\multicolumn{3}{c}{} \\
+		Senses & Strength & Movement \\
+		\hline
+		\begin{tabular}[t]{lr|}
+			#1
+		\end{tabular} &
+		\begin{tabular}[t]{lr|}
+			#2
+		\end{tabular} &
+		\begin{tabular}[t]{lr}
+			#3
+		\end{tabular} \\
+	\end{tabular}
+}
+% TODO: How to do speed and size?
+
+\newenvironment{emphasisParagraph}{
+	\begin{quote}
+	\begin{mdframed}[style=emphasisParagraphFrameStyle]
+	\em
+}{
+	\end{mdframed}
+	\end{quote}
+}
