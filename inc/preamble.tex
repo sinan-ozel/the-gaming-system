@@ -49,11 +49,7 @@
 	skipabove=\topsep,
 	skipbelow=\topsep,
 	linecolor=xkcdBottleGreen,
-	linewidth=3pt,
-	leftmargin=0pt,
-	rightmargin=0pt,
-	innertopmargin=0pt,
-	innerbottommargin=0pt
+	middlelinewidth=3pt,
 }
 
 % Style the bullets in itemized lists
@@ -99,10 +95,12 @@
 
 \newenvironment{characterSheet}{
 	\begin{minipage}{\columnwidth}
+	\begin{mdframed}
 	\begin{center}
 }
 {
 	\end{center}
+	\end{mdframed}
 	\end{minipage}
 }
 
