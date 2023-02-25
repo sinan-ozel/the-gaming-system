@@ -70,4 +70,13 @@
 	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
 }
 
+\newcommand{\acronym}[2]{
+	\pdfmarkupcomment[markup=Underline,disable=false,color=colorTerm]{#1}{#2}
+}
+
+\newcommand{\acronymDL}[1]{
+	\pdfmarkupcomment[markup=Underline,disable=false,color=colorTerm]{DL}{
+		Difficulty Level: A roll has to beat this level number to succeed.
+	}
+}
 

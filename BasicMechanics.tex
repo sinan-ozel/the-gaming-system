@@ -1,0 +1,38 @@
+\documentclass{LegrandOrangeTufteBook}
+
+\input{inc/preamble.tex}
+
+\begin{document}
+
+\chapterimage{image/dice.jpg}
+\chapterspaceabove{6.75cm}
+\chapterspacebelow{11.25cm}
+
+
+\chapter*{Challenges}
+
+\begin{quote}
+	For basic challenges, the player rolls a \term{core competency} to overcome a \term{difficulty level (DL)}.
+	Often, but not always, the bonus from \term{expertise} gets added.
+	The result of the roll has to be equal to or greater than this number to succeed.
+\end{quote}
+\todo{Does the success level matter? Think on it.}
+
+\paragraph*{Guideline on Deciding the Difficulty Level}
+
+Imagine a talented character (2d6 in their \term{core capability}) with 20 years of experience.
+This character's roll is 2d6 + 12 without any additional bonuses.
+This means that they are approximately 50\% likely to overcome a challenge with \acronymDL 18.
+It also means that they can overcome a challenge with \acronymDL 24 with a lot of luck - only 1/36 of the time.\\
+
+\marginpar{
+	\footnotesize
+	\input{inc/difficulty_levels.tex}
+}
+
+Now consider a regular person with no \term{expertise}. This person will roll d6 + d4.
+They cannot overcome a challenge with 12,
+and they will fail at relatively basic challenges of \acronymDL 5 half of the time.\\
+
+
+\end{document}
