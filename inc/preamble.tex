@@ -1,0 +1,73 @@
+% Add some TODO notes for the writer's own use.
+\usepackage[disable]{todonotes}
+
+% This package combines longtable and tabularx
+\usepackage{xltabular}
+
+% Add the highlighted notes that appear when the reader hovers
+\usepackage{acro}
+\usepackage{pdfcomment}
+
+% Get some nice pre-defined colors.
+% Start here: https://ctan.math.ca/tex-archive/macros/latex/contrib/xkcdcolors/xkcdcolors-manual.pdf
+% See the git page: https://github.com/Rmano/xkcdcolors
+% See the full list here: https://xkcd.com/color/rgb/
+% See here for the story: https://blog.xkcd.com/2010/05/03/color-survey-results/
+\usepackage{xkcdcolors}
+
+% Define coloring related to terms
+% I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
+\definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
+
+\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
+\newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
+
+\definecolor{colorTerm}{RGB}{196, 70, 1}
+\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
+
+\newcommand{\termClass}[1]{\textcolor{xkcdSpearmint}{#1}}
+
+% Add the nice side tabs on the tables.
+% Usage: Put into the rightmost cell in a tabularx environment.
+% Example: \sideTab{LightBlue}{Modern}
+\newcommand{\sideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+
+% Add color to table cells
+% See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
+\usepackage{colortbl}
+
+% Use this package to break up a list into multiple columns
+\usepackage{multicol}
+
+% Style the bullets in itemized lists
+% https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
+\renewcommand\labelitemi{\textbullet}
+\renewcommand\labelitemii{\normalfont\bfseries \textendash}
+\renewcommand\labelitemiii{\textasteriskcentered}
+\renewcommand\labelitemiv{\textperiodcentered}
+
+
+% Make it easy to create the core capabilities of a character sheet
+\newcommand{\coreCompetencyTable}[8]{
+	\begin{center}
+	\resizebox{\columnwidth}{!}{
+		\begin{tabular}{lr|clr|}
+			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+			\cline{1-2} \cline{4-5}
+			Reasoning & #1				&& 	Coordination & #3 \\
+			Situational Awareness & #2	&& 	Constitution & #4 \\
+			\multicolumn{4}{c}{} \\
+			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
+			\cline{1-2} \cline{4-5}
+			Communication & #5 			&&	Focus & #7 \\
+			Social Awareness & #6 		&&	Creativity & #8 	\\
+		\end{tabular}
+	}
+	\end{center}
+}
+
+\newcommand{\hover}[2]{
+	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
+}
+
+
