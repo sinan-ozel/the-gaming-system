@@ -49,20 +49,7 @@
 \renewcommand\labelitemiv{\textperiodcentered}
 
 
-% Make it easy to create the core competencies of a character sheet
-\newcommand{\coreCompetencyTableOld}[8]{
-	\begin{center}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|lr|lr|lr}
-			\multicolumn{2}{c}{Mental}	&	\multicolumn{2}{c}{Physical}	&	\multicolumn{2}{c}{Social}	& \multicolumn{2}{c}{Innate} \\
-			\hline
-			Reasoning & #1				& 	Coordination & #3				& 	Communication & #5 			& Focus & #7 \\
-			Situational Awareness & #2	& 	Constitution & #4				& 	Social Awareness & #6 		& Creativity & #8 	\\
-		\end{tabular}
-	}
-	\end{center}
-}
-
+% Make it easy to create the core capabilities of a character sheet
 \newcommand{\coreCompetencyTable}[8]{
 	\begin{center}
 	\resizebox{\columnwidth}{!}{
@@ -272,22 +259,22 @@
 
 \chapter*{Character Creation}
 
-Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core competencies}.
+Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core capabilities}.
 Then based on their years of experience, list their \term{skills}, \term{talent} and \term{knowledge}.
 List their \term{income} and \term{renown} based on their backstory.
 Finally, based on their species and backstory, determine their \term{physiological bonuses}.
 \marginpar{
 	\footnotesize
-	\term{Mundane} characters are humans in a modern setting. Spells, powers \& overpowered core competencies take the character \term{beyond the mundane}.
+	\term{Mundane} characters are humans in a modern setting. Spells, powers \& overpowered \term{core capabilities} take the character \term{beyond the mundane}.
 }
 
-\section*{Core Competencies}
+\section*{Core Capabilities}
 
-\term{Core competencies} determine which dice to roll \& add to overcome challenges.
+\term{Core capabilities} determine which dice to roll \& add to overcome challenges.
 \marginpar{
 	\footnotesize
 	For d20 players:
-	imagine \term{core competencies} as the dice roll that replaces the d20 rolls.
+	imagine \term{core capabilities} as dice that replace d20.
 }
 
 \coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
@@ -297,7 +284,7 @@ To create a \term{mundane} character,
 	\footnotesize
 	\input{inc/core_competencies_dicepool_guide.tex}
 }
-assign 2d4 if they are bad at a \term{core competency},
+assign 2d4 if they are bad,
 2d6 if they are good, and d4 + d6 if they are average.
 d6 is for teenagers, literally or figuratively.\footnote{
  	Larger dice (d8, d10, ...) are reserved for heroes, superheroes and supernatural characters.
@@ -357,7 +344,7 @@ They are transferrable across jobs and even different campaign settings.\\
 If something can be taught with less then one hour of instructions, that is not an area of \term{expertise}.
 This is something that an adult should be able to do very easily after hearing the instructions,
 so the \term{difficulty level} of using such an equipment will likely be 3 on simple checks,
-and should be determined only by the \term{core competency}.
+and should be determined only by the \term{core capability}.
 This includes crossbox and modern firearms.
 \footnote{"Firearms", listed under knowledge, is about encyclopedic knowledge of firearms and their maintenance, not for shooting.}
 
@@ -483,8 +470,8 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 	\begin{xltabular}{\textwidth}{XX}
 		Campaign & Character Creation \\
 		\hline
-\rowcolor{xkcdEggShell}    A band of talented teenagers investigate paranormal phenomenon. & Create teenagers with d6 in all \term{core competencies}, except for their one special talent, which is 2d8.\\
-   				Young group of friends are attending a secret school of magic. & Create kids with d4 in all \term{core competencies}. However, also add in the fantasy knowledge and talents. Add a spellbook. \\
+\rowcolor{xkcdEggShell}    A band of talented teenagers investigate paranormal phenomenon. & Create teenagers with d6 in all \term{core capabilities}, except for their one special talent, which is 2d8.\\
+   				Young group of friends are attending a secret school of magic. & Create kids with d4 in all \term{core capabilities}. However, also add in the fantasy knowledge and talents. Add a spellbook. \\
 
 	\end{xltabular}
 \end{center}
