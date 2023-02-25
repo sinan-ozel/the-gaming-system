@@ -14,20 +14,20 @@
 
 \section*{Mundane}
 
-\subsection*{Fire}
+\subsection*{A Small Fire}
 
-Fire is a beast: it has no reasoning or situational awareness, but it has a strength.
+Fire is a beast: it has no reasoning or situational awareness, but it has the capability to burn.
 \begin{center}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr}
-            \multicolumn{2}{c}{A Small Fire}
-			Blaze & 1d4 \\
-		\end{tabular}
-	}
+	\begin{tabular}{lr|}
+		\multicolumn{2}{c}{Capabilities}\\
+		\hline
+		Burn & 1d4 \\
+	\end{tabular}
 \end{center}
 
-Each round, fire rolls its \termCore{Strength}. Every time it rolls 4, it spreads into an adjacent tile.
-Once it goes over 4 tiles in either direction, its \termCore{Strength} increases.
+Each round, fire rolls its \termCore{Burn}. Every time it rolls the face die,
+it spreads into an adjacent tile. The face die is 4 at start but it increases as it spreads.
+Once it goes over 4 tiles in either direction, its \termCore{Burn} increases.
 The maximum number of tiles in a row in each direction determines one of the dice in the \termCore{Strength} roll, rounded up.
 \todo{Add an image using tikz.}\\
 
@@ -44,34 +44,34 @@ Unlike domesticated pets and familiars, they cannot communicate with
 humans, so they have no \termCore{Communication}.
 Please do not hurt them.\\
 \begin{center}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|clr|}
-			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
-			\cline{1-2} \cline{4-5}
-			Situational Awareness & 1d4				&& 	Coordination & 1d4 \\
-		\end{tabular}
-	}
+	\begin{tabular}{lr|clr|}
+		\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+		\cline{1-2} \cline{4-5}
+		Situational Awareness & 1d4				&& 	Coordination & 1d4 \\
+	\end{tabular}
 \end{center}
-\todo{Add physiology: size & bite strength}
+\todo{Add skills: gather nuts, evade}
+\todo{Add physiology: size & bite strength, speed}
 
 \subsection*{A Dog}
 Dogs have the following four core competencies at 1d4.
 Unlike many other animals, they can communicate with humans.
 Their bite attacks are \termCore{Coordination} + Jaw Strength\\
 \begin{center}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|clr|}
-			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
-			\cline{1-2} \cline{4-5}
-			Situational Awareness & 1d4				&& 	Coordination & 1d4 \\
-			\multicolumn{4}{c}{} \\
-			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
-			\cline{1-2} \cline{4-5}
-			Communication & 1d4 			&&	Focus & 1d4 \\
-		\end{tabular}
-	}
+	\begin{tabular}{lr|clr|}
+		\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
+		\cline{1-2} \cline{4-5}
+		Situational Awareness & 1d4				&& 	Coordination & 1d4 \\
+		\multicolumn{4}{c}{} \\
+		\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
+		\cline{1-2} \cline{4-5}
+		Communication & 1d4 			&&	Focus & 1d4 \\
+	\end{tabular}
 \end{center}
+\todo{Add skills: fetch, open doors}
 \todo{Add physiology: size & bite strength}
+
+\todo{Add a wolf. Also add a werewolf to beyond the mundane.}
 
 \section*{Beyond the Mundane}
 
