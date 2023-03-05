@@ -6,7 +6,7 @@
 % Authors:
 % Vel (vel@latextemplates.com)
 % Mathias Legrand (legrand.mathias@gmail.com)
-% 
+%
 % This class originates from:
 % https://www.LaTeXTemplates.com
 %
@@ -217,7 +217,7 @@
 	{0cm} % Space between the title and label
 	{} % Code before the label
 	[] % Code after the label
-	
+
 \titleformat
 	{name=\section, numberless} % Section type being modified
 	[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
@@ -239,7 +239,7 @@
 	{0cm} % Space between the title and label
 	{} % Code before the label
 	[] % Code after the label
-	
+
 \titleformat
 	{name=\subsection, numberless} % Section type being modified
 	[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
@@ -261,7 +261,7 @@
 	{0cm} % Space between the title and label
 	{} % Code before the label
 	[] % Code after the label
-	
+
 \titleformat
 	{name=\subsubsection, numberless} % Section type being modified
 	[block] % Shape type, can be: hang, block, display, runin, leftmargin, rightmargin, drop, wrap, frame
@@ -368,7 +368,7 @@
 	{} % Formatting of numberless sections of this type
 	{~\titlerule*[6pt]{.}~\thecontentspage} % Formatting of the filler to the right of the heading and the page number
 	[] % After code
-	
+
 %------------------------------------------------
 
 \titlecontents{subsubsection} % Section type being modified
@@ -435,6 +435,7 @@
 \usepackage[
 	backend=biber, % Use the biber engine for compiling the bibliography
 	bibstyle=numeric, % Main bibliography style
+	style=authoryear,
 	citestyle=numeric, % In-text citation style
 	sorting=nyt, % Sort references in the bibliography by name, then year, then title
 	sortcites=true, % If multiple citekeys are passed to a citation command, sort them in the citation
@@ -536,7 +537,7 @@
 		\node [inner sep=0pt] at (current page.center) {#1}; % Background image
 		\node [anchor=center, inner sep=1.25cm, rectangle, fill=ocre!30!white, fill opacity=0.6, text opacity=1, minimum height=0.2\paperheight, minimum width=\paperwidth, text width=0.8\paperwidth] at (current page.center) {#2}; % Title highlight box with title(s) and author(s)
 	\end{tikzpicture}
-	
+
 	\newpage
 }
 
