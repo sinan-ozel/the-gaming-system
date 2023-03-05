@@ -18,6 +18,7 @@
 % Define coloring related to terms
 % I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
 \definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
+\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
 
 \definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
 \newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
@@ -42,6 +43,16 @@
 % Add styling to emphasized paragraphs and character sheets
 \usepackage{mdframed}
 
+\global\mdfdefinestyle{d20ComparisonBoxStyle}{
+	linewidth=1pt,
+	linecolor=xkcdSandy,
+	frametitlebackgroundcolor=xkcdPale,
+	backgroundcolor=xkcdPale,
+	frametitlefont=\bfseries\sffamily\footnotesize,
+	frametitlerule=true,
+}
+
+
 \global\mdfdefinestyle{emphasisParagraphFrameStyle}{
 	topline=false,
 	bottomline=false,
@@ -49,8 +60,20 @@
 	skipabove=\topsep,
 	skipbelow=\topsep,
 	linecolor=xkcdBottleGreen,
-	middlelinewidth=3pt,
+	linewidth=3pt,
 }
+
+\newenvironment{emphasisParagraph}{
+	\begin{quote}
+	\begin{mdframed}[style=emphasisParagraphFrameStyle]
+	\em
+}{
+	\end{mdframed}
+	\end{quote}
+}
+
+
+
 
 % Style the bullets in itemized lists
 % https://tex.stackexchange.com/questions/42805/what-are-original-itemize-bullet-definitions
@@ -60,7 +83,7 @@
 \renewcommand\labelitemiv{\textperiodcentered}
 
 
-% Make it easy to create the core capabilities of a character sheet
+% TODO: Remove this.
 \newcommand{\coreCompetencyTable}[8]{
 	\begin{center}
 	\resizebox{\columnwidth}{!}{
@@ -93,6 +116,8 @@
 	}
 }
 
+
+% TODO: Remove the following
 \newenvironment{characterSheet}{
 	\begin{minipage}{\columnwidth}
 	\begin{mdframed}
@@ -104,7 +129,7 @@
 	\end{minipage}
 }
 
-\newcommand{\expertiseTable}[3]{
+\newcommand{\expertiseTableOld}[3]{
 	\begin{tabular}{ccc}
 		\multicolumn{3}{c}{} \\
 		Knowledge & Skills & Talents \\
@@ -121,7 +146,8 @@
 	\end{tabular}
 }
 
-\newcommand{\physiologyTable}[3]{
+% TODO: Remove when done.
+\newcommand{\physiologyTableOld}[3]{
 	\begin{tabular}{ccc}
 		\multicolumn{3}{c}{} \\
 		Senses & Strength & Movement \\
@@ -137,13 +163,92 @@
 		\end{tabular} \\
 	\end{tabular}
 }
-% TODO: How to do speed and size?
 
-\newenvironment{emphasisParagraph}{
-	\begin{quote}
-	\begin{mdframed}[style=emphasisParagraphFrameStyle]
-	\em
+\usepackage{wrapfig}
+
+% Add tikzpicture to use for sheets
+\usepackage{tikz}
+\usetikzlibrary{positioning, calc, shadings}
+
+% Font for handwriting
+\usepackage{emerald}
+
+\usepackage{makecell}
+
+\newenvironment{actorSheet}{
+	\begin{tikzpicture}
+		\draw[color=xkcdLightPlum,line width=2mm,rounded corners=.55cm]
+			 	(0,0) node (SW) {} --
+				(0,5.5in) node (NW) {} --
+				(4.25in,5.5in) node (NE) {} --
+				(4.25in,0) node (SE) {} -- (current subpath start)
+			;
 }{
-	\end{mdframed}
-	\end{quote}
+	\end{tikzpicture}
 }
+
+
+\newcommand{\labeledFrame}[4]{
+	\node[draw=xkcdLightPlum,top color=xkcdLightPink,middle color=xkcdVeryLightPink,bottom color=white,font=\normalsize,#3,anchor=north west,line width=.5mm,inner ysep=1mm,inner xsep=2mm] (#1){
+		#4
+	};
+	\node[text=xkcdVeryLightPink,fill=xkcdLightPlum,node font=\sffamily,below right=0.2mm and -0.1mm of #1.north west,anchor=south west] (#1Label)  {
+		\hspace*{5mm}#2
+	};
+	\coordinate[below right=.2mm and -.1mm of #1Label.north east,anchor=west] (#1A);
+	\coordinate[right=-.1mm of #1Label.south east,anchor=west] (#1B);
+	\coordinate[left=.6mm of #1.north east,anchor=south west] (#1C);
+	\draw[xkcdLightPlum,fill=xkcdLightPlum] (#1A) -- (#1B) -- (#1C) -- (#1A);
+}
+
+
+\newcommand{\capabilityTable}[2]{
+	\labeledFrame{tabCapability}{\footnotesize #1}{below right=.35 in and .15 in of NW}{
+		\begin{tabular}{lr}
+			#2
+		\end{tabular}
+	}
+}
+
+\newcommand{\physiologyTable}[4]{
+	\node[draw=xkcdMutedBlue,fill=xkcdReallyLightBlue,top color=xkcdReallyLightBlue,middle color=xkcdReallyLightBlue,bottom color=white,#1,font=\normalsize,anchor=north west,line width=.5mm,inner ysep=0mm,inner xsep=0mm] (tabPhysiology){
+		\begin{tabular}[t]{c|c|c}
+			\rowcolor{xkcdMutedBlue}
+			\sffamily\footnotesize\textcolor{xkcdIvory}{Strength}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Senses}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Natural Armor} \\
+			\begin{tabular}[t]{p{1.6cm}r}#2\end{tabular}			& \begin{tabular}[t]{p{1.6cm}r}#3\end{tabular} 			& \begin{tabular}[t]{p{1.6cm}r}#4\end{tabular}
+		\end{tabular}
+	};
+}
+
+\newcommand{\expertiseTable}[4]{
+	\node[draw=xkcdMutedBlue,fill=xkcdReallyLightBlue,top color=xkcdReallyLightBlue,middle color=xkcdReallyLightBlue,bottom color=white,#1,font=\normalsize,anchor=north west,line width=.5mm,inner ysep=0mm,inner xsep=0mm] (tabExpertise){
+		\begin{tabular}[t]{c|c|c}
+			\rowcolor{xkcdMutedBlue}
+			\sffamily\footnotesize\textcolor{xkcdIvory}{Knowledge}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Skills}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Talents} \\
+			\begin{tabular}[t]{p{1.5cm}r}#2\end{tabular}			& \begin{tabular}[t]{p{1.5cm}r}#3\end{tabular} 			& \begin{tabular}[t]{p{1.5cm}r}#4\end{tabular}
+		\end{tabular}
+	};
+}
+
+
+
+
+
+\newcommand{\coreCapability}[2]{
+	\\[-3mm]
+	#1 & \ECFAugie\footnotesize #2 \\
+	\hline
+}
+
+\newcommand{\bonusLine}[2]{
+	#1 & \ECFAugie\footnotesize #2 \\
+}
+
+\newcommand{\expertiseLine}[2]{
+	\ECFAugie\footnotesize #1 & \ECFAugie\footnotesize #2 \\
+}
+
+%TODO: Add fields on top for: Name, Species, Size
+%TODO: Add movement
+%TODO: Add trauma scale
+%TODO: Injuries, Mental States
