@@ -187,44 +187,147 @@
 
 \chapter*{Character Creation}
 
-Generating a character like writing a social network profile or a CV: Based on the character idea, formulate their \term{core capabilities}.
-Then based on their years of experience, list their \term{skills}, \term{talent} and \term{knowledge}.
-List their \term{income} and \term{renown} based on their backstory.
-Finally, based on their species and backstory, determine their \term{physiological bonuses}.
+\section*{Generate a Mundane Character}
 \marginpar{
 	\footnotesize
-	\term{Mundane} characters are humans in a modern setting. Spells, powers \& overpowered \term{core capabilities} take the character \term{beyond the mundane}.
+	\term{Mundane} characters are humans in a modern setting.
+	Spells, powers \& overpowered \term{core capabilities} take the character \term{beyond the mundane}.
 }
 
-\section*{Core Capabilities}
+Generating a character like writing a social network profile or a CV:
+\begin{enumerate}
+	\item Based on the character idea, formulate their \term{core capabilities}.
+	\item Based on their species (human) and background, write their \term{physilogical bonuses}, such as core body strength.
+	\item Based on their years of experience, list their \term{expertise}.
+\end{enumerate}
+Characters roll their \term{core capabilities} and
+add their bonuses from either \term{physiology} or their \term{expertise},
+depending on the situation.
 
-\term{Core capabilities} determine which dice to roll \& add to overcome challenges.
+\subsection*{1. Core Capabilities}
+
+\begin{wrapfigure}{L}{0.4\textwidth}
+	\begin{tikzpicture}
+		\coordinate (NW);
+		\capabilityTable{Core Capabilities}{
+			\coreCapability{Reasoning}{2d6}
+			\coreCapability{Situational Awareness}{d4 + d6}
+			\coreCapability{Coordination}{2d4}
+			\coreCapability{Constitution}{d4 + d6}
+			\coreCapability{Communication}{2d4}
+			\coreCapability{Social Awareness}{2d4}
+			\coreCapability{Focus}{2d4}
+			\coreCapability{Creativity}{2d4}
+			\coreCapability{Willpower}{2d4}
+		}
+	\end{tikzpicture}
+\end{wrapfigure}
+
 \marginpar{
-	\footnotesize
-	For d20 players:
-	imagine \term{core capabilities} as dice that replace d20.
+	\begin{mdframed}[style=d20ComparisonBoxStyle,frametitle=Compare to $d20$]
+		\footnotesize
+		Imagine \term{core capabilities} as dice rolls that replace the $d20$ roll.
+	\end{mdframed}
 }
 
-\coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
+\term{Core capabilities} determine which dice to roll \& add
+to overcome challenges.
 
 To create a \term{mundane} character,
 \marginpar{
 	\footnotesize
 	\input{inc/core_competencies_dicepool_guide.tex}
 }
-assign 2d4 if they are bad,
-2d6 if they are good, and d4 + d6 if they are average.
-d6 is for teenagers, literally or figuratively.\footnote{
- 	Larger dice (d8, d10, ...) are reserved for heroes, superheroes and supernatural characters.
- 	These are action movie protoganists, villains, comic book heroes, vampires.
- 	The largest dice are for divine beings and legendary characters.
- 	A \term{third dice} is for representing dangerous, forbidden magic and alien technology:
- 	they increase the sum, but also the risk of rolling double ones, which means that a \term{misfortune} happened.
+assign $2d4$ if they are bad,
+$2d6$ if they are good, and $d4 + d6$ if they are average.
+d6 is for a teenager-level capability, literally or figuratively.
+
+Larger dice ($d8$, $d10$, ...) are reserved to go \term{beyond the mundane} - for heroes, superheroes and supernatural characters.
+These are action movie protoganists, villains, comic book heroes, vampires, etc\dots
+The largest dice are for divine beings and legendary characters.
+A \term{third dice} is for representing dangerous, forbidden magic and alien technology:
+they increase the sum, but also the risk of rolling a \term{double one}.
+
+
+\subsection*{2. Physiology}
+Certain bonuses to dice roles are directly related to the species of the character, such as senses \& strength.
+For \term{mundane} characters, the species is "human".
+Hover the table to see how each score is determined.
+% TODO: Put the following explanation in hovers inside the table.
+% Humans get +7 to their vision.
+% \footnote{
+% 	To calculate the vision for an animal, divide their visual acuity, cycles-per-degree by ten.
+% 	For example, an eagle has 140 cyc/deg, so their bonus is +14.
+% }
+% However, deduct 1 for each level of correction on their prescription.
+% For instance, this character had myopia in their prescription, so their
+% sight is +2.
+
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		\coordinate (tabCapability);
+		\physiologyTable{below left=5 mm and 0 in of tabCapability}
+		{
+			\bonusLine{Core}{+1}
+			\bonusLine{Upper Body}{+1}
+		}
+		{
+			\bonusLine{Vision (Daylight)}{+2}
+			\bonusLine{Hearing}{+1}
+		}
+		{
+			\bonusLine{Skin}{+1}
+		}
+
+	\end{tikzpicture}
+\end{figure}
+
+% TODO: Explain strength.
+
+\paragraph*{Senses}
+Humans get +7 to their vision, see this footnote for how this is calculated.
+\footnote{
+	To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
+	For example, an eagle has 140 cyc/deg, so their bonus is +14.
+}
+However, deduct 1 for each level of correction on their prescription.
+Human get +2 to their hearing, see the footnote for how this is calculated.
+\footnote{
+	To calculate the hearing for another species, divide their audible range in Hz by 10000.
+	For example, bats can hear up to 100kHz, so this will give them +10.
+}
+\term{Mundane} humans do not get other senses.
+However, other species have other senses.
+Examples include the smell of dogs, infrared vision, ultraviolet vision,
+magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
+To go \term{beyond the mundane}, you might want to consider these characters.
+See the footnote.
+\footnote{
+	Some of these senses are not well understood, and quantifying them is difficult.
+	Furthermore, going \term{beyond the mundane}, there can be other senses,
+	such as receptivity to a magic.
+	In general, when creating a species, extrapolate from real-life:
+	if a sense is supposed to be main means by which a predator
+	hunts, consider humans +7 or eagles +14 as examples - note that eagles
+	are the animals with the highest known cycles-per-degree, so that
+	could be the absolute best for a mundane species.
 }
 
-\section*{Expertise}
+% TODO: Explain strength.
 
-These are bonuses added to dice rolls. Assign these bonuses based on the character's background: Bonus equals the years of experience, and after the tenth year, count each decade as one point. Less than six months counts as half-year. Flesh out as much as desired, extend the \term{knowledge}, \term{skills} and \term{talents} depending on the setting and the focus of the campaign. The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
+
+
+\subsection*{3. Expertise}
+
+These are bonuses related to a character's history \& experience up to date.
+Assign these bonuses based on the character's background:
+Bonus equals the years of experience up to the tenth year.
+After the tenth year, count each decade as one point.
+% TODO: Explain this better.
+% If in a year, they worked only partially, count that as a half-year.
+Flesh out as much as desired, extend the \term{knowledge}, \term{skills} and \term{talents} depending on the setting and the focus of the campaign.
+The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
 
 \marginpar{
 	\footnotesize
@@ -289,18 +392,18 @@ This includes crossbox and modern firearms.
 
 \subsection*{Character Example}
 
-\marginpar{
-	\vspace{7cm}
-	\footnotesize
-	Any income to the chraracter that does not involve a job is \term{passive income}. This can be rent from a real estate, parental support, or from investments. (Exact score determination needs to be decided, this can be a dice or a bonus.)\\
+% \marginpar{
+% 	\vspace{7cm}
+% 	\footnotesize
+% 	Any income to the chraracter that does not involve a job is \term{passive income}. This can be rent from a real estate, parental support, or from investments. (Exact score determination needs to be decided, this can be a dice or a bonus.)\\
 
-	\term{Renown} is the based on the number of you people who know of the character, without the character knowing them.
-	To determine the score, get the number of people who would know of the chracter, and count the number of digits.
-	For example, a researcher well known in their field could be 2 or even 3.
-	An modern-era influencer could go up to 4 (1000 followers or more), 5, (10000 followers or more).
-	A celebrity could be at 6 or 7, or even 8 if they are very famous.
-	Most people should have 0 or, perhaps 1 if they have an online presence.
-}
+% 	\term{Renown} is the based on the number of you people who know of the character, without the character knowing them.
+% 	To determine the score, get the number of people who would know of the chracter, and count the number of digits.
+% 	For example, a researcher well known in their field could be 2 or even 3.
+% 	An modern-era influencer could go up to 4 (1000 followers or more), 5, (10000 followers or more).
+% 	A celebrity could be at 6 or 7, or even 8 if they are very famous.
+% 	Most people should have 0 or, perhaps 1 if they have an online presence.
+% }
 
 
 \begin{minipage}{\columnwidth}
@@ -335,30 +438,6 @@ This includes crossbox and modern firearms.
 \todo{Need to add the rules for physilogical bonuses.}
 \todo{Add size to physiology.}
 
-\begin{characterSheet}
-	\coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
-
-	\expertiseTable{
-		Electrical Engineering & +6\\
-		Economics & +2\\
-	}{
-	 	Cycling & +3 \\
-	 	Dancing (Latin) & +3 \\
-	}{
-		Skepticism & +4 \\
-	}
-
-	\physiologyTable{
-		Vision (Visible Light) & +7 \\
-		Hearing & +2 \\
-	}{
-		Upper Body & +1\\
-		Core & +1\\
-	}{
-	}
-
-\end{characterSheet}
-
 
 \subsection*{Dice Roll Examples}
 
@@ -368,23 +447,25 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 \subsubsection*{Mundane}
 
 \begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{Xll}
-				Situation												& Challenge 								& Roll \\
-\rowcolor{xkcdEggShell}	They need to find a solution to an engineering problem at work.				& \termCore{Reasoning} + Electrical Engineering		& 2d6 + 6 \\
-				They want to meet someone at a party.								& \termCore{Social Awareness}					& 2d4 \\
-\rowcolor{xkcdEggShell}	They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 		& d4 + d6 + 0 \\
-		 		See through deception during conversation							& \termCore{Reasoning} + Skepticism				& d4 + d6 + 5 \\
-\rowcolor{xkcdEggShell}	Deceive someone during conversation 								& \termCore{Communication} + Deception			& d4 + d6 + 0 \\
-		 		Throw a fist at an unsuspecting individual							& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
+		Situation												& Challenge 								& Roll \\
+		They need to find a solution to an engineering problem at work.				& \termCore{Reasoning} + Electrical Engineering		& 2d6 + 6 \\
+		They want to meet someone at a party.								& \termCore{Social Awareness}					& 2d4 \\
+		They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 		& d4 + d6 + 0 \\
+		See through deception during conversation							& \termCore{Reasoning} + Skepticism				& d4 + d6 + 5 \\
+		Deceive someone during conversation 								& \termCore{Communication} + Deception			& d4 + d6 + 0 \\
+		Throw a fist at an unsuspecting individual							& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
 	\end{xltabular}
 \end{center}
 
 \subsubsection*{Beyond the Mundane}
 
 \begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{Xll}
-				Situation												& Challenge 								& Roll \\
-\rowcolor{xkcdEggShell}	They need to identify some potions through sight, smell \& taste. 				& \termCore{Situational Awareness} + Herbology		& d4 + d6 + 0 \\
+		Situation												& Challenge 								& Roll \\
+		They need to identify some potions through sight, smell \& taste. 				& \termCore{Situational Awareness} + Herbology		& d4 + d6 + 0 \\
 	\end{xltabular}
 \end{center}
 
@@ -409,24 +490,25 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 
 \subsection*{Mundane}
 \begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
 		Campaign & Character Creation \\
 		\hline
-\rowcolor{xkcdEggShell}    A group of high school friends come back to their home town when one of them passes away. As they mourn their friends' passing, they begin to suspect foulplay and a coverup... & Create characters as usual. \\
-				A band of volunteer soldiers find themselves in a war. & Create characters as usual. \\
-\rowcolor{xkcdEggShell}    In a longer campaign, a group of firegihters respond to crises in a particularly flammable \& dangerous city. & Create characters as usual. Obviously, the background should reflect their years in the firefighting force. \\
+		A group of high school friends come back to their home town when one of them passes away. As they mourn their friends' passing, they begin to suspect foulplay and a coverup... & Create characters as usual. \\
+		A band of volunteer soldiers find themselves in a war. & Create characters as usual. \\
+		In a longer campaign, a group of firegihters respond to crises in a particularly flammable \& dangerous city. & Create characters as usual. Obviously, the background should reflect their years in the firefighting force. \\
 	\end{xltabular}
 \end{center}
 
 
 \subsection*{Beyond the Mundane}
 \begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
 		Campaign & Character Creation \\
 		\hline
-\rowcolor{xkcdEggShell}    A band of talented teenagers investigate paranormal phenomenon. & Create teenagers with d6 in all \term{core capabilities}, except for their one special talent, which is 2d8.\\
-   				A tightly-knit group of kids are attending a secret school of magic. & Create kids with d4 in all \term{core capabilities}. However, also add in the fantasy knowledge and talents. Add a spellbook. \\
-
+		A band of talented teenagers investigate paranormal phenomenon. & Create teenagers with d6 in all \term{core capabilities}, except for their one special talent, which is 2d8.\\
+   		A tightly-knit group of kids are attending a secret school of magic. & Create kids with d4 in all \term{core capabilities}. However, also add in the fantasy knowledge and talents. Add a spellbook. \\
 	\end{xltabular}
 \end{center}
 
