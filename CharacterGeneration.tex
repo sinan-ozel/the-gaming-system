@@ -6,41 +6,39 @@
 
 \newcommand{\listUniversalTraining}{
 	\begin{itemize}[leftmargin=.5cm]
-		\item Animal Handling (...)\footnote{Small mammals, large mammals, small reptiles, large reptiles, small birds, birds of prey}
-		\item Artistic Painting
-		\item Baking
-		\item Brewing
 		\item Carpentry
-		\item Ceramics
-		\item Cooking
-		\item Drawing
 		\item Embroidery
 		\item Knitting
-  		\item Knots
-    	\item Lasso Throwing
-		\item Language (...)
 		\item Lockpicking
 		\item Massage
-		\item Musical Instrument (...)
-		\item Roof tiling
-		\item Sleight of Hand
-		\item Sailing
+		\item Roof Tiling
 		\item Shoemaking
+		\item Sleight of Hand
 		\item Survival
 		\item Swimming
-		\item Winemaking
 		\item Tailoring
+  		\item Chiropractice
+  		\item Knots
   		\item Trap Making
+    	\item Lasso Throwing
 	\end{itemize}
 }
 
 \newcommand{\listTalents}{
 	\begin{itemize}[leftmargin=.5cm]
 		\item Acting
+		\item Animal Handling (\ldots)\footnote{\footnoteMundaneAnimals}
 		\item Assertion
 		\item Deception
+		\item Drawing
+  		\item Eye for Color
 		\item Joking
+		\item Language (\ldots)
 		\item Listening
+		\item Musical Instrument (\ldots)
+		\item Painting
+		\item Sense of Direction
+		\item Singing
 		\item Skepticism
 		\item Taurascatics
 	\end{itemize}
@@ -48,15 +46,23 @@
 
 \newcommand{\listUniversalKnowledge}{
 	\begin{itemize}[leftmargin=.5cm]
-		\item Bookkeeping
 		\item Algebra
+		\item Anatomy (Human)
+		\item Anatomy (\ldots)\footnote{\footnoteMundaneAnimals}
 		\item Astronomy
+		\item Baking
+		\item Bookkeeping
+		\item Boat Maintenance
+		\item Brewing
+		\item Cooking
+		\item Ceramics
+		\item Maritime Currents (\ldots)\footnote{Specify the ocean or sea.}
 		\item Herbology
-		\item Human Anatomy
 		\item Philosophy
 		\item Physics
 		\item Politics
 		\item Theology (...)
+		\item Winemaking
 	\end{itemize}
 }
 
@@ -66,23 +72,14 @@
 \newcommand{\listModernTraining}{
 	\begin{itemize}[leftmargin=.5cm]
 		\item Bouldering
-		\item Clinical Skills
 		\item Cycling
 		\item Dancing (...)\footnote{Ballroom, Capoeira, Hiphop, Latin, Tango}
 		\item Defensive Martial Art (...)
 		\item Driving (Cars)
-		\item Firefighting
-		\item First Aid
 		\item Gymnastics
-		\item Household Repair
-		\item Interior Design
 		\item Kickboxing
 		\item Knife Fighting
-		\item Medical Equipment (...)
-		\item Mixology
 		\item Offensive Martial Art (...)
-		\item Photography
-		\item Plumbing
 		\item Riding (Motorcycle)
 		\item Wrestling
 	\end{itemize}
@@ -98,16 +95,24 @@
 		\item Calculus
 		\item Cinema
 		\item Civil Engineering
+		\item Clinical Skills
 		\item Computer Art
+		\item Computer Networks
 		\item Computing Concepts
 		\item Criminal Law
 		\item Economics\footnote{Macro, unless otherwise specified.}
 		\item Electrical Engineering
 		\item Electronics
 		\item Firearms
+		\item Firefighting
+		\item First Aid
+		\item Household Repair
+		\item Interior Design
 		\item Mechanics
+		\item Medical Equipment (...)
+		\item Mixology
 		\item Music Theory
-		\item Computer Networks
+		\item Photography
 		\item Physics
 		\item Psychology
 		\item Sociology
@@ -119,7 +124,7 @@
 
 \newcommand{\listModernTalents}{
 	\begin{itemize}[leftmargin=.5cm]
-		\item Fashion
+		\item Fashion Sense
 	\end{itemize}
 }
 
@@ -155,6 +160,7 @@
 		\item Mediumship
 		\item Telekinesis
 		\item Pyrokinesis
+  		\item Danger Sense
 	\end{itemize}
 }
 
@@ -208,22 +214,20 @@ depending on the situation.
 
 \subsection*{1. Core Capabilities}
 
-\begin{wrapfigure}{L}{0.4\textwidth}
-	\begin{tikzpicture}
-		\coordinate (NW);
-		\capabilityTable{Core Capabilities}{
-			\coreCapability{Reasoning}{2d6}
-			\coreCapability{Situational Awareness}{d4 + d6}
-			\coreCapability{Coordination}{2d4}
-			\coreCapability{Constitution}{d4 + d6}
-			\coreCapability{Communication}{2d4}
-			\coreCapability{Social Awareness}{2d4}
-			\coreCapability{Focus}{2d4}
-			\coreCapability{Creativity}{2d4}
-			\coreCapability{Willpower}{2d4}
-		}
-	\end{tikzpicture}
-\end{wrapfigure}
+% TODO: Put this back in
+% \begin{wrapfigure}{L}{0.4\textwidth}
+% 	\begin{capabilitiesTable}
+% 		\capability{Reasoning}{2d6}
+% 		\capability{Situational Awareness}{d4+d6}
+% 		\capability{Coordination}{2d4}
+% 		\capability{Constitution}{d4+d6}
+% 		\capability{Communication}{2d4}
+% 		\capability{Social Awareness}{2d4}
+% 		\capability{Focus}{2d4}
+% 		\capability{Creativity}{2d4}
+% 		\capability{Willpower}{2d4}
+% 	\end{capabilitiesTable}
+% \end{wrapfigure}
 
 \marginpar{
 	\begin{mdframed}[style=d20ComparisonBoxStyle,frametitle=Compare to $d20$]
@@ -244,7 +248,7 @@ assign $2d4$ if they are bad,
 $2d6$ if they are good, and $d4 + d6$ if they are average.
 d6 is for a teenager-level capability, literally or figuratively.
 
-Larger dice ($d8$, $d10$, ...) are reserved to go \term{beyond the mundane} - for heroes, superheroes and supernatural characters.
+Larger dice ($d8$, $d10$, \ldots) are reserved to go \term{beyond the mundane} - for heroes, superheroes and supernatural characters.
 These are action movie protoganists, villains, comic book heroes, vampires, etc\dots
 The largest dice are for divine beings and legendary characters.
 A \term{third dice} is for representing dangerous, forbidden magic and alien technology:
@@ -252,29 +256,32 @@ they increase the sum, but also the risk of rolling a \term{double one}.
 
 
 \subsection*{2. Physiology}
+% TODO: Height
+% TODO: Weight
+% TODO: Movement Speeds
 Certain bonuses to dice roles are directly related to the species of the character, such as senses \& strength.
 For \term{mundane} characters, the species is "human".
 Hover the table to see how each score is determined.
-% TODO: Put in the hovers.
+% TODO: Put in the hover tooltips.
 
 \begin{figure}[H]
 	\centering
-	\begin{tikzpicture}
-		\coordinate (tabCapability);
-		\physiologyTable{below left=5 mm and 0 in of tabCapability}
-		{
-			\bonusLine{Core}{+1}
-			\bonusLine{Upper Body}{+1}
-		}
-		{
-			\bonusLine{Vision (Daylight)}{+2}
-			\bonusLine{Hearing}{+1}
-		}
-		{
-			\bonusLine{Skin}{+1}
-		}
+	% \begin{tikzpicture}
+	% 	\coordinate (tabCapability);
+	% 	\physiologyTable{below left=5 mm and 0 in of tabCapability}
+	% 	{
+	% 		\bonus{Core}{+1}
+	% 		\bonus{Upper Body}{+1}
+	% 	}
+	% 	{
+	% 		\bonus{Vision (Daylight)}{+7}
+	% 		\bonus{Hearing}{+1}
+	% 	}
+	% 	{
+	% 		\bonus{Skin}{+1}
+	% 	}
 
-	\end{tikzpicture}
+	% \end{tikzpicture}
 \end{figure}
 
 % TODO: Explain strength.
@@ -287,8 +294,8 @@ Humans get +7 to their vision, see this footnote for how this is calculated.
 	See \cite{caves_acuityview_2018} for more information on visual acuity,
 	and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 }
-However, deduct 1 for each level of correction on their prescription.
-Human get +2 to their hearing, see the footnote for how this is calculated.
+% However, deduct 1 for each level of correction on their prescription.
+Humans get +2 to their hearing, see the footnote for how this is calculated.
 \footnote{
 	To calculate the hearing for another species, divide their audible range in Hz by 10000.
 	For example, bats can hear up to 100kHz, so this will give them +10.
@@ -297,18 +304,6 @@ Human get +2 to their hearing, see the footnote for how this is calculated.
 However, other species have other senses.
 Examples include the smell of dogs, infrared vision, ultraviolet vision,
 magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
-To go \term{beyond the mundane}, you might want to consider these characters.
-See the footnote.
-\footnote{
-	Some of these senses are not well understood, and quantifying them is difficult.
-	Furthermore, going \term{beyond the mundane}, there can be other senses,
-	such as receptivity to a magic.
-	In general, when creating a species, extrapolate from real-life:
-	if a sense is supposed to be main means by which a predator
-	hunts, consider humans +7 or eagles +14 as examples - note that eagles
-	are the animals with the highest known cycles-per-degree, so that
-	could be the absolute best for a mundane species.
-}
 
 % TODO: Explain strength.
 
@@ -340,6 +335,7 @@ The final bonuses need to make sense to \emph{all} other players when you are in
 \newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
 
 
+% TODO: Carry over to the new table.
 \begin{center}
 	\begin{tabular}{lr|lr|lr|}
 		\multicolumn{2}{c}{Knowledge}							&	\multicolumn{2}{c}{Skills}				&	\multicolumn{2}{c}{Talents} \\
@@ -402,37 +398,131 @@ This includes crossbox and modern firearms.
 % }
 
 
-\begin{minipage}{\columnwidth}
-\begin{center}
-	\coreCompetencyTable{2d6}{d4 + d6}{2d4}{d4 + d6}{2d4}{2d4}{4d6}{2d4}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|lr|lr|}
+% TODO: Recreate the character sheet based on the following categorization:
+% Physical / Mental / Innate
+% Transpose the top table.
 
-			\multicolumn{6}{c}{} \\
-			\multicolumn{2}{c}{Knowledge}	&	\multicolumn{2}{c}{Skills}		&	\multicolumn{2}{c}{Talents} \\
-			\hline
-			Electrical Engineering & +6		& 	Cycling & +3					& 	Skepticism & +4 \\
-			Economics & +2					& 	Dancing (Latin) & +3			& 	& \\
-			Marketing & +1					& 	Swimming & +2 					& 	& \\
-			Finance & +2 					& 	Driving (Car) & +5				& 	& \\
-			Accounting  & +1 				& 	 &  							& 	& \\
-			Philosophy  & +1 				& 	 &  							& 	& \\
-			Physics  & +1 					& 	 &  							& 	& \\
-			Chemistry  & +1  				& 	 &  							& 	& \\
-			Computing Concepts & +10  		& 	 &  							& 	& \\
-			\multicolumn{6}{c}{} \\
- 			\multicolumn{2}{c}{Resources}	&	\multicolumn{2}{c}{Physiology}	&	\multicolumn{2}{c}{Items} \\
-			\hline
-			Passive Income & +1				& Sight	& +6						&  Mobile Phone & \\
-			Renown & 						& Hearing &	+2						&  & \\
-			 & 								& Strength, Upper Body & +1			&  & \\
-			 & 								& Strength, Core & +1				&  & \\
-		\end{tabular}
+% Alternative: Physical / Mental / Intellectual / Innate & Social
+% Mental are the things that involve focus & concentration, and do not result in physical exertion.
+
+% Add the main formula on top of the character sheet.
+
+% Explain again: Knowledge is everything you either take a course for, or apprentice to learn.
+% Cannot be too specific: night-time classes or 100-level courses.
+% Cannot be too broad: High school classes and things that everyone knows are too broad.
+% Training is pure muscle memory, and is physically exhausting.
+% Skills are things that require focus. You typically learn these in a night class, or you might apprentice.
+% Talents are things that you develop by doing. They can be by nature or by nurture.
+
+% Categories of rolls:
+% Basic / Complex / Opposed / Competition
+
+\begin{actorCardLetterSizeFitToPage}{testCharacter}{Test Human}{colorBgMundane}
+
+	\begin{capabilitiesBox}{testCharacter}
+		\begin{capabilitiesTable}{Physical}
+			\capability{Coordination}{2d4}
+			\capability{Constitution}{d4+d6}
+		\end{capabilitiesTable}
+		\begin{capabilitiesTable}{Mental}
+ 			\capability{Situational Awareness}{d4+d6}
+ 			\capability{Focus}{2d6}
+		\end{capabilitiesTable}
+		\begin{capabilitiesTable}{Intellectual}
+ 			\capability{Reasoning}{2d6}
+ 			\capability{Willpower}{2d4}
+		\end{capabilitiesTable}
+		\begin{capabilitiesTable}{Social}
+			\capability{Communication}{2d6}
+			\capability{Social Awareness}{d4+d6}
+	   \end{capabilitiesTable}
+	\end{capabilitiesBox}
+
+	\begin{speciesBonusBox}{testCharacter}
+		\begin{bonusTable}{Strength}
+			\bonus{Core}{+1}
+			\bonus{Upper Body}{+1}
+		\end{bonusTable}
+		\begin{bonusTable}{Sensory}
+			\bonus{Vision (Daylight)}{+7}
+			\bonus{Hearing}{+1}
+		\end{bonusTable}
+	\end{speciesBonusBox}
+
+	\expertiseTable{testCharacter}{
+        \expertise{Cycling}{+3}
+        \expertise{Dancing (Latin)}{+3}
+        \expertise{Swimming}{+3}
+	}{
+        \expertise{Driving (Car)}{+3}
+	}{
+        \expertise{Accounting}{+1}
+        \expertise{Chemistry}{+1}
+        \expertise{Computing Concepts}{+10}
+        \expertise{Economics}{+2}
+        \expertise{Electrical Engineering}{+6}
+        \expertise{Finance}{+2}
+        \expertise{Marketing}{+1}
+        \expertise{Physics}{+1}
+	}{
+        \expertise{Skepticism}{+4}
 	}
-\end{center}
-\end{minipage}
-\todo{Need to add the rules for physilogical bonuses.}
-\todo{Add size to physiology.}
+
+\end{actorCardLetterSizeFitToPage}
+
+
+
+
+
+
+% \begin{actorCardLetterSizeFitToPage}{testCharacter}{Test Human}{colorBgMundane}
+% 	\begin{topTableCBP}{testCharacter}
+% 		\physicalCBP{
+% 			\coreCapability{Coordination}{2d4}
+% 			\coreCapability{Constitution}{d4+d6}
+% 		}{
+% 			\bonusLine{Core Strength}{+1}
+% 			\bonusLine{Upper Body}{+1}
+% 		}{
+% 			\propertyLine{Armor}{1}
+% 			\propertyLine{Size}{?}
+% 			\propertyLine{Trauma Scale}{?}
+% 		}
+% 		\mentalCBP{
+% 			\coreCapability{Reasoning}{2d6}
+% 			\coreCapability{Situational Awareness}{d4+d6}
+% 			\coreCapability{Focus}{2d6}
+% 			\coreCapability{Willpower}{2d4}
+% 		}{
+% 			\bonusLine{Vision}{+7}
+% 			\bonusLine{Hearing}{+1}
+% 		}{}
+% 		\socialCBP{
+% 			\coreCapability{Communication}{2d6}
+% 			\coreCapability{Creativity}{2d4}
+% 			\coreCapability{Social Awareness}{d4+d6}
+% 		}{}{}
+% 	\end{topTableCBP}
+
+% 	\expertiseTable{testCharacter}{
+%         \expertiseLine{Accounting}{+1}
+%         \expertiseLine{Chemistry}{+1}
+%         \expertiseLine{Computing Concepts}{+10}
+%         \expertiseLine{Economics}{+2}
+%         \expertiseLine{Electrical Engineering}{+6}
+%         \expertiseLine{Finance}{+2}
+%         \expertiseLine{Marketing}{+1}
+%         \expertiseLine{Physics}{+1}
+% 	}{
+%         \expertiseLine{Cycling}{+3}
+%         \expertiseLine{Dancing (Latin)}{+3}
+%         \expertiseLine{Driving (Car)}{+3}
+%         \expertiseLine{Swimming}{+3}
+% 	}{
+%         \expertiseLine{Skepticism}{+4}
+% 	}
+% \end{actorCardLetterSizeFitToPage}
+
 
 
 \subsection*{Dice Roll Examples}
@@ -446,13 +536,13 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{Xll}
-		Situation												& Challenge 								& Roll \\
-		They need to find a solution to an engineering problem at work.				& \termCore{Reasoning} + Electrical Engineering		& 2d6 + 6 \\
-		They want to meet someone at a party.								& \termCore{Social Awareness}					& 2d4 \\
-		They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 		& d4 + d6 + 0 \\
-		See through deception during conversation							& \termCore{Reasoning} + Skepticism				& d4 + d6 + 5 \\
-		Deceive someone during conversation 								& \termCore{Communication} + Deception			& d4 + d6 + 0 \\
-		Throw a fist at an unsuspecting individual							& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
+		Situation																		& Challenge 												& Roll \\
+		They need to find a solution to an engineering problem at work.					& \termCore{Reasoning} + Electrical Engineering				& 2d6 + 6 \\
+		They want to meet someone at a party.											& \termCore{Social Awareness}								& 2d4 \\
+		They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 			& d4 + d6 + 0 \\
+		See through deception during conversation										& \termCore{Reasoning} + Skepticism							& d4 + d6 + 5 \\
+		Deceive someone during conversation 											& \termCore{Communication} + Deception						& d4 + d6 + 0 \\
+		Throw a fist at an unsuspecting individual										& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
 	\end{xltabular}
 \end{center}
 
@@ -473,18 +563,19 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 	\begin{xltabular}{\textwidth}{XXXl}
 		Knowledge 								& Skills								&  Talents & \\
 		\hline
-		\footnotesize \listUniversalKnowledge	&\footnotesize \listUniversalTraining	& \footnotesize \listTalents 	 	& \sideTab{xkcdCloudyBlue}{All Settings} \\
-		\footnotesize \listModernKnowledge		&\footnotesize \listModernTraining		& \footnotesize \listModernTalents	& \sideTab{xkcdPowderBlue}{Modern Setting} \\
-		\footnotesize \listMedievalKnowledge	&\footnotesize \listMedievalTraining	& \footnotesize  				& \sideTab{xkcdSandy}{Medieval Setting} \\
-		\footnotesize \listFantasyKnowledge		&\footnotesize \listFantasyTraining		& \footnotesize  \listFantasyTalents 	& \sideTab{xkcdSpearmint}{Beyond the Mundane} \\
+		\footnotesize \listUniversalKnowledge	&\footnotesize \listUniversalTraining	& \footnotesize \listTalents 	 		& \sideTab{colorBgMundane}{All Settings} \\
+		\footnotesize \listModernKnowledge		&\footnotesize \listModernTraining		& \footnotesize \listModernTalents		& \sideTab{colorBgModern}{Modern Setting} \\
+		\footnotesize \listMedievalKnowledge	&\footnotesize \listMedievalTraining	& \footnotesize  						& \sideTab{colorBgMedieval}{Medieval Setting} \\
+		\footnotesize \listFantasyKnowledge		&\footnotesize \listFantasyTraining		& \footnotesize  \listFantasyTalents 	& \sideTab{colorBgBeyondMundane}{Beyond the Mundane} \\
 	\end{xltabular}
 \end{center}
 
 
 
 
-\section*{Creating Characters for Different Campaigns}
 
+
+\section*{Creating Characters for Different Campaigns}
 \subsection*{Mundane}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}

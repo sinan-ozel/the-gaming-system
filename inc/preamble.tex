@@ -1,8 +1,12 @@
 % Add some TODO notes for the writer's own use.
 \usepackage[disable]{todonotes}
 
+% Used for citations & references
 \usepackage{biblatex}
 \addbibresource{inc/citations.bib}
+
+% Compile using UTF-8
+\usepackage[utf8]{inputenc}
 
 % This package combines longtable and tabularx
 \usepackage{xltabular}
@@ -21,20 +25,31 @@
 % Define coloring related to terms
 % I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
 \definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
-\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
 
+% TODO: This needs to be the same as the capability colors
 \definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
 \newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
 
+% TODO: This needs to be black & boldface
 \definecolor{colorTerm}{RGB}{196, 70, 1}
 \newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
 
+\colorlet{colorBgMundane}{xkcdCloudyBlue}
+\colorlet{colorBgModern}{xkcdPowderBlue}
+\colorlet{colorBgMedieval}{xkcdSandy}
+\colorlet{colorBgBeyondMundane}{xkcdSpearmint}
+
+
+% TODO: Currently not using the following, remove if I never wind up using it.
 \newcommand{\termClass}[1]{\textcolor{xkcdSpearmint}{#1}}
 
 % Add the nice side tabs on the tables.
 % Usage: Put into the rightmost cell in a tabularx environment.
 % Example: \sideTab{LightBlue}{Modern}
 \newcommand{\sideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+\newcommand{\rightSideTab}[2]{\cellcolor{#1} \rotatebox[origin=l]{270}{#2}}
+\newcommand{\leftSideTab}[2]{\cellcolor{#1} \rotatebox[origin=r]{90}{#2}}
+
 
 % Add color to table cells
 % See here: https://tex.stackexchange.com/questions/50349/color-only-a-cell-of-a-table
@@ -50,7 +65,7 @@
 	linewidth=1pt,
 	linecolor=xkcdSandy,
 	frametitlebackgroundcolor=xkcdPale,
-	backgroundcolor=xkcdPale,
+	backgroundcolor=xkcdOffWhite,
 	frametitlefont=\bfseries\sffamily\footnotesize,
 	frametitlerule=true,
 }
@@ -86,25 +101,6 @@
 \renewcommand\labelitemiv{\textperiodcentered}
 
 
-% TODO: Remove this.
-\newcommand{\coreCompetencyTable}[8]{
-	\begin{center}
-	\resizebox{\columnwidth}{!}{
-		\begin{tabular}{lr|clr|}
-			\multicolumn{2}{c}{Mental}	&&	\multicolumn{2}{c}{Physical} \\
-			\cline{1-2} \cline{4-5}
-			Reasoning & #1				&& 	Coordination & #3 \\
-			Situational Awareness & #2	&& 	Constitution & #4 \\
-			\multicolumn{4}{c}{} \\
-			\multicolumn{2}{c}{Social}	&&	\multicolumn{2}{c}{Innate} \\
-			\cline{1-2} \cline{4-5}
-			Communication & #5 			&&	Focus & #7 \\
-			Social Awareness & #6 		&&	Creativity & #8 	\\
-		\end{tabular}
-	}
-	\end{center}
-}
-
 \newcommand{\hover}[2]{
 	\pdfmarkupcomment[markup=Highlight,disable=false,color=LightYellow]{#1}{#2}
 }
@@ -119,53 +115,7 @@
 	}
 }
 
-
-% TODO: Remove the following
-\newenvironment{characterSheet}{
-	\begin{minipage}{\columnwidth}
-	\begin{mdframed}
-	\begin{center}
-}
-{
-	\end{center}
-	\end{mdframed}
-	\end{minipage}
-}
-
-\newcommand{\expertiseTableOld}[3]{
-	\begin{tabular}{ccc}
-		\multicolumn{3}{c}{} \\
-		Knowledge & Skills & Talents \\
-		\hline
-		\begin{tabular}[t]{lr|}
-			#1
-		\end{tabular} &
-		\begin{tabular}[t]{lr|}
-			#2
-		\end{tabular} &
-		\begin{tabular}[t]{lr}
-			#3
-		\end{tabular} \\
-	\end{tabular}
-}
-
-% TODO: Remove when done.
-\newcommand{\physiologyTableOld}[3]{
-	\begin{tabular}{ccc}
-		\multicolumn{3}{c}{} \\
-		Senses & Strength & Movement \\
-		\hline
-		\begin{tabular}[t]{lr|}
-			#1
-		\end{tabular} &
-		\begin{tabular}[t]{lr|}
-			#2
-		\end{tabular} &
-		\begin{tabular}[t]{lr}
-			#3
-		\end{tabular} \\
-	\end{tabular}
-}
+\newcommand{\footnoteMundaneAnimals}{Small mammals, large mammals, small reptiles, large reptiles, small birds, birds of prey}
 
 \usepackage{wrapfig}
 
@@ -173,85 +123,225 @@
 \usepackage{tikz}
 \usetikzlibrary{positioning, calc, shadings}
 
-% Font for handwriting
+% Font for handwriting. Run udpmap to compile.
 \usepackage{emerald}
 
+% Font for titles. Run udpmap to compile.
+\usepackage{comfortaa}
+
+% Is this used? Test and remove if not used.
 \usepackage{makecell}
 
-\newenvironment{actorSheet}{
+% Useful for creating environments in an easier format.
+\usepackage{environ}
+
+\colorlet{colorCapabilityDark}{xkcdLightPlum}
+\colorlet{colorCapability}{xkcdLightPink}
+\colorlet{colorCapabilityLight}{xkcdVeryLightPink}
+\colorlet{colorCapabilityContour}{xkcdVeryLightPink}
+
+\colorlet{colorBonusDark}{xkcdMutedBlue}
+\colorlet{colorBonus}{xkcdBabyBlue}
+\colorlet{colorBonusLight}{xkcdIce}
+\colorlet{colorBonusContour}{white}
+
+\colorlet{colorPropertyDark}{xkcdDirtyOrange}
+\colorlet{colorProperty}{xkcdLightMustard}
+\colorlet{colorPropertyLight}{xkcdParchment}
+\colorlet{colorPropertyContour}{xkcdOffWhite}
+
+
+% Set and reset variables based on the hack here:
+% https://tex.stackexchange.com/questions/37094/what-is-the-recommended-way-to-assign-a-value-to-a-variable-and-retrieve-it-for
+\usepackage{pgfkeys}
+
+\newcommand{\setval}[1]{\pgfkeys{/variables/#1}}
+\newcommand{\getval}[1]{\pgfkeysvalueof{/variables/#1}}
+\newcommand{\declare}[1]{%
+ \pgfkeys{
+  /variables/#1.is family,
+  /variables/#1.unknown/.style = {\pgfkeyscurrentpath/\pgfkeyscurrentname/.initial = ##1}
+ }%
+}
+
+\declare{}
+
+\newcommand{\cardwidth}{}
+\newcommand{\sheetwidth}{}
+
+\newenvironment{actorSheet}[5]{
+	\setval{widthCapability = 25mm}
+	\setval{widthBonus = 25mm}
+	\setval{widthProperty = 25mm}
+	\setval{widthExpertise = 25mm}
+
+	% Not tested.
+	\renewcommand{\cardwidth}{#2}
+	\renewcommand{\sheetwidth}{#2}
+	% TODO: Add height if this works
+
 	\begin{tikzpicture}
-		\draw[color=xkcdLightPlum,line width=2mm,rounded corners=.55cm]
-			 	(0,0) node (SW) {} --
-				(0,5.5in) node (NW) {} --
-				(4.25in,5.5in) node (NE) {} --
-				(4.25in,0) node (SE) {} -- (current subpath start)
-			;
+		\draw[color=#5,line width=2mm]
+			(#2, 0) coordinate (#1_SE) {} -- (0,  0) coordinate (#1_SW) {}
+		;
+		\draw[color=#5,line width=2pt]
+			(0, #3) coordinate (#1_NW) {} -- (#2,#3) coordinate (#1_NE) {}
+	   ;
+	   \node[below right=1.5mm and -7.5pt of #1_NW,anchor=north west,inner sep=0,outer sep=0] (#1_title) {
+			\setlength{\extrarowheight}{1.6mm}
+			\setlength{\tabcolsep}{0mm}
+			\setlength{\arraycolsep}{0mm}
+			\begin{tabular}{@{}p{#2}}
+				\cellcolor{#5} \hspace*{10mm} \ECFDecadenceInTheDarkCondensed #4\\[.9mm]
+			\end{tabular}
+	   };
 }{
 	\end{tikzpicture}
 }
+% TODO: Adjust the hspace depending on the card dimensions. Package calc or pgf?
 
 
-\newcommand{\labeledFrame}[4]{
-	\node[draw=xkcdLightPlum,top color=xkcdLightPink,middle color=xkcdVeryLightPink,bottom color=white,font=\normalsize,#3,anchor=north west,line width=.5mm,inner ysep=1mm,inner xsep=2mm] (#1){
-		#4
-	};
-	\node[text=xkcdVeryLightPink,fill=xkcdLightPlum,node font=\sffamily,below right=0.2mm and -0.1mm of #1.north west,anchor=south west] (#1Label)  {
-		\hspace*{5mm}#2
-	};
-	\coordinate[below right=.2mm and -.1mm of #1Label.north east,anchor=west] (#1A);
-	\coordinate[right=-.1mm of #1Label.south east,anchor=west] (#1B);
-	\coordinate[left=.6mm of #1.north east,anchor=south west] (#1C);
-	\draw[xkcdLightPlum,fill=xkcdLightPlum] (#1A) -- (#1B) -- (#1C) -- (#1A);
+\newenvironment{actorCardLetterSizeFitToPage}[3]{
+	\begin{actorSheet}{#1}{\textwidth}{1.29411764706 * \textwidth}{#2}{#3}
+	\setval{widthCapability = 14mm}
+	\setval{widthBonus = 19.5mm}
+	\setval{widthProperty = 15mm}
+	\setval{widthExpertise = 13mm}
+}{
+	\end{actorSheet}
 }
 
+\newenvironment{actorCardStandardSize}[3]{
+	\begin{actorSheet}{#1}{2.5in}{3.5in}{#2}{#3}
+}{
+	\end{actorSheet}
+}
 
-\newcommand{\capabilityTable}[2]{
-	\labeledFrame{tabCapability}{\footnotesize #1}{below right=.35 in and .15 in of NW}{
-		\begin{tabular}{lr}
-			#2
+\newenvironment{actorCardTarotSize}[3]{
+	\begin{actorSheet}{#1}{7cm}{12cm}{#2}{#3}
+}{
+	\end{actorSheet}
+}
+
+\newenvironment{actorCardMiniEuro}[3]{
+	\begin{actorSheet}{#1}{44mm}{68mm}{#2}{#3}
+}{
+	\end{actorSheet}
+}
+
+\NewEnviron{capabilitiesBox}[1]{
+	\node[
+			draw=colorCapabilityDark,
+			below left=11 mm and 0 in of #1_NW,
+			top color=colorCapability,
+			middle color=colorCapabilityLight,
+			bottom color=colorCapabilityContour,
+			anchor=north west,
+			inner ysep=0mm,
+			inner xsep=0mm
+	] (#1_capabilitiesBox){
+		\BODY
+	};
+}
+
+\NewEnviron{capabilitiesTable}[1]{
+	\begin{tabular}[t]{@{}p{\getval{widthCapability}}r}
+		\multicolumn{2}{c}{
+			\cellcolor{colorCapabilityDark}
+			\textcolor{colorCapabilityContour}{
+				\comfortaa\footnotesize #1
+			}
+		} \\
+		\BODY
+	\end{tabular}
+}
+
+\NewEnviron{speciesBonusBox}[1]{
+	\node[
+			draw=colorBonusDark,
+			below left=4mm and 0mm of #1_capabilitiesBox,
+			top color=colorBonus,
+			middle color=colorBonusLight,
+			bottom color=colorBonusContour,
+			anchor=north west,
+			inner ysep=0mm,
+			inner xsep=0mm
+	] (#1_speciesBonusBox){
+		\BODY
+	};
+}
+
+\NewEnviron{bonusTable}[1]{
+	\begin{tabular}[t]{@{}p{\getval{widthBonus}}r}
+		\multicolumn{2}{c}{
+			\cellcolor{colorBonusDark}
+			\textcolor{colorBonusContour}{
+				\comfortaa\footnotesize #1
+			}
+		} \\
+		\BODY
+	\end{tabular}
+}
+
+\newcommand{\expertiseTable}[5]{
+	\node[
+		draw=colorBonusDark,
+		top color=colorBonus,
+		middle color=colorBonusLight,
+		bottom color=colorBonusContour,
+		font=\normalsize,
+		below left=4mm and 0mm of #1_speciesBonusBox,
+		anchor=north west,
+		line width=.5mm,
+		inner ysep=0mm,
+		inner xsep=0mm
+	] (#1_tableExpertise){
+		\begin{tabular}[t]{c|c|c|c}
+			\rowcolor{colorBonusDark}
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Training}	&
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}		&
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Talents} \\
+			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#2\end{tabular}	&
+			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#3\end{tabular} 	&
+			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#4\end{tabular}	&
+			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#5\end{tabular}
 		\end{tabular}
-	}
-}
-
-\newcommand{\physiologyTable}[4]{
-	\node[draw=xkcdMutedBlue,fill=xkcdReallyLightBlue,top color=xkcdReallyLightBlue,middle color=xkcdReallyLightBlue,bottom color=white,#1,font=\normalsize,anchor=north west,line width=.5mm,inner ysep=0mm,inner xsep=0mm] (tabPhysiology){
-		\begin{tabular}[t]{c|c|c}
-			\rowcolor{xkcdMutedBlue}
-			\sffamily\footnotesize\textcolor{xkcdIvory}{Strength}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Senses}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Natural Armor} \\
-			\begin{tabular}[t]{p{1.6cm}r}#2\end{tabular}			& \begin{tabular}[t]{p{1.6cm}r}#3\end{tabular} 			& \begin{tabular}[t]{p{1.6cm}r}#4\end{tabular}
-		\end{tabular}
-	};
-}
-
-\newcommand{\expertiseTable}[4]{
-	\node[draw=xkcdMutedBlue,fill=xkcdReallyLightBlue,top color=xkcdReallyLightBlue,middle color=xkcdReallyLightBlue,bottom color=white,#1,font=\normalsize,anchor=north west,line width=.5mm,inner ysep=0mm,inner xsep=0mm] (tabExpertise){
-		\begin{tabular}[t]{c|c|c}
-			\rowcolor{xkcdMutedBlue}
-			\sffamily\footnotesize\textcolor{xkcdIvory}{Knowledge}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Skills}	& \sffamily\footnotesize\textcolor{xkcdIvory}{Talents} \\
-			\begin{tabular}[t]{p{1.5cm}r}#2\end{tabular}			& \begin{tabular}[t]{p{1.5cm}r}#3\end{tabular} 			& \begin{tabular}[t]{p{1.5cm}r}#4\end{tabular}
-		\end{tabular}
 	};
 }
 
 
 
-
-
-\newcommand{\coreCapability}[2]{
+\newcommand{\capability}[2]{
 	\\[-3mm]
-	#1 & \ECFAugie\footnotesize #2 \\
+	\footnotesize #1 & \ECFAugie\footnotesize #2 \\
 	\hline
 }
 
-\newcommand{\bonusLine}[2]{
-	#1 & \ECFAugie\footnotesize #2 \\
+\newcommand{\bonus}[2]{
+	\footnotesize #1 & \footnotesize #2 \\
+	\hline
 }
 
-\newcommand{\expertiseLine}[2]{
+\newcommand{\expertise}[2]{
 	\ECFAugie\footnotesize #1 & \ECFAugie\footnotesize #2 \\
+	\hline
 }
 
-%TODO: Add fields on top for: Name, Species, Size
-%TODO: Add movement
-%TODO: Add trauma scale
-%TODO: Injuries, Mental States
+% \newcommand{\propertyLine}[2]{
+% 	\footnotesize #1 & \footnotesize #2 \\
+% }
+
+
+% \newcommand{\labeledFrame}[4]{
+% 	\node[draw=xkcdLightPlum,top color=xkcdLightPink,middle color=xkcdVeryLightPink,bottom color=white,font=\normalsize,#3,anchor=north west,line width=.5mm,inner ysep=1mm,inner xsep=2mm] (#1){
+% 		#4
+% 	};
+% 	\node[text=xkcdVeryLightPink,fill=xkcdLightPlum,node font=\sffamily,below right=0.2mm and -0.1mm of #1.north west,anchor=south west] (#1Label)  {
+% 		\hspace*{5mm}#2
+% 	};
+% 	\coordinate[below right=.2mm and -.1mm of #1Label.north east,anchor=west] (#1A);
+% 	\coordinate[right=-.1mm of #1Label.south east,anchor=west] (#1B);
+% 	\coordinate[left=.6mm of #1.north east,anchor=south west] (#1C);
+% 	\draw[xkcdLightPlum,fill=xkcdLightPlum] (#1A) -- (#1B) -- (#1C) -- (#1A);
+% }
