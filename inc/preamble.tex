@@ -46,6 +46,10 @@
 \colorlet{colorPropertyLight}{xkcdParchment}
 \colorlet{colorPropertyContour}{xkcdOffWhite}
 
+\colorlet{colorBeyond}{xkcdHunterGreen}
+
+\colorlet{colorParchment}{orange!30!black!10}
+
 % TODO: Remove colorCoreCompetency if not being used.
 \colorlet{colorCoreCompetency}{colorCapabilityDark}
 \newcommand{\termCore}[1]{\textcolor{colorCapabilityDark}{#1}}
@@ -55,7 +59,8 @@
 
 % TODO: This needs to be black & boldface
 \definecolor{colorTerm}{RGB}{196, 70, 1}
-\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
+\newcommand{\term}[1]{\emph{#1}}
+\newcommand{\termBeyond}[1]{\textcolor{colorBeyond}{#1}}
 
 % TODO: Currently not using the following, remove if I never wind up using it.
 \newcommand{\termClass}[1]{\textcolor{xkcdSpearmint}{#1}}
@@ -78,7 +83,7 @@
 % Add styling to emphasized paragraphs and character sheets
 \usepackage{mdframed}
 
-% TODO: Change these to use tikz instead, for round corners.
+% TODO: Make these into environments.
 \global\mdfdefinestyle{d20ComparisonBoxStyle}{
 	linewidth=1pt,
 	linecolor=xkcdSandy,
@@ -446,4 +451,13 @@
 			\end{parchment}
 		\end{minipage}
 	\end{center}
+}
+
+\NewEnviron{marginNote}{
+	\marginpar{
+		\begin{mdframed}[backgroundcolor=colorParchment,linewidth=0pt]
+			\footnotesize
+			\BODY
+		\end{mdframed}
+	}
 }

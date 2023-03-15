@@ -208,117 +208,79 @@
 
 \chapter*{Character Creation}
 
-\section*{Generate a Mundane Character}
-\marginpar{
-	\footnotesize
+\section*{Generate a \term{Mundane} Character}
+\begin{marginNote}
 	\term{Mundane} characters are humans in a modern setting.
-	Spells, powers \& overpowered \term{core capabilities} take the character \term{beyond the mundane}.
-}
-
-Generating a character like writing a social network profile or a CV:
+	Spells, powers \& overpowered \termBeyond{core capabilities} take the character \term{beyond the mundane}.
+\end{marginNote}
+Generating a character like writing a social network profile or a CV, but more truthful.
+You thought about their background, so represent your character to the best of your knowledge:
 \begin{enumerate}
-	\item Based on the character idea, formulate their \term{core capabilities}.
-	\item Based on their species (human) and background, write their \term{physilogical bonuses}, such as core body strength.
-	\item Based on their years of experience, list their \term{expertise}.
+	\item Assign their \termCore{core capabilities}.
+	\item They get set \termBonus{bonuses} based on their species - "human" for \term{mundane} characters.
+	\item Based on their years of experience, list their \termBonus{areas of expertise}.
 \end{enumerate}
-Characters roll their \term{core capabilities} and
-add their bonuses from either \term{physiology} or their \term{expertise},
-depending on the situation.
 
-\subsection*{1. Core Capabilities}
+Characters roll their \termCore{core capabilities} and
+add their set \termBonus{bonuses} from their species, either \term{physiology} or their \term{expertise}, whichever is higher.
+The bonus is limited by the maximum possible dice roll.\\
 
-% TODO: Put this back in
-% \begin{wrapfigure}{L}{0.4\textwidth}
-% 	\begin{capabilitiesTable}
-% 		\capability{Reasoning}{2d6}
-% 		\capability{Situational Awareness}{d4+d6}
-% 		\capability{Coordination}{2d4}
-% 		\capability{Constitution}{d4+d6}
-% 		\capability{Communication}{2d4}
-% 		\capability{Social Awareness}{2d4}
-% 		\capability{Focus}{2d4}
-% 		\capability{Creativity}{2d4}
-% 		\capability{Willpower}{2d4}
-% 	\end{capabilitiesTable}
-% \end{wrapfigure}
+\paragraph*{1. Core Capabilities}
 
 \marginpar{
 	\begin{mdframed}[style=d20ComparisonBoxStyle,frametitle=Compare to $d20$]
 		\footnotesize
-		Imagine \term{core capabilities} as dice rolls that replace the $d20$ roll.
+		Imagine \termCore{core capabilities} as dice rolls that replace the $d20$ roll.
 	\end{mdframed}
 }
 
-\term{Core capabilities} determine which dice to roll \& add
-to overcome challenges.
-
 To create a \term{mundane} character,
-\marginpar{
-	\footnotesize
+\begin{marginNote}
 	\input{inc/core_competencies_dicepool_guide.tex}
-}
+\end{marginNote}
 assign $2d4$ if they are bad,
-$2d6$ if they are good, and $d4 + d6$ if they are average.
-d6 is for a teenager-level capability, literally or figuratively.
-
-Larger dice ($d8$, $d10$, \ldots) are reserved to go \term{beyond the mundane} - for heroes, superheroes and supernatural characters.
-These are action movie protoganists, villains, comic book heroes, vampires, etc\dots
-The largest dice are for divine beings and legendary characters.
-A \term{third dice} is for representing dangerous, forbidden magic and alien technology:
-they increase the sum, but also the risk of rolling a \term{double one}.
+$2d6$ if they are good, and $d4 + d6$ if they are average.\\
+For weak characters, you can use $d6$ - inexperienced teenagers, people with disabilities or injuries, or debilitatings sicknesses.\\
+Larger dice ($d8$, $d10$, \ldots) are for going \termBeyond{beyond the mundane}, for supernatural characters.
 
 
-\subsection*{2. Physiology}
-% TODO: Height
-% TODO: Weight
-% TODO: Movement Speeds
-Certain bonuses to dice roles are directly related to the species of the character, such as senses \& strength.
-For \term{mundane} characters, the species is "human".
-Hover the table to see how each score is determined.
-% TODO: Put in the hover tooltips.
 
-\begin{figure}[H]
-	\centering
-	% \begin{tikzpicture}
-	% 	\coordinate (tabCapability);
-	% 	\physiologyTable{below left=5 mm and 0 in of tabCapability}
-	% 	{
-	% 		\bonus{Core}{+1}
-	% 		\bonus{Upper Body}{+1}
-	% 	}
-	% 	{
-	% 		\bonus{Vision (Daylight)}{+7}
-	% 		\bonus{Hearing}{+1}
-	% 	}
-	% 	{
-	% 		\bonus{Skin}{+1}
-	% 	}
 
-	% \end{tikzpicture}
-\end{figure}
-
-% TODO: Explain strength.
-
-\paragraph*{Senses}
-Humans get +7 to their vision, see this footnote for how this is calculated.
-\footnote{
+\paragraph*{2. Bonuses Based on Species}
+As a human, the character gets +7 to vision\footnote{
 	To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
 	For example, an eagle has 140 cyc/deg, so their bonus is +14.
 	See \cite{caves_acuityview_2018} for more information on visual acuity,
 	and \cite{noauthor_list_2019} for a list of visual acuities of animals.
-}
-% However, deduct 1 for each level of correction on their prescription.
-Humans get +2 to their hearing, see the footnote for how this is calculated.
-\footnote{
+},
+and +2 to hearing.\footnote{
 	To calculate the hearing for another species, divide their audible range in Hz by 10000.
 	For example, bats can hear up to 100kHz, so this will give them +10.
 }
-\term{Mundane} humans do not get other senses.
-However, other species have other senses.
-Examples include the smell of dogs, infrared vision, ultraviolet vision,
-magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
 
 % TODO: Explain strength.
+
+% Examples include the smell of dogs, infrared vision, ultraviolet vision,
+% magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
+
+\paragraph*{3. Expertise}
+
+These are bonuses related to a character's history \& experience up to date.
+Assign these bonuses based on the character's background:
+Bonus equals the years of experience up to the tenth year.
+After the tenth year, count each decade as one point.
+If they work on it only part-time, count as half-year.\\
+\begin{marginNote}
+	\input{inc/years_of_experience_bonus.tex}
+\end{marginNote}
+\termBonus{Training} is pure muscle memory, you learn these by training regularly.
+\termBonus{Skills} are things that require concentration to accomplish. Think of these as skills for blue-collared jobs or hobbies.
+\termBonus{Knowledge} are pure theoretical knowledge, 100-level university courses or night classes.
+\termBonus{Talents} are social.
+The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
+
+
+
 
 % Explain again: Knowledge is everything you either take a course for, or apprentice to learn.
 % Cannot be too specific: night-time classes or 100-level courses.
@@ -326,9 +288,6 @@ magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
 % Training is pure muscle memory, and is physically exhausting.
 % Skills are things that require focus. You typically learn these in a night class, or you might apprentice.
 % Talents are things that you develop by doing. They can be by nature or by nurture.
-
-% Categories of rolls:
-% Basic / Complex / Opposed / Competition
 
 \begin{actorCardLetterSizeFitToPage}{testCharacter}{Test Human}{colorBgMundane}
 
@@ -388,25 +347,13 @@ magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
 	Roll \termCore{Capability} + Add \termBonus{Bonus} \\ Against \termDifficultyLevel{Difficulty Level}
 \end{formula}
 
+% Categories of rolls:
+% Basic / Complex / Opposed / Competition
 
 
 
 
-\subsection*{3. Expertise}
 
-These are bonuses related to a character's history \& experience up to date.
-Assign these bonuses based on the character's background:
-Bonus equals the years of experience up to the tenth year.
-After the tenth year, count each decade as one point.
-% TODO: Explain this better.
-% If in a year, they worked only partially, count that as a half-year.
-Flesh out as much as desired, extend the \term{knowledge}, \term{skills} and \term{talents} depending on the setting and the focus of the campaign.
-The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
-
-\marginpar{
-	\footnotesize
-	\input{inc/years_of_experience_bonus.tex}
-}
 
 
 \newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \term{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
