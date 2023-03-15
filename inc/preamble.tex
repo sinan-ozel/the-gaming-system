@@ -26,19 +26,36 @@
 % I am using "Contrasting Palette 1 & 2" from https://venngage.com/tools/accessible-color-palette-generator
 \definecolor{ocre}{RGB}{196, 70, 1} % Define the color used for highlighting throughout the boo
 
-% TODO: This needs to be the same as the capability colors
-\definecolor{colorCoreCompetency}{RGB}{91, 163, 0}
-\newcommand{\termCore}[1]{\textcolor{colorCoreCompetency}{#1}}
-
-% TODO: This needs to be black & boldface
-\definecolor{colorTerm}{RGB}{196, 70, 1}
-\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
-
 \colorlet{colorBgMundane}{xkcdCloudyBlue}
 \colorlet{colorBgModern}{xkcdPowderBlue}
 \colorlet{colorBgMedieval}{xkcdSandy}
 \colorlet{colorBgBeyondMundane}{xkcdSpearmint}
 
+\colorlet{colorCapabilityDark}{xkcdLightPlum}
+\colorlet{colorCapability}{xkcdLightPink}
+\colorlet{colorCapabilityLight}{xkcdVeryLightPink}
+\colorlet{colorCapabilityContour}{xkcdVeryLightPink}
+
+\colorlet{colorBonusDark}{xkcdMutedBlue}
+\colorlet{colorBonus}{xkcdBabyBlue}
+\colorlet{colorBonusLight}{xkcdIce}
+\colorlet{colorBonusContour}{white}
+
+\colorlet{colorPropertyDark}{xkcdDirtyOrange}
+\colorlet{colorProperty}{xkcdLightMustard}
+\colorlet{colorPropertyLight}{xkcdParchment}
+\colorlet{colorPropertyContour}{xkcdOffWhite}
+
+% TODO: Remove colorCoreCompetency if not being used.
+\colorlet{colorCoreCompetency}{colorCapabilityDark}
+\newcommand{\termCore}[1]{\textcolor{colorCapabilityDark}{#1}}
+\newcommand{\termBonus}[1]{\textcolor{colorBonusDark}{#1}}
+\newcommand{\termDifficultyLevel}[1]{\textcolor{colorPropertyDark}{#1}}
+
+
+% TODO: This needs to be black & boldface
+\definecolor{colorTerm}{RGB}{196, 70, 1}
+\newcommand{\term}[1]{\textcolor{colorTerm}{#1}}
 
 % TODO: Currently not using the following, remove if I never wind up using it.
 \newcommand{\termClass}[1]{\textcolor{xkcdSpearmint}{#1}}
@@ -61,6 +78,7 @@
 % Add styling to emphasized paragraphs and character sheets
 \usepackage{mdframed}
 
+% TODO: Change these to use tikz instead, for round corners.
 \global\mdfdefinestyle{d20ComparisonBoxStyle}{
 	linewidth=1pt,
 	linecolor=xkcdSandy,
@@ -110,8 +128,8 @@
 }
 
 \newcommand{\acronymDL}[1]{
-	\pdfmarkupcomment[markup=Underline,disable=false,color=colorTerm]{DL}{
-		Difficulty Level: A roll has to beat this level number to succeed.
+	\pdfmarkupcomment[markup=Underline,disable=false,color=colorPropertyDark]{DL}{
+		Difficulty Level (DL): A roll has to beat this level number to succeed.
 	}
 }
 
@@ -121,7 +139,7 @@
 
 % Add tikzpicture to use for sheets
 \usepackage{tikz}
-\usetikzlibrary{positioning, calc, shadings}
+\usetikzlibrary{positioning, calc, shadings, decorations.pathmorphing}
 
 % Font for handwriting. Run udpmap to compile.
 \usepackage{emerald}
@@ -134,21 +152,6 @@
 
 % Useful for creating environments in an easier format.
 \usepackage{environ}
-
-\colorlet{colorCapabilityDark}{xkcdLightPlum}
-\colorlet{colorCapability}{xkcdLightPink}
-\colorlet{colorCapabilityLight}{xkcdVeryLightPink}
-\colorlet{colorCapabilityContour}{xkcdVeryLightPink}
-
-\colorlet{colorBonusDark}{xkcdMutedBlue}
-\colorlet{colorBonus}{xkcdBabyBlue}
-\colorlet{colorBonusLight}{xkcdIce}
-\colorlet{colorBonusContour}{white}
-
-\colorlet{colorPropertyDark}{xkcdDirtyOrange}
-\colorlet{colorProperty}{xkcdLightMustard}
-\colorlet{colorPropertyLight}{xkcdParchment}
-\colorlet{colorPropertyContour}{xkcdOffWhite}
 
 
 % Set and reset variables based on the hack here:
@@ -238,7 +241,7 @@
 			bottom color=colorCapabilityContour,
 			anchor=north west,
 			inner ysep=0mm,
-			inner xsep=0mm
+			inner xsep=0mm,
 	] (#1_capabilitiesBox){
 		\BODY
 	};
@@ -252,7 +255,7 @@
 				\comfortaa\footnotesize #1
 			}
 		} \\
-		\BODY
+		\BODY \\
 	\end{tabular}
 }
 
@@ -345,3 +348,102 @@
 % 	\coordinate[left=.6mm of #1.north east,anchor=south west] (#1C);
 % 	\draw[xkcdLightPlum,fill=xkcdLightPlum] (#1A) -- (#1B) -- (#1C) -- (#1A);
 % }
+
+
+% Add a "parchment" environment for shaded paragraphs
+% https://texample.net//tikz/examples/framed-tikz/
+
+%%%%%%%%%%%%%%%%%%% BEGIN %%%%%%%%%%%%%%%%%%%%%%
+\usepackage{framed}
+\pgfmathsetseed{1} % To have predictable results
+\pgfdeclarelayer{background}
+\pgfsetlayers{background,main}
+
+% define styles for the normal border and the torn border
+\tikzset{
+  normal border/.style={orange!30!black!10, decorate,
+     decoration={random steps, segment length=2.5cm, amplitude=.7mm}},
+  torn border/.style={orange!30!black!5, decorate,
+     decoration={random steps, segment length=.5cm, amplitude=1.7mm}}}
+
+% Macro to draw the shape behind the text, when it fits completly in the
+% page
+\def\parchmentframe#1{
+\tikz{
+  \node[inner sep=2em] (A) {#1};  % Draw the text of the node
+  \begin{pgfonlayer}{background}  % Draw the shape behind
+  \fill[normal border]
+        (A.south east) -- (A.south west) --
+        (A.north west) -- (A.north east) -- cycle;
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text will continue in next page
+\def\parchmentframetop#1{
+\tikz{
+  \node[inner sep=2em] (A) {#1};    % Draw the text of the node
+  \begin{pgfonlayer}{background}
+  \fill[normal border]              % Draw the ``complete shape'' behind
+        (A.south east) -- (A.south west) --
+        (A.north west) -- (A.north east) -- cycle;
+  \fill[torn border]                % Add the torn lower border
+        ($(A.south east)-(0,.2)$) -- ($(A.south west)-(0,.2)$) --
+        ($(A.south west)+(0,.2)$) -- ($(A.south east)+(0,.2)$) -- cycle;
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when the text continues from previous page
+\def\parchmentframebottom#1{
+\tikz{
+  \node[inner sep=2em] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}
+  \fill[normal border]             % Draw the ``complete shape'' behind
+        (A.south east) -- (A.south west) --
+        (A.north west) -- (A.north east) -- cycle;
+  \fill[torn border]               % Add the torn upper border
+        ($(A.north east)-(0,.2)$) -- ($(A.north west)-(0,.2)$) --
+        ($(A.north west)+(0,.2)$) -- ($(A.north east)+(0,.2)$) -- cycle;
+  \end{pgfonlayer}}}
+
+% Macro to draw the shape, when both the text continues from previous page
+% and it will continue in next page
+\def\parchmentframemiddle#1{
+\tikz{
+  \node[inner sep=2em] (A) {#1};   % Draw the text of the node
+  \begin{pgfonlayer}{background}
+  \fill[normal border]             % Draw the ``complete shape'' behind
+        (A.south east) -- (A.south west) --
+        (A.north west) -- (A.north east) -- cycle;
+  \fill[torn border]               % Add the torn lower border
+        ($(A.south east)-(0,.2)$) -- ($(A.south west)-(0,.2)$) --
+        ($(A.south west)+(0,.2)$) -- ($(A.south east)+(0,.2)$) -- cycle;
+  \fill[torn border]               % Add the torn upper border
+        ($(A.north east)-(0,.2)$) -- ($(A.north west)-(0,.2)$) --
+        ($(A.north west)+(0,.2)$) -- ($(A.north east)+(0,.2)$) -- cycle;
+  \end{pgfonlayer}}}
+
+% Define the environment which puts the frame
+% In this case, the environment also accepts an argument with an optional
+% title (which defaults to ``Example'', which is typeset in a box overlaid
+% on the top border
+\newenvironment{parchment}[1][Example]{%
+  \def\FrameCommand{\parchmentframe}%
+  \def\FirstFrameCommand{\parchmentframetop}%
+  \def\LastFrameCommand{\parchmentframebottom}%
+  \def\MidFrameCommand{\parchmentframemiddle}%
+  \vskip\baselineskip
+  \MakeFramed {\FrameRestore}
+  \noindent\tikz\node[inner sep=1ex, draw=black!20,fill=white,
+          anchor=west, overlay] at (0em, 2em) {\sffamily#1};\par}%
+{\endMakeFramed}
+%%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%
+
+
+\NewEnviron{formula}[1]{
+	\begin{center}
+		\begin{minipage}{3.5in}
+			\begin{parchment}[#1]
+				\centering
+				\BODY
+			\end{parchment}
+		\end{minipage}
+	\end{center}
+}
