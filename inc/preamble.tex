@@ -83,35 +83,16 @@
 % Add styling to emphasized paragraphs and character sheets
 \usepackage{mdframed}
 
-% TODO: Make these into environments.
-\global\mdfdefinestyle{d20ComparisonBoxStyle}{
-	linewidth=1pt,
-	linecolor=xkcdSandy,
-	frametitlebackgroundcolor=xkcdPale,
-	backgroundcolor=xkcdOffWhite,
-	frametitlefont=\bfseries\sffamily\footnotesize,
-	frametitlerule=true,
-}
+% TODO: Remove the following
+% \global\mdfdefinestyle{d20ComparisonBoxStyle}{
+% 	linewidth=1pt,
+% 	linecolor=xkcdSandy,
+% 	frametitlebackgroundcolor=xkcdPale,
+% 	backgroundcolor=xkcdOffWhite,
+% 	frametitlefont=\bfseries\sffamily\footnotesize,
+% 	frametitlerule=true,
+% }
 
-
-\global\mdfdefinestyle{emphasisParagraphFrameStyle}{
-	topline=false,
-	bottomline=false,
-	rightline=false,
-	skipabove=\topsep,
-	skipbelow=\topsep,
-	linecolor=xkcdBottleGreen,
-	linewidth=3pt,
-}
-
-\newenvironment{emphasisParagraph}{
-	\begin{quote}
-	\begin{mdframed}[style=emphasisParagraphFrameStyle]
-	\em
-}{
-	\end{mdframed}
-	\end{quote}
-}
 
 
 
@@ -442,6 +423,7 @@
 %%%%%%%%%%%%%%%%%%%% END %%%%%%%%%%%%%%%%%%%%%%%
 
 
+% Side notes
 \NewEnviron{formula}[1]{
 	\begin{center}
 		\begin{minipage}{3.5in}
@@ -460,4 +442,24 @@
 			\BODY
 		\end{mdframed}
 	}
+}
+
+% Emphasis paragraph
+\global\mdfdefinestyle{emphasisParagraphFrameStyle}{
+	topline=false,
+	bottomline=false,
+	rightline=false,
+	skipabove=\topsep,
+	skipbelow=\topsep,
+	linecolor=xkcdBottleGreen,
+	linewidth=3pt,
+}
+
+\newenvironment{emphasisParagraph}{
+	\begin{quote}
+	\begin{mdframed}[style=emphasisParagraphFrameStyle]
+	\em
+}{
+	\end{mdframed}
+	\end{quote}
 }
