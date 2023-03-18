@@ -198,15 +198,15 @@
 \chapterspacebelow{5.25cm}
 
 
-\chapter*{Character Creation}
+\chapter{Character Creation}
 
-\section*{Generate a \term{Mundane} Character}
+\section{Create a \term{Mundane} Character}
 \begin{marginNote}
 	\term{Mundane} characters are humans in a modern setting.
 	Spells, powers \& overpowered \termBeyond{core capabilities} take the character \term{beyond the mundane}.
 \end{marginNote}
-Generating a character like writing a social network profile or a CV, but more truthful.
-You thought about their background, so reflect your thoughts to numbers:
+Creating a character is like writing a social network profile or a CV, but more truthful.
+You thought about their background, so reflect your thoughts as numbers:
 \begin{enumerate}
 	\item Assign their \termCore{core capabilities}.
 	\item They get set \termBonus{bonuses} based on their species - "human" for \term{mundane} characters.
@@ -214,22 +214,20 @@ You thought about their background, so reflect your thoughts to numbers:
 \end{enumerate}
 
 Characters roll their \termCore{core capabilities} and
-add their set \termBonus{bonuses} from their species, either \term{physiology} or their \term{expertise}, whichever is higher.
-The bonus is limited by the maximum possible dice roll.\\
+add their \termBonus{bonuses} from their species, either \term{physiology} or their \term{expertise}, whichever is higher.
+The bonus is limited by the maximum possible dice roll, for example, if the \termCore{capability} rolle is $2d6$, the \termBonus{bonus} can be 12 at most.
 
 \paragraph*{1. Core Capabilities}
 
-To create a \term{mundane} character,
 \begin{marginNote}
 	\input{inc/core_competencies_dicepool_guide.tex}
 \end{marginNote}
-assign $2d4$ if they are bad,
-$2d6$ if they are good, and $d4 + d6$ if they are average.\\
-For weak characters, you can use $d6$ - inexperienced teenagers, people with disadvantages or injuries, or debilitatings sicknesses.\\
+Assign $2d4$ if they are bad,
+$2d6$ if they are good, and $d4 + d6$ if they are average.
+For weak characters, you can use $d6$ - inexperienced teenagers, people with disadvantages or injuries, or debilitatings sicknesses.
 Larger dice ($d8$, $d10$, \ldots) are for going \termBeyond{beyond the mundane}, for supernatural characters.
 
-
-
+% TODO: Formalize this a bit more to keep mundane characters balanced.
 
 \paragraph*{2. Bonuses Based on Species}
 As a human, the character gets +7 to vision\footnote{
@@ -240,8 +238,17 @@ As a human, the character gets +7 to vision\footnote{
 },
 and +2 to hearing.\footnote{
 	To calculate the hearing for another species, divide their audible range in Hz by 10000.
-	For example, bats can hear up to 100kHz, so this will give them +10.
+	For example, bats can hear up to 100kHz, so a bat character will have +10.
 }
+In addition, they get +1 or +2 as \termBonus{upper body strength}.\footnote{
+	The average human punch is 150 psi, we divide that by 100 to get the bonus.
+	Some humans are stronger than others, due to age, gender, nutrion differencces.
+	For trained humans, the \termBonus{expertise bonus} will override this, because it will
+	very likely be larger.
+}
+See \nameref{subsec:chargen_mundane} for more details on these stats.
+
+% TODO: Consider adding a kick.
 
 % TODO: Explain strength.
 
@@ -250,14 +257,14 @@ and +2 to hearing.\footnote{
 
 \paragraph*{3. Expertise}
 
+\begin{marginNote}
+	\input{inc/years_of_experience_bonus.tex}
+\end{marginNote}
 These are bonuses related to a character's history \& experience up to date.
 Assign these bonuses based on the character's background:
 Bonus equals the years of experience up to the tenth year.
 After the tenth year, count each decade as one point.
-If they work on it only part-time, count as half-year.\\
-\begin{marginNote}
-	\input{inc/years_of_experience_bonus.tex}
-\end{marginNote}
+If they work on it only part-time, count as half-year.\par
 \termBonus{Training} is pure muscle memory, you learn these by training regularly.
 \termBonus{Skills} are things that require concentration to accomplish. Think of these as skills for blue-collared jobs or hobbies.
 \termBonus{Knowledge} are pure theoretical knowledge, 100-level university courses or night classes.
@@ -459,13 +466,14 @@ Some of these situations are in the modern setting, some of them are in fantasy 
 \end{center}
 
 
-\section*{Characters of Other Species}
+\section{Characters of Other Species}
 
 When creating an actor, you have to at least list their senses and their physical strength in physical altercation.
 For a list of animals, see the section
 % TODO: Make it into a book and complete this paragraph.
 
-\subsection*{Mundane}
+\subsection[Mundane Species]{Mundane Species}
+\label{subsec:chargen_mundane}
 
 Earlier, we wrote that humans get +7 to their \termBonus{vision}.
 This is calculated based on something called visual acuity.
@@ -478,8 +486,8 @@ and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 
 
 
-\section*{Creating Characters for Different Campaigns}
-\subsection*{Mundane}
+\section{Creating Characters for Different Campaigns}
+\subsection{Mundane}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
@@ -492,7 +500,7 @@ and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 \end{center}
 
 
-\subsection*{Beyond the Mundane}
+\subsection{Beyond the Mundane}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
