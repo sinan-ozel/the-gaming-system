@@ -241,10 +241,10 @@ and +2 to hearing.\footnote{
 	For example, bats can hear up to 100kHz, so a bat character will have +10.
 }
 In addition, they get +1 or +2 as \termBonus{upper body strength}.\footnote{
-	The average human punch is 150 psi, we divide that by 100 to get the bonus.
-	Some humans are stronger than others, due to age, gender, nutrion differencces.
-	For trained humans, the \termBonus{expertise bonus} will override this, because it will
-	very likely be larger.
+	The average human punch has pressure of 150 psi, we divide that by 100 to get the bonus.
+	Some humans are stronger than others, due to age, gender, nutrition differencces.
+	If needed, based on their background, gauge how much pressure their punch will pack in psi, and divide by 100.
+	For trained humans, the \termBonus{expertise bonus} will likely be higher.
 }
 See \nameref{subsec:chargen_mundane} for more details on these stats.
 
@@ -362,6 +362,37 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 
 
 
+\section{Play the Character}
+
+\subsection{Mundane Challenges}
+
+% TODO: The 4th and 5th are competitions, remove them, or change the DL.
+
+\begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
+	\begin{xltabular}{\textwidth}{Xlll}
+		\textbf{Situation}																& \textbf{Roll} 														& \textbf{Dice}	& \textbf{DL}	\\
+		Find a solution to an engineering problem at work.								& \termCore{Reasoning} + \termBonus{Electrical Engineering}				& $2d6+6$ 		& 12 \\
+		Meet someone at a party.														& \termCore{Social Awareness}											& $2d4$ 		& 9 \\
+		Respond to a fire that just started												& \termCore{Situational Awareness} + \termBonus{Firefighting} 			& $d4+d6+0$ 	& 12 \\
+		Notice a hidden door by checking the wall dimensions							& \termCore{Situational Awareness} + \termBonus{Architecture} 			& $2d6+0$ 		& 12 \\
+																						& \termCore{Situational Awareness} + \termBonus{Stonemasonry} 			& $d4+d6+0$ 	& 12 \\
+		See through deception during conversation										& \termCore{Reasoning} + \termBonus{Skepticism}							& $d4+d6+5$ 	& \hover{---}{Opposed Roll: \termCore{Communication} + \termBonus{Deception}} \\
+		Deceive someone during conversation 											& \termCore{Communication} + \termBonus{Deception}						& $d4+d6+0$ 	& \hover{---}{Opposed Roll: \termCore{Reasoning} + \termBonus{Skepticism}} \\
+		Throw a fist at an unsuspecting individual										& \termCore{Coordination} + \termBonus{Strength}						& $2d4+1$ 		& 6 \\
+	\end{xltabular}
+\end{center}
+
+\subsection*{Beyond the Mundane}
+
+\begin{center}
+	\rowcolors{1}{white}{xkcdEggShell}
+	\begin{xltabular}{\textwidth}{Xll}
+		Situation												& Challenge 								& Roll \\
+		They need to identify some potions through sight, smell \& taste. 				& \termCore{Situational Awareness} + Herbology		& d4 + d6 + 0 \\
+	\end{xltabular}
+\end{center}
+
 
 
 
@@ -369,17 +400,24 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 % 	If worked on something more than half of a year, that's a full year, round up. If less than a year (for instance, summers only) divide the total number of years by half.
 % }
 
+\section{Areas of Expertise}
 
-\term{Knowledge} is pure theory. In the modern setting, these are 100-level university courses. They can be purely academic, or they can be useful at high-income jobs.\\
-\term{Skills} are everything that you learn mainly by doing:
-they will have a technical component, and may require taking some classes, but to get beyond the basic, you need to keep using skills.
-In the modern setting, think of everything you would learn in night classes, or by working with an individual, or with a coach or a trainer.
-In other settings, they may be used through apprenticeship.
-These may be useful in a medium-income jobs.\\
-\term{Talents} cannot be easily taught, you have to learn these by doing.
-In the modern setting, these are useful in social situations.
-However, in other settings, they can include any other talent that is innate or developed.
-They are transferrable across jobs and even different campaign settings.\\
+
+\termBonus{Training} is physical.
+You can have a trainer, but what matters is that you train day in, day out.
+For example, if they went \termBonus{Bouldering} every weekend or so for two years, count each one of those as a half year, because it is part time, and assign +1.
+Alternatively, if the character taught a form of \termBonus{offensive martial arts} for five years, assign +5 as the bonus.\par
+\termBonus{Knowledge} is pure theory.
+In the modern setting, these are 100-level university courses, or sometimes, night classes.
+Consider all years studying in the university to calculate the bonus, as well working in a job which actively requires the knowledge in question.
+In other settings, also consider the years fully apprenticing.
+When adding more areas of \termBonus{knowledge} to the campaign, consider the following:
+If you go to 200-level or 300-level courses, it is too specific for the game mechanic.
+For settings that are \termBonus{beyond the mundane}, consider the highest level of
+education that will prepare the character for a high paying job, or a respectable role in the society that requires specific knowledge.
+This can be schooling in magic, or it can be apprenticing scholars, or working with elders.
+\par
+\termBonus{Talents} are social, and cannot be easily taught, characters get better at these by doing.\par
 
 If something can be taught with less then one hour of instructions, that is not an area of \term{expertise}.
 This is something that an adult should be able to do very easily after hearing the instructions,
@@ -397,9 +435,6 @@ This includes crossbox and modern firearms.
 % Criminal Network?
 
 
-\section*{Character in Gameplay}
-
-\subsection*{Character Example}
 
 % \marginpar{
 % 	\vspace{7cm}
@@ -415,47 +450,26 @@ This includes crossbox and modern firearms.
 % }
 
 
-\subsection*{Dice Roll Examples}
-
-This character is a technically proficient young professional.
-The following are a list of situations and the rolls that the character above would need to make.
-Some of these situations are in the modern setting, some of them are in fantasy settings. The same character can be used without modification in all of them.
-
-\subsubsection*{Mundane}
-
-\begin{center}
-	\rowcolors{1}{white}{xkcdEggShell}
-	\begin{xltabular}{\textwidth}{Xll}
-		Situation																		& Challenge 												& Roll \\
-		They need to find a solution to an engineering problem at work.					& \termCore{Reasoning} + Electrical Engineering				& 2d6 + 6 \\
-		They want to meet someone at a party.											& \termCore{Social Awareness}								& 2d4 \\
-		They are in an emergency situation where a fire started, and they need to react	& \termCore{Situational Awareness} + Firefighting 			& d4 + d6 + 0 \\
-		See through deception during conversation										& \termCore{Reasoning} + Skepticism							& d4 + d6 + 5 \\
-		Deceive someone during conversation 											& \termCore{Communication} + Deception						& d4 + d6 + 0 \\
-		Throw a fist at an unsuspecting individual										& \termCore{Coordination} + Offensive Martial Art (Boxing)	& 2d4 + 0 \\
-	\end{xltabular}
-\end{center}
-
-\subsubsection*{Beyond the Mundane}
-
-\begin{center}
-	\rowcolors{1}{white}{xkcdEggShell}
-	\begin{xltabular}{\textwidth}{Xll}
-		Situation												& Challenge 								& Roll \\
-		They need to identify some potions through sight, smell \& taste. 				& \termCore{Situational Awareness} + Herbology		& d4 + d6 + 0 \\
-	\end{xltabular}
-\end{center}
-
 \pagebreak
-\section*{List of Areas of Expertise}
+\subsection{Mundane Areas of Expertise}
+
+\begin{center}
+	\scriptsize
+	\begin{xltabular}{\textwidth}{XXXXl}
+		Training				&	Skills					& Knowledge					&  Talents 				& \\
+		\hline
+		\listUniversalTraining	&	\listUniversalSkills	&	\listUniversalKnowledge	& \listUniversalTalents & \sideTab{colorBgMundane}{All Settings} \\
+		\listModernTraining		&	\listModernSkills		&	\listModernKnowledge	& \listModernTalents	& \sideTab{colorBgModern}{Modern Setting} \\
+		\listMedievalTraining	&	\listMedievalSkills		&	\listMedievalKnowledge	&   					& \sideTab{colorBgMedieval}{Medieval Setting} \\
+	\end{xltabular}
+\end{center}
+
+\subsection{Beyond the Mundane}
 
 \begin{center}
 	\begin{xltabular}{\textwidth}{XXXXl}
 		Training								&	Skills									& Knowledge								&  Talents & \\
 		\hline
-		\footnotesize \listUniversalTraining	&	\footnotesize	\listUniversalSkills	&\footnotesize \listUniversalKnowledge	& \footnotesize \listUniversalTalents 	 		& \sideTab{colorBgMundane}{All Settings} \\
-		\footnotesize \listModernTraining		&	\footnotesize	\listModernSkills		&\footnotesize \listModernKnowledge		& \footnotesize \listModernTalents		& \sideTab{colorBgModern}{Modern Setting} \\
-		\footnotesize \listMedievalTraining		&	\footnotesize	\listMedievalSkills		&\footnotesize \listMedievalKnowledge	& \footnotesize  						& \sideTab{colorBgMedieval}{Medieval Setting} \\
 		\footnotesize \listFantasyTraining		&	\footnotesize	\listFantasySkills		&\footnotesize \listFantasyKnowledge	& \footnotesize  \listFantasyTalents 	& \sideTab{colorBgBeyondMundane}{Beyond the Mundane} \\
 	\end{xltabular}
 \end{center}
@@ -481,7 +495,7 @@ and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 
 
 
-\section{Creating Characters for Different Campaigns}
+\section{Put Characters in Various Campaigns}
 \subsection{Mundane}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
@@ -506,9 +520,7 @@ and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 	\end{xltabular}
 \end{center}
 
-\section*{Balance}
-
-\subsection*{Balancing Gameplay}
+\section{Balance Gameplay for Characters}
 
 With this level of flexibility, finding the right difficulty for the challenges may be difficult. Look at the players' rolls, and find the maximum roll possible. For example, for an young professional,
 this number is likely going to be 18: This is going to be a roll with a \term{core capability} where they are particulary talented, so this is going to be 2d6. The highest possible roll is 12. They probably have at least five or six years of experience in their job, so this brings us up to 18. This is the character's \term{mundane level}.
