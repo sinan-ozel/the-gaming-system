@@ -2,9 +2,11 @@
 
 ## What This Is
 
-This is a role playing game mechanic designed for flexibility, consistency and relatability.
+This is a role playing game mechanic designed for consistency, flexibility  and relatability.
 
 ## Why Is This Happening?
+
+TODO: Remove this section.
 
 After years of playing D&D, I want something new:
 I want to be able to role play challenges other than massacring humanoids in dungeons.
@@ -16,6 +18,37 @@ Finally, I want a consistent and complete system: if a villain is raising an und
 
 
 ## Design Principles
+
+### If the NPCs can do it, so can the PCs
+
+Often times, the scenario will present players with "flying cities", "undead armies", or "powerful curses". However, the game mechanics have no clear way of creating these effects for the characters.
+
+The game mechanic gives
+
+### Non-violent encounters are "first class citizens" in the system
+
+In movies and literature, we see protoganists faced with different types of conflicts: they can be facing an array of brutal threats in nature, such as drowning, or exposure to elements.
+They can be facing social challenges. They can be having internal conflicts.
+if they face an external threat, they can find various ways to deal with it. Often times,
+in action movies, the protoganist will need to outwit an main antagonist to be able to defeat them.
+In contrast, fantasy role playing games tend to have one type of challenge:
+there is a main antagonist, in the form of a monster or a humanoid character.
+The only way to defeat this antagonist is through physical violence.
+
+Even fantasy literature has moved beyond simple, one-dimensional antagonists
+to complex challenges that require an array of skills to compete with - imagine the Witcher
+series, or Game of Thrones.
+
+This game system intends to give the option to create multiple types of challenges.
+The characters are not limited to one type of social roll called "charisma".
+(It's almost as if the original writers of D&D had trouble understanding the complexities of social skills, so they lumped them all under "charisma", as if to give a name to all of these skills that they did not have.)
+
+
+### To connect with the characters, we want to use
+
+
+
+TODO: Remove the rest of this document.
 
 ### Approachable
 
