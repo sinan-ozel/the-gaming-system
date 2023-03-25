@@ -209,8 +209,8 @@ Creating a character is like writing a social network profile or a CV, but more 
 You thought about their background, so reflect your thoughts as numbers:
 \begin{enumerate}
 	\item Assign their \termCore{core capabilities}.
-	\item They get set \termBonus{bonuses} based on their species - "human" for \term{mundane} characters.
-	\item Based on their years of experience, list their \termBonus{areas of expertise}.
+	\item The character gets \termBonus{species bonuses} - "human" for \term{mundane} characters.
+	\item Because they are sentient, the character also gets bonuses for their \termBonus{areas of expertise}, based on their years of experience.
 \end{enumerate}
 
 Characters roll their \termCore{core capabilities} and
@@ -229,7 +229,7 @@ Larger dice ($d8$, $d10$, \ldots) are for going \termBeyond{beyond the mundane},
 
 % TODO: Formalize this a bit more to keep mundane characters balanced.
 
-\paragraph*{2. Bonuses Based on Species}
+\paragraph*{2. Species Bonuses}
 As a human, the character gets +7 to vision\footnote{
 	To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
 	For example, an eagle has 140 cyc/deg, so their bonus is +14.
@@ -269,7 +269,13 @@ If they work on it only part-time, count as half-year.\par
 \termBonus{Skills} are things that require concentration to accomplish. Think of these as skills for blue-collared jobs or hobbies.
 \termBonus{Knowledge} are pure theoretical knowledge, 100-level university courses or night classes.
 \termBonus{Talents} are social.
-The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\\
+The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\par
+
+Below is a sample character based roughly on yours truly.
+Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip that explains how each of those were calculated.\footnote{
+	The PDF viewer that you are using should be showing \hover{this as highlighted}{This is a tooltip.} with a message that says "this is a toolip".
+	Otherwise, you will need another PDF viewer to see the tooltips.
+}
 
 
 
@@ -281,7 +287,16 @@ The final bonuses need to make sense to \emph{all} other players when you are in
 % Skills are things that require focus. You typically learn these in a night class, or you might apprentice.
 % Talents are things that you develop by doing. They can be by nature or by nurture.
 
-\begin{actorCardLetterSizeFitToPage}{testCharacter}{Test Human}{colorBgMundane}
+\newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \termBonus{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
+\newcommand{\explainEcon}{The character took multiple classes during the master's degree. I decided that this sums up 2 or 3, and went with the lower number.}
+\newcommand{\explainFinance}{Two years of classes on finance and no work experience.}
+\newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
+\newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
+\newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
+\newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
+
+
+\begin{actorCardLetterSizeFitToPage}{testCharacter}{Sample Mundane Character}{colorBgMundane}
 
 	\begin{capabilitiesBox}{testCharacter}
 		\begin{capabilitiesTable}{Physical}
@@ -314,22 +329,24 @@ The final bonuses need to make sense to \emph{all} other players when you are in
 	\end{speciesBonusBox}
 
 	\expertiseTable{testCharacter}{
-        \expertise{Cycling}{+3}
+        \expertise{Cycling}{\hover{+3}{\explainCycling}}
         \expertise{Dancing (Latin)}{+3}
         \expertise{Swimming}{+3}
 	}{
-        \expertise{Driving (Car)}{+3}
+        \expertise{Driving (Car)}{\hover{+3}{\explainDriving}}
 	}{
         \expertise{Accounting}{+1}
         \expertise{Chemistry}{+1}
-        \expertise{Computing Concepts}{+10}
-        \expertise{Economics}{+2}
-        \expertise{Electrical Engineering}{+6}
-        \expertise{Finance}{+2}
+        \expertise{Computing Concepts}{\hover{+10}{\explainProgramming}}
+        \expertise{Economics}{\hover{+2}{\explainEcon}}
+        \expertise{Electrical Engineering}{\hover{+6}{\explainEE}}
+        \expertise{Finance}{\hover{+2}{\explainFinance}}
         \expertise{Marketing}{+1}
         \expertise{Physics}{+1}
 	}{
-        \expertise{Skepticism}{+4}
+        \expertise{Language (English)}{+12}
+        \expertise{Language (French)}{+2}
+        \expertise{Skepticism}{\hover{+4}{\explainSkepticism}}
 	}
 
 \end{actorCardLetterSizeFitToPage}
@@ -340,29 +357,11 @@ The final bonuses need to make sense to \emph{all} other players when you are in
 \end{formula}
 
 % TODO: Add the list of core capabilities somewhere in this chapter as a full list.
+% TODO: Add a table of dice rolls and their meanings.
 
 
 
 
-\newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \termBonus{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
-\newcommand{\explainEcon}{The character took multiple classes during the master's degree. I decided that this sums up 2 or 3, and went with the lower number.}
-\newcommand{\explainFinance}{Two years of classes on finance and no work experience.}
-\newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
-\newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
-\newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
-\newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
-
-
-% TODO: Carry over to the new table.
-\begin{center}
-	\begin{tabular}{lr|lr|lr|}
-		\multicolumn{2}{c}{Knowledge}							&	\multicolumn{2}{c}{Skills}				&	\multicolumn{2}{c}{Talents} \\
-		\hline
-		Electrical Engineering & \hover{+6}{\explainEE}			& 	Cycling & \hover{+3}{\explainCycling}		& 	Skepticism &  \hover{+4}{\explainSkepticism} \\
-		Computing Concepts & \hover{+10}{\explainProgramming}	& 	Dancing (Latin) & +3				& 	 &  \\
-		Economics & \hover{+2}{\explainEcon}					& 	Driving (Car) & \hover{+5}{\explainDriving}	& 	& \\
-	\end{tabular}
-\end{center}
 
 
 
