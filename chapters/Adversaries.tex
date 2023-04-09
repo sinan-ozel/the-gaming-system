@@ -88,44 +88,45 @@ The maximum number of tiles in each direction determines one of the two dice in 
 \section{Animals \& Creatures}
 \label{sec:animals}
 
-\subsection{Squirrel}
-Small mammals and lizards use \termCore{Situational Awareness} to recognize food and danger,
+\subsection{Small Mammals}
+
+% TODO: label this section, and reference using the
+
+Small mammals such as squirrels use \termCore{Situational Awareness} to recognize food and danger,
 and \termCore{Coordination} to avoid them.
 Unlike domesticated pets and familiars, they cannot communicate with
 humans, so they have no \termCore{Communication}.
 Please do not hurt them.\\
 
-\sbox{0}{
-	\begin{actorCardStandardSize}{mundaneAnimalSquirrel}{Squirrel}{colorBgMundane}
-		\begin{capabilitiesBox}{mundaneAnimalSquirrel}
-			\begin{capabilitiesTable}{Physical}
-				\capability{Coordination}{1d4}
-			\end{capabilitiesTable}
-			\begin{capabilitiesTable}{Mental}
-				\capability{Situational Awareness}{1d4}
-			\end{capabilitiesTable}
-		\end{capabilitiesBox}
-		\begin{speciesBonusBox}{mundaneAnimalSquirrel}
-			\begin{bonusTable}{Sensory}
-				\bonus{Vision (Daylight)}{+7}
-				\bonus{Hearing}{+1}
-			\end{bonusTable}
-		\end{speciesBonusBox}
-	\end{actorCardStandardSize}
-}
+% TODO: Find out more about the vision, smelling and senses of squirrels and put it here.
 
-% TODO: Decide on the capabilities of the squirrel. Can they be higher than 1d4?
-% TODO: Add the squirrel sensory bonuses.
+\begin{actorCardMiniEuro}{squirrel}{Squirrel}{colorBgMundane}
+
+	\begin{capabilitiesBox}{squirrel}
+		\begin{capabilitiesTable}{Capabilities}
+			\capability{Coordination}{2d4}
+ 			\capability{Situational Awareness}{d4+d6}
+		\end{capabilitiesTable}
+	\end{capabilitiesBox}
+
+	\begin{speciesBonusBox}{squirrel}
+		\begin{bonusTable}{Sensory}
+			\bonus{Vision (Daylight)}{+7}
+			\bonus{Hearing}{+1}
+		\end{bonusTable}
+	\end{speciesBonusBox}
+\end{actorCardMiniEuro}
+
 % TODO: Speed?
+\todo{Add skills: gather nuts, evade}
+\todo{Add physiology: size & bite strength, speed}
+\todo{Add how to show a squirrel with human intelligence}
 
 \begin{wrapfigure}{r}{\wd0}
 	\usebox{0}
 \end{wrapfigure}
 
 
-\todo{Add skills: gather nuts, evade}
-\todo{Add physiology: size & bite strength, speed}
-\todo{Add how to show a squirrel with human intelligence}
 
 \subsection{A Dog}
 \label{subsec:dog}
