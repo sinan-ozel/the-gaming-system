@@ -40,7 +40,7 @@
 
 \usepackage{calc} % For simpler calculations - used for spacing the index letter headings correctly
 
-\usepackage{changepage} % Required for temporarily indenting text blocks
+\usepackage[strict]{changepage} % Required for temporarily indenting text blocks
 
 \usepackage[toc]{appendix} % Required for the appendices chapters
 

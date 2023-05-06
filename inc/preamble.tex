@@ -147,6 +147,9 @@
 % https://tex.stackexchange.com/questions/37094/what-is-the-recommended-way-to-assign-a-value-to-a-variable-and-retrieve-it-for
 \usepackage{pgfkeys}
 
+% This is for the marginfigure environment.
+\usepackage{sidenotes}
+
 \newcommand{\setval}[1]{\pgfkeys{/variables/#1}}
 \newcommand{\getval}[1]{\pgfkeysvalueof{/variables/#1}}
 \newcommand{\declare}[1]{%
@@ -217,6 +220,12 @@
 
 \newenvironment{actorCardMiniEuro}[3]{
 	\begin{actorSheet}{#1}{44mm}{68mm}{#2}{#3}
+}{
+	\end{actorSheet}
+}
+
+\newenvironment{actorCardMiniAmerican}[3]{
+	\begin{actorSheet}{#1}{41mm}{63mm}{#2}{#3}
 }{
 	\end{actorSheet}
 }
