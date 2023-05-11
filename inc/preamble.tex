@@ -198,10 +198,10 @@
 
 \newenvironment{actorCardLetterSizeFitToPage}[3]{
 	\begin{actorSheet}{#1}{\textwidth}{1.29411764706 * \textwidth}{#2}{#3}
-	\setval{widthCapability = 14mm}
+	\setval{widthCapability = 29.75mm}
 	\setval{widthBonus = 19.5mm}
 	\setval{widthProperty = 15mm}
-	\setval{widthExpertise = 13mm}
+	\setval{widthExpertise = 10mm}
 }{
 	\end{actorSheet}
 }
@@ -220,6 +220,8 @@
 
 \newenvironment{actorCardMiniEuro}[3]{
 	\begin{actorSheet}{#1}{44mm}{68mm}{#2}{#3}
+	\setval{widthCapability = 32.5mm}
+	\setval{widthExpertise = 20mm}
 }{
 	\end{actorSheet}
 }
@@ -246,7 +248,7 @@
 }
 
 \NewEnviron{capabilitiesTable}[1]{
-	\begin{tabular}[t]{@{}p{\getval{widthCapability}}r}
+	\begin{tabularx}{\getval{widthCapability}}[t]{Xr}
 		\multicolumn{2}{c}{
 			\cellcolor{colorCapabilityDark}
 			\textcolor{colorCapabilityContour}{
@@ -254,7 +256,7 @@
 			}
 		} \\
 		\BODY \\
-	\end{tabular}
+	\end{tabularx}
 }
 
 \NewEnviron{speciesBonusBox}[1]{
