@@ -199,9 +199,10 @@
 \newenvironment{actorCardLetterSizeFitToPage}[3]{
 	\begin{actorSheet}{#1}{\textwidth}{1.29411764706 * \textwidth}{#2}{#3}
 	\setval{widthCapability = 29.75mm}
-	\setval{widthBonus = 19.5mm}
+	\setval{widthBonus = 29.75mm}
 	\setval{widthProperty = 15mm}
-	\setval{widthExpertise = 10mm}
+	\setval{widthExpertise = 26.75
+	mm}
 }{
 	\end{actorSheet}
 }
@@ -275,7 +276,7 @@
 }
 
 \NewEnviron{bonusTable}[1]{
-	\begin{tabular}[t]{@{}p{\getval{widthBonus}}r}
+	\begin{tabularx}{\getval{widthBonus}}[t]{Xr}
 		\multicolumn{2}{c}{
 			\cellcolor{colorBonusDark}
 			\textcolor{colorBonusContour}{
@@ -283,7 +284,7 @@
 			}
 		} \\
 		\BODY
-	\end{tabular}
+	\end{tabularx}
 }
 
 \newcommand{\expertiseTable}[5]{
@@ -305,10 +306,10 @@
 			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}		&
 			\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
 			\sffamily\footnotesize\textcolor{colorBonusContour}{Talents} \\
-			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#2\end{tabular}	&
-			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#3\end{tabular} 	&
-			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#4\end{tabular}	&
-			\begin{tabular}[t]{p{\getval{widthExpertise}}r}#5\end{tabular}
+			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#2\end{tabularx}	&
+			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#3\end{tabularx} 	&
+			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#4\end{tabularx}	&
+			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#5\end{tabularx}
 		\end{tabular}
 	};
 }
