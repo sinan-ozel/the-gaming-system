@@ -17,15 +17,16 @@ I want a roleplaying system where creating spells is designed into the system fr
 Finally, I want a consistent and complete system: if a villain is raising an undead army, or a mage creates a tower, my characters should have rules for making the same.
 
 
-## Design Principles
+## Design Goals
 
-### If the NPCs can do it, so can the PCs
+### Coherence: If the NPCs can do it, so can the PCs
 
 Often times, the scenario will present players with "flying cities", "undead armies", or "powerful curses". However, the game mechanics have no clear way of creating these effects for the characters.
 
-The game mechanic gives
+The game mechanic intends to include ways to create these wondrous accomplishments that
+are normally in the realm of the NPCs.
 
-### Non-violent encounters are "first class citizens" in the system
+### Diversity in Challenges: Non-violent encounters are "first class citizens" in the system
 
 In movies and literature, we see protoganists faced with different types of conflicts: they can be facing an array of brutal threats in nature, such as drowning, or exposure to elements.
 They can be facing social challenges. They can be having internal conflicts.
@@ -33,22 +34,33 @@ if they face an external threat, they can find various ways to deal with it. Oft
 in action movies, the protoganist will need to outwit an main antagonist to be able to defeat them.
 In contrast, fantasy role playing games tend to have one type of challenge:
 there is a main antagonist, in the form of a monster or a humanoid character.
-The only way to defeat this antagonist is through physical violence.
+The only way to resolve this conflict is through physical violence.
 
-Even fantasy literature has moved beyond simple, one-dimensional antagonists
-to complex challenges that require an array of skills to compete with - imagine the Witcher
-series, or Game of Thrones.
+This is in contrast with the current state of the fantasy literature,
+which has moved beyond the oversimplified model of good and evil duality.
+Contemporary movies, series and books include complex personalities, and
+equally complex challenges that require an array of skills to compete
+with - imagine the Witcher series, or Game of Thrones.
+
+In addition to the fantasy literature, imagine the whole array of conflicts
+that make the action movie genre: disaster movies, survival movies all
+incorporate intense challenges without invoking violence. Nature is
+as exciting an adversary as any necromancer, and so is humman limitations.
 
 This game system intends to give the option to create multiple types of challenges.
-The characters are not limited to one type of social roll called "charisma".
-(It's almost as if the original writers of D&D had trouble understanding the complexities of social skills, so they lumped them all under "charisma", as if to give a name to all of these skills that they did not have.)
+Elements, natural phenomenon, and even humans' own weakness can be adversaries
+and therefore, dice-rolling actors in the game system.
 
 
-### To connect with the characters, we want to use
+### Relatability: To connect with the characters, we want to use dice rolls that connect to every day experience.
+
+Make rules approachable to the general public.
 
 
 
-TODO: Remove the rest of this document.
+
+
+## Design Principles
 
 ### Approachable
 
@@ -60,7 +72,7 @@ Somehow, in fantasy role play, we always have to have a fight to death.
 This is not the human norm: humans rarely lead lives where they constantly have fights to death - if they did, they would not survive for long.
 It is also a small part of cinema and literature: action is just one genre among many.
 There are multiple dramatic encounters in literature that have nothing to with interpersonal violence.
-These dramatic encounters should not be second-class citizens in a system designed for entertainment, always left to the domain of bards.\\
+These dramatic encounters should not be second-class citizens in a system designed for entertainment, always left to the domain of bards.
 
 ### Flexibility
 
@@ -76,7 +88,7 @@ The design should move these narrative elements into gameplay: if an NPC is able
 ### Easy Start
 
 Character creation and basic challenges should each take one page, and should make sense to the modern reader.
-It should be easy to create a character that resembles the player themselves, or people that they could meet in the modern world.\\
+It should be easy to create a character that resembles the player themselves, or people that they could meet in the modern world.
 
 Fantasy elements should follow the mundane: first we lay the foundations to create relatable, approachable characters.
 Then we expand the rules to incorporate characters and challenges that go beyond the mundane.
