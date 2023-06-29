@@ -175,7 +175,7 @@
 	\renewcommand{\sheetwidth}{#2}
 	% TODO: Add height if this works
 
-	\begin{figure}
+	\begin{figure}[!h]
 
 	\begin{tikzpicture}
 		\draw[color=#5,line width=2mm]
@@ -297,7 +297,7 @@
 		middle color=colorBonusLight,
 		bottom color=colorBonusContour,
 		font=\normalsize,
-		below left=4mm and 0mm of #1_speciesBonusBox,
+		below left=4mm and 0mm of #1_capabilitiesBox,
 		anchor=north west,
 		line width=.5mm,
 		inner ysep=0mm,
@@ -306,9 +306,9 @@
 		\begin{tabular}[t]{c|c|c|c}
 			\rowcolor{colorBonusDark}
 			\sffamily\footnotesize\textcolor{colorBonusContour}{Training}	&
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}		&
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}	&
 			\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Talents} \\
+			\sffamily\footnotesize\textcolor{colorBonusContour}{Social} \\
 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#2\end{tabularx}	&
 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#3\end{tabularx} 	&
 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#4\end{tabularx}	&

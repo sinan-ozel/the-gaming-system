@@ -300,17 +300,22 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 \newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
 \newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
 
+\begin{tikzpicture}[overlay]
+	\node[draw, fill=LightYellow, thick,minimum width=5cm,minimum height=3cm] (b) at (-3.5,-2){
+		Annotations are coming.
+	};
+\end{tikzpicture}
 
 \begin{actorCardLetterSizeFitToPage}{testCharacter}{Sample Mundane Character}{colorBgMundane}
 
 	\begin{capabilitiesBox}{testCharacter}
-		\begin{capabilitiesTable}{Physical}
+		\begin{capabilitiesTable}{Athletic}
 			\capability{Coordination}{2d4}
 			\capability{Constitution}{d4+d6}
 		\end{capabilitiesTable}
 		\begin{capabilitiesTable}{Mental}
  			\capability{Situational Awareness}{d4+d6}
- 			\capability{Focus}{2d6}
+ 			\capability{Focus / Creativity}{2d6}
 		\end{capabilitiesTable}
 		\begin{capabilitiesTable}{Intellectual}
  			\capability{Reasoning}{2d6}
@@ -322,23 +327,13 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 	   \end{capabilitiesTable}
 	\end{capabilitiesBox}
 
-	\begin{speciesBonusBox}{testCharacter}
-		\begin{bonusTable}{Physical}
-			\bonus{Core}{+1}
-			\bonus{Upper Body}{+1}
-		\end{bonusTable}
-		\begin{bonusTable}{Sensory}
-			\bonus{Vision (Daylight)}{+7}
-			\bonus{Hearing}{+1}
-		\end{bonusTable}
-	\end{speciesBonusBox}
-
 	\expertiseTable{testCharacter}{
         \expertise{Cycling}{\hover{+3}{\explainCycling}}
         \expertise{Dancing (Latin)}{+3}
         \expertise{Swimming}{+3}
 	}{
         \expertise{Driving (Car)}{\hover{+3}{\explainDriving}}
+        \expertise{Musical Instrument (Guitar)}{\hover{+5}{\explainDriving}}
 	}{
         \expertise{Accounting}{+1}
         \expertise{Chemistry}{+1}
