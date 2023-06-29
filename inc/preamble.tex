@@ -175,6 +175,8 @@
 	\renewcommand{\sheetwidth}{#2}
 	% TODO: Add height if this works
 
+	\begin{figure}
+
 	\begin{tikzpicture}
 		\draw[color=#5,line width=2mm]
 			(#2, 0) coordinate (#1_SE) {} -- (0,  0) coordinate (#1_SW) {}
@@ -192,6 +194,8 @@
 	   };
 }{
 	\end{tikzpicture}
+
+	\end{figure}
 }
 % TODO: Adjust the hspace depending on the card dimensions. Package calc or pgf?
 
@@ -201,8 +205,7 @@
 	\setval{widthCapability = 29.75mm}
 	\setval{widthBonus = 29.75mm}
 	\setval{widthProperty = 15mm}
-	\setval{widthExpertise = 26.75
-	mm}
+	\setval{widthExpertise = 26.75mm}
 }{
 	\end{actorSheet}
 }
