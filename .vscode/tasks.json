@@ -8,26 +8,29 @@
             "command": "pdflatex",
             "type": "shell",
             "args": [
-                "GamingSystemTheHandbook.tex",
+                "GamingSystemTheHandbook.tex"
             ],
             "group": "build",
             "presentation": {
-                "reveal": "always",
+                "reveal": "always"
             },
-            "problemMatcher": "$msCompile",
+            "problemMatcher": "$msCompile"
         },
         {
             "label": "build chapter",
             "command": "pdflatex",
             "type": "shell",
             "args": [
-                "${fileBasename}",
+                "${fileBasename}"
             ],
-            "group": "build",
-            "presentation": {
-                "reveal": "always",
+            "group": {
+                "kind": "build",
+                "isDefault": true
             },
-            "problemMatcher": "$msCompile",
+            "presentation": {
+                "reveal": "always"
+            },
+            "problemMatcher": "$msCompile"
         }
     ]
 }
