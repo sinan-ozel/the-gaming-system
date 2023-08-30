@@ -290,7 +290,7 @@
 	\end{tabularx}
 }
 
-\newcommand{\expertiseTable}[5]{
+\NewEnviron{expertiseBox}[1]{
 	\node[
 		draw=colorBonusDark,
 		top color=colorBonus,
@@ -303,19 +303,65 @@
 		inner ysep=0mm,
 		inner xsep=0mm
 	] (#1_tableExpertise){
-		\begin{tabular}[t]{c|c|c|c}
-			\rowcolor{colorBonusDark}
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Training}	&
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}	&
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
-			\sffamily\footnotesize\textcolor{colorBonusContour}{Social} \\
-			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#2\end{tabularx}	&
-			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#3\end{tabularx} 	&
-			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#4\end{tabularx}	&
-			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#5\end{tabularx}
-		\end{tabular}
+		\BODY
 	};
 }
+
+\newcommand{\expertiseTable}[4]{
+	\begin{tabular}[t]{c|c|c|c}
+		\rowcolor{colorBonusDark}
+		\sffamily\footnotesize\textcolor{colorBonusContour}{Training}	&
+		\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}		&
+		\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
+		\sffamily\footnotesize\textcolor{colorBonusContour}{Social} \\
+		\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#1\end{tabularx}	&
+		\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#2\end{tabularx} 	&
+		\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#3\end{tabularx}	&
+		\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#4\end{tabularx}
+	\end{tabular}
+}
+
+\NewEnviron{physiologyBox}[1]{
+	\node[
+		draw=colorBonusDark,
+		font=\normalsize,
+		below left=4mm and 0mm of #1_tableExpertise,
+		anchor=north west,
+		line width=.5mm,
+		inner ysep=0mm,
+		inner xsep=0mm
+	] (#1_tablePhysiology){
+		\BODY
+	};
+}
+
+
+% \newcommand{\expertiseTable}[5]{
+% 	\node[
+% 		draw=colorBonusDark,
+% 		top color=colorBonus,
+% 		middle color=colorBonusLight,
+% 		bottom color=colorBonusContour,
+% 		font=\normalsize,
+% 		below left=4mm and 0mm of #1_capabilitiesBox,
+% 		anchor=north west,
+% 		line width=.5mm,
+% 		inner ysep=0mm,
+% 		inner xsep=0mm
+% 	] (#1_tableExpertise){
+% 		\begin{tabular}[t]{c|c|c|c}
+% 			\rowcolor{colorBonusDark}
+% 			\sffamily\footnotesize\textcolor{colorBonusContour}{Training}	&
+% 			\sffamily\footnotesize\textcolor{colorBonusContour}{Skills}	&
+% 			\sffamily\footnotesize\textcolor{colorBonusContour}{Knowledge}	&
+% 			\sffamily\footnotesize\textcolor{colorBonusContour}{Social} \\
+% 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#2\end{tabularx}	&
+% 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#3\end{tabularx} 	&
+% 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#4\end{tabularx}	&
+% 			\begin{tabularx}{\getval{widthExpertise}}[t]{Xr}#5\end{tabularx}
+% 		\end{tabular}
+% 	};
+% }
 
 
 

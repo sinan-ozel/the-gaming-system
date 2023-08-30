@@ -204,83 +204,119 @@
 
 \chapter{Character Creation}
 
-\section{Create a \term{Mundane} Character}
+\section{Create an \term{Ordinary} Character}
 \begin{marginNote}
-	\term{Mundane} characters are humans in a modern setting.
-	Spells, powers \& overpowered \termBeyond{core capabilities} take the character \term{beyond the mundane}.
+	\term{Ordinary} characters are humans in a modern setting.
+	In various settings or stories, spells, powers \& overpowered
+	\termCore{core capabilities} take the character \term{beyond the ordinary}.
 \end{marginNote}
-Creating a character is like writing a social network profile or a CV, but more truthful.
-You thought about their background, so reflect your thoughts as numbers:
+To create the character, we first decide on their life story so far,
+then we reflect than in dice and bonuses.
 \begin{enumerate}
-	\item Assign their \termCore{core capabilities}.
-	\item The character gets \termBonus{species bonuses} - "human" for \term{mundane} characters.
-	\item Because they are sentient, the character also gets bonuses for their \termBonus{areas of expertise}, based on their years of experience.
+	\item Based on their childhood \& teenage years, assign their \termCore{core capabilities}.
+	\item Based on their years of experience, assign their \termBonus{areas of expertise}.
 \end{enumerate}
 
-Characters roll their \termCore{core capabilities} and
-add their \termBonus{bonuses} from their species, either \term{physiology} or their \term{expertise}, whichever is higher.
-The bonus is limited by the maximum possible dice roll, for example, if the \termCore{capability} rolle is $2d6$, the \termBonus{bonus} can be 12 at most.
+As a player, you will roll the dice from the \termCore{core capabilities},
+and add a bonus from the \termBonus{areas of expertise}.
+If the sum is higher than the \termDifficultyLevel{difficulty level} of a task,
+your character succeeds at that task.
 
 \paragraph*{1. Core Capabilities}
 
 \begin{marginNote}
-	\input{inc/core_competencies_dicepool_guide.tex}
+	\textbf{TL;DR for Capabilities}
+	Add either $d4$ or $d6$ from childhood.
+	Add another $d4$ or $d6$ from teenage years.
 \end{marginNote}
-Assign $2d4$ if they are bad,
-$2d6$ if they are good, and $d4 + d6$ if they are average.
-For weak characters, you can use $d6$ - inexperienced teenagers, people with disadvantages or injuries, or debilitatings sicknesses.
-Larger dice ($d8$, $d10$, \ldots) are for going \termBeyond{beyond the mundane}, for supernatural characters.
 
-% TODO: Formalize this a bit more to keep mundane characters balanced.
+Choose the capabilities to represent the experiences of the character's childhood and teenage years.
+For each one of the 8 core capabilities in the table below, choose two dice.
+First die comes from the childhood. If they had a childhood which would
+make them exceptional in this \termCore{core capability}, use $d6$, otherwise, it is a $d4$.
+If you want to have a prodigy in the area, use $d8$.
+Now do the same for the teenage years.
 
-\paragraph*{2. Species Bonuses}
-As a human, the character gets +7 to vision\footnote{
-	To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
-	For example, an eagle has 140 cyc/deg, so their bonus is +14.
-	See \cite{caves_acuityview_2018} for more information on visual acuity,
-	and \cite{noauthor_list_2019} for a list of visual acuities of animals.
-},
-and +2 to hearing.\footnote{
-	To calculate the hearing for another species, divide their audible range in Hz by 10000.
-	For example, bats can hear up to 100kHz, so a bat character will have +10.
-}
-In addition, they get +1 or +2 as \termBonus{upper body strength}.\footnote{
-	The average human punch has pressure of 150 psi, we divide that by 100 to get the bonus.
-	Some humans are stronger than others, due to age, gender, nutrition differencces.
-	If needed, based on their background, gauge how much pressure their punch will pack in psi, and divide by 100.
-	For trained humans, the \termBonus{expertise bonus} will likely be higher.
-}
-See \nameref{subsec:chargen_mundane} for more details on these stats.
+\begin{emphasisParagraph}
+The \termCore{core capabilities} need to make sense to \emph{all} other players
+when you are introducing your character.
+If you made them raise their eyebrows or roll their eyes, character creation failed.
+\end{emphasisParagraph}
 
-% TODO: Consider adding a kick.
 
-% TODO: Explain strength.
+\setval{widthCapability = 29.75mm}
+\begin{capabilitiesTable}{Athletic}
+	\capability{Coordination}{2d4}
+	\capability{Constitution}{d4+d6}
+\end{capabilitiesTable}
+\begin{capabilitiesTable}{Mental}
+	\capability{Situational Awareness}{d4+d6}
+	\capability{Focus / Creativity}{2d6}
+\end{capabilitiesTable}
+\begin{capabilitiesTable}{Intellectual}
+	\capability{Reasoning}{2d6}
+	\capability{Willpower}{2d4}
+\end{capabilitiesTable}
+\begin{capabilitiesTable}{Social}
+	\capability{Communication}{d4+d6}
+	\capability{Social Awareness}{2d4}
+\end{capabilitiesTable}
 
-% Examples include the smell of dogs, infrared vision, ultraviolet vision,
-% magnetoreceptivity of bees and some birds, and electroreceptivity of sharks.
-
-\paragraph*{3. Expertise}
+\paragraph*{2. Expertise}
 
 \begin{marginNote}
 	\input{inc/years_of_experience_bonus.tex}
 \end{marginNote}
-These are bonuses related to a character's history \& experience up to date.
-Assign these bonuses based on the character's background:
-Bonus equals the years of experience up to the tenth year.
-After the tenth year, count each decade as one point.
-% TODO: Add a link to the beyond-the-mundane calculation.
-If they work on it only part-time, count as half-year.\par
-\termBonus{Training} is pure muscle memory, you learn these by training regularly.
-\termBonus{Skills} are things that require concentration to accomplish. Think of these as skills for blue-collared jobs or hobbies.
-\termBonus{Knowledge} are pure theoretical knowledge, 100-level university courses or night classes.
-\termBonus{Talents} are social.
-The final bonuses need to make sense to \emph{all} other players when you are introducing your character.\par
+Choose the bonuses the same way you talk about work expertise on a CV.
+How many years did the character spend as a professional or in higher education?
+This number of years is the bonus of all \termBonus{areas of expertise}.
+See Section \ref{subsec:areas_of_expertise} for the full list.
 
-Below is a sample character based roughly on yours truly.
-Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip that explains how each of those were calculated.\footnote{
-	The PDF viewer that you are using should be showing \hover{this as highlighted}{This is a tooltip.} with a message that says "this is a toolip".
-	Otherwise, you will need another PDF viewer to see the tooltips.
+The final \termBonus{bonuses} need to make sense to \emph{all} other players
+when you are introducing your character.\par
+
+
+% You now know everything you need to understand the character sheet in the next page.
+% Feel free to jump to the next page to see the character sheet.
+% This process differs from many other gaming systems in two respects:
+% first, we do not enforce any rules about fairness. Just as in life, some members of the troupe can be more advantaged than the others - this is up to the players to deal with.
+% Second, as a player, you do not need to flesh out all of the details of the character to start playing.
+% Some parts of their history may be decided after the game starts, and these decisions can
+% add new bonuses.
+
+
+
+\newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \termBonus{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
+\newcommand{\explainEcon}{The character took multiple classes during the master's degree. I decided that this sums up 2 or 3, and went with the lower number.}
+\newcommand{\explainFinance}{Two years of classes on finance and no work experience.}
+\newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
+\newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
+\newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
+\newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
+
+
+
+\setval{widthExpertise = 25mm}
+\expertiseTable{
+	\expertise{Cycling}{\hover{+3}{\explainCycling}}
+	\expertise{Dancing (Latin)}{+3}
+}{
+	\expertise{Driving (Car)}{\hover{+3}{\explainDriving}}
+	\expertise{Musical Instrument (Guitar)}{\hover{+5}{\explainDriving}}
+}{
+	\expertise{Computing Concepts}{\hover{+10}{\explainProgramming}}
+	\expertise{Economics}{\hover{+2}{\explainEcon}}
+}{
+	\expertise{Language (English)}{+12}
+	\expertise{Language (French)}{+2}
 }
+
+
+% Below is a sample character based roughly on yours truly.
+% Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip that explains how each of those were calculated.\footnote{
+% 	The PDF viewer that you are using should be showing \hover{this as highlighted}{This is a tooltip.} with a message that says "this is a toolip".
+% 	Otherwise, you will need another PDF viewer to see the tooltips.
+% }
 
 
 
@@ -292,21 +328,28 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 % Skills are things that require focus. You typically learn these in a night class, or you might apprentice.
 % Talents are things that you develop by doing. They can be by nature or by nurture.
 
-\newcommand{\explainEE}{The character took 4 years of classes related to Electrical Engineering.This gives +4 bonus under \termBonus{knowledge}.  His work between the ages 24 and 26 involved components used in electrical engineering. This sums up to 6 years, or a bonus of +6.}
-\newcommand{\explainEcon}{The character took multiple classes during the master's degree. I decided that this sums up 2 or 3, and went with the lower number.}
-\newcommand{\explainFinance}{Two years of classes on finance and no work experience.}
-\newcommand{\explainCycling}{The character can cycle: they taught themselves as a kid. For about six summers, they spent a lot of summers cycling. However, it's just the summer, and not the full year. I divide 6 years in half, and get +3 as the bonus.}
-\newcommand{\explainDriving}{Driving is something that you would take lessons to learn. Furthermore, it is a mixture of theoretical knowledge and training. So it is classified as a \term{skill}. The character has been driving regularly since the age of 22, so the bonus is +5.}
-\newcommand{\explainProgramming}{He started programming at the age of 9, did that as a hobby pretty much every year until the age of 22. I decide to divide this by half - it's not equivalent of full time work. However, between the ages 22 and 26, he worked full time programming a system, so I count that as 4. The total is 10.}
-\newcommand{\explainSkepticism}{When the character started work, they found themselves in situations where they need to understand when people are being deceptive. This is the only social talent that this character has. While difficult to quantify in terms of years of experience, the player decides that this is fair based on the character history \& concept.}
-
+% The first die should come from the childhood, second die from teenage years.
+\clearpage
 \begin{tikzpicture}[overlay]
-	\node[draw, fill=LightYellow, thick,minimum width=5cm,minimum height=3cm] (b) at (-3.5,-2){
-		Annotations are coming.
+	\node[draw, fill=LightYellow, thick,minimum width=4cm,text width=4cm,minimum height=3cm] (b) at (-3.5,-3.5
+	){
+		Characters get one die each from their childhood and teenage years.
+		If there is a reason that they would develop a capability early on, change
+		the die to $d6$. Otherwise, it is $d4$. Use $d8$ only if they are a prodigy,
+		a truly exceptional person.
 	};
 \end{tikzpicture}
 
-\begin{actorCardLetterSizeFitToPage}{testCharacter}{Sample Mundane Character}{colorBgMundane}
+\begin{tikzpicture}[overlay]
+	\node[draw, fill=LightYellow, thick,minimum width=4cm,text width=4cm,minimum height=3cm] (b) at (-3.5,-7.0
+	){
+		The bonus is equal to the characters' years of experience working to sustain themselves.
+		This includes years spent as an adult on a primary occupation, apprenticeship,
+		and/or college education.
+	};
+\end{tikzpicture}
+
+\begin{actorCardLetterSizeFitToPage}{testCharacter}{Sample Mundane Adult}{colorBgMundane}
 
 	\begin{capabilitiesBox}{testCharacter}
 		\begin{capabilitiesTable}{Athletic}
@@ -327,33 +370,43 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 	   \end{capabilitiesTable}
 	\end{capabilitiesBox}
 
-	\expertiseTable{testCharacter}{
-        \expertise{Cycling}{\hover{+3}{\explainCycling}}
-        \expertise{Dancing (Latin)}{+3}
-        \expertise{Swimming}{+3}
-	}{
-        \expertise{Driving (Car)}{\hover{+3}{\explainDriving}}
-        \expertise{Musical Instrument (Guitar)}{\hover{+5}{\explainDriving}}
-	}{
-        \expertise{Accounting}{+1}
-        \expertise{Chemistry}{+1}
-        \expertise{Computing Concepts}{\hover{+10}{\explainProgramming}}
-        \expertise{Economics}{\hover{+2}{\explainEcon}}
-        \expertise{Electrical Engineering}{\hover{+6}{\explainEE}}
-        \expertise{Finance}{\hover{+2}{\explainFinance}}
-        \expertise{Marketing}{+1}
-        \expertise{Physics}{+1}
-	}{
-        \expertise{Language (English)}{+12}
-        \expertise{Language (French)}{+2}
-        \expertise{Skepticism}{\hover{+4}{\explainSkepticism}}
-	}
+	\begin{expertiseBox}{testCharacter}
+		\expertiseTable{
+			\expertise{Cycling}{\hover{+3}{\explainCycling}}
+			\expertise{Dancing (Latin)}{+3}
+			\expertise{Swimming}{+3}
+		}{
+			\expertise{Driving (Car)}{\hover{+3}{\explainDriving}}
+			\expertise{Musical Instrument (Guitar)}{\hover{+5}{\explainDriving}}
+		}{
+			\expertise{Accounting}{+1}
+			\expertise{Chemistry}{+1}
+			\expertise{Computing Concepts}{\hover{+10}{\explainProgramming}}
+			\expertise{Economics}{\hover{+2}{\explainEcon}}
+			\expertise{Electrical Engineering}{\hover{+6}{\explainEE}}
+			\expertise{Finance}{\hover{+2}{\explainFinance}}
+			\expertise{Marketing}{+1}
+			\expertise{Physics}{+1}
+		}{
+			\expertise{Language (English)}{+12}
+			\expertise{Language (French)}{+2}
+			\expertise{Skepticism}{\hover{+4}{\explainSkepticism}}
+		}
+	\end{expertiseBox}
+
+
+	\begin{physiologyBox}{testCharacter}
+		\begin{tabular}[t]{c}
+			This space is reserved for physilogy mechanics which replace the hit point
+			mechanic. (Robustness, natural armor)
+		\end{tabular}
+	\end{physiologyBox}
 
 \end{actorCardLetterSizeFitToPage}
 
 \begin{formula}{The Basic Game Mechanic}
 	\Large
-	Roll \termCore{Capability} + Add \termBonus{Bonus} \\ Against \termDifficultyLevel{Difficulty Level}
+	Roll \termCore{Capability} + Add \termBonus{Bonus} \\ Compare to \termDifficultyLevel{Difficulty Level}
 \end{formula}
 
 % TODO: Add the list of core capabilities somewhere in this chapter as a full list.
@@ -364,7 +417,7 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 
 \section{Play the Character}
 
-\subsection{Mundane Challenges}
+\subsection{Ordinary Challenges}
 
 % TODO: The 4th and 5th are competitions, remove them, or change the DL.
 
@@ -383,7 +436,7 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 	\end{xltabular}
 \end{center}
 
-\subsection*{Beyond the Mundane}
+\subsection*{Beyond Ordinary}
 
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
@@ -396,17 +449,34 @@ Hover over the \hover{highlighted scores}{This is a tooltip.} to see a tooltip t
 
 
 
-% \footnote{
-% 	If worked on something more than half of a year, that's a full year, round up. If less than a year (for instance, summers only) divide the total number of years by half.
-% }
 
 \section{Areas of Expertise}
 
+\label{subsec:areas_of_expertise}
 
-\termBonus{Training} is physical.
+How many years did the character spend working to sustain themselves and in training?
+This years of experience is represented as a bonus added to the roll, up until the tenth year.
+Full-time work, college education are included.
+(For instance, if they took economics classes in one year in college, that one year counts towards the bonus.
+If they worked in a job requiring economics knowledge, those years also count toward the bonus.)
+
+If some of this is done as a hobby, before adulthood, or as a part-time job, include those as half-years.
+After ten years, each decade counts as +1. For \termBeyond{characters that go beyond normal lifetimes},
+after a century, each century counts as +1. See the side table.
+
+\subsection{Guidelines for Creating and Extending Areas of Expertise}
+
+When adding new areas of expertise, to keep bonuses consistent,
+authors or DMs can use the principles used to create the table above:
+
+\termBonus{Training} is pure muscle memory, you learn these by training regularly.
 You can have a trainer, but what matters is that you train day in, day out.
 For example, if they went \termBonus{Bouldering} every weekend or so for two years, count each one of those as a half year, because it is part time, and assign +1.
 Alternatively, if the character taught a form of \termBonus{offensive martial arts} for five years, assign +5 as the bonus.\par
+
+\termBonus{Skills} are things that require concentration to accomplish.
+In a modern setting, think of these as skills needed for blue-collared jobs, vocations or hobbies.
+
 \termBonus{Knowledge} is pure theory.
 In the modern setting, these are 100-level university courses, or sometimes, night classes.
 Consider all years studying in the university to calculate the bonus, as well working in a job which actively requires the knowledge in question.
@@ -450,8 +520,7 @@ This includes crossbox and modern firearms.
 % }
 
 
-\pagebreak
-\subsection{Mundane Areas of Expertise}
+\subsection{Ordinary Areas of Expertise}
 
 \begin{center}
 	\scriptsize
@@ -464,7 +533,7 @@ This includes crossbox and modern firearms.
 	\end{xltabular}
 \end{center}
 
-\subsection{Beyond the Mundane}
+\subsection{Expertise Beyond Ordinary}
 
 \begin{center}
 	\begin{xltabular}{\textwidth}{XXXXl}
@@ -475,37 +544,45 @@ This includes crossbox and modern firearms.
 \end{center}
 
 
-\section{Characters of Other Species}
+% \section{Go Beyond the Ordinary - Other Humanoid Species}
 
-When creating an actor, you have to at least list their senses and their physical strength in physical altercation.
-For a list of animals, see the section
-% TODO: Make it into a book and complete this paragraph.
 
-\subsection[Mundane Species]{Mundane Species}
-\label{subsec:chargen_mundane}
 
-Earlier, we wrote that humans get +7 to their \termBonus{vision}.
-This is calculated based on something called visual acuity.
-To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
-For example, an eagle has 140 cyc/deg, so their bonus is +14.
-See \cite{caves_acuityview_2018} for more information on visual acuity,
-and \cite{noauthor_list_2019} for a list of visual acuities of animals.
+% \section{Go Beyond the Ordinary - Vampires}
+
+
+
+% \section{Characters of Other Species}
+
+% When creating an actor, you have to at least list their senses and their physical strength in physical altercation.
+% For a list of animals, see the section
+% % TODO: Make it into a book and complete this paragraph.
+
+% \subsection[Mundane Species]{Mundane Species}
+% \label{subsec:chargen_mundane}
+
+% Earlier, we wrote that humans get +7 to their \termBonus{vision}.
+% This is calculated based on something called visual acuity.
+% To calculate the vision for another species, divide their visual acuity, cycles-per-degree by ten.
+% For example, an eagle has 140 cyc/deg, so their bonus is +14.
+% See \cite{caves_acuityview_2018} for more information on visual acuity,
+% and \cite{noauthor_list_2019} for a list of visual acuities of animals.
 
 % TODO: Add a list of visual acuities of animals.
 
-\subsection[Transmundane Species]{Transmundane Species}
-\label{subsec:chargen_transmundane_species}
+% \subsection[Transmundane Species]{Transmundane Species}
+% \label{subsec:chargen_transmundane_species}
 
-In our universe, throughout the history of our species, we existed along with other humanoid species.
-It turns out that we even mated with them and created offsprings.
-%TODO: Add citation here.
-In multiple fantasy worlds, we also have humanoid species,
-such as elves, dwarves, gnomes, orcs, goblins, fey dryads.
+% In our universe, throughout the history of our species, we existed along with other humanoid species.
+% It turns out that we even mated with them and created offsprings.
+% %TODO: Add citation here.
+% In multiple fantasy worlds, we also have humanoid species,
+% such as elves, dwarves, gnomes, orcs, goblins, fey dryads.
 
 
 
 \section{Put Characters in Various Campaigns}
-\subsection{Mundane}
+\subsection{Ordinary}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
@@ -518,7 +595,7 @@ such as elves, dwarves, gnomes, orcs, goblins, fey dryads.
 \end{center}
 
 
-\subsection{Beyond the Mundane}
+\subsection{Beyond Ordinary}
 \begin{center}
 	\rowcolors{1}{white}{xkcdEggShell}
 	\begin{xltabular}{\textwidth}{XX}
