@@ -57,6 +57,11 @@ and therefore, dice-rolling actors in the game system.
 Make rules approachable to the general public.
 
 
+### Distributed Responsibility
+The game master is _not_ the final judge - this is too much responsibility for the game master
+to be able to enjoy the game. The responsibility of balancing is now distributed to all players.
+There are various rule mechanics that make this possible. For example, for a character to be
+accepted, all players need to find the bonuses and dice pools of a character to be convincing.
 
 
 
