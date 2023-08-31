@@ -21,3 +21,4 @@
   * [ ] Creation / Transformation Mechanic
 * [ ] Adversaries
   * [ ] Conditions (Physiological)
+  * [ ] Small Mammals
