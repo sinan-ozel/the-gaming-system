@@ -2,6 +2,11 @@
 
 ## Release 0.1
 
+* [ ] Character Creation
+  * [ ] Character Advancement
+* [ ] Challenges
+  * [ ] Character Advancement - rolling 1's in a row or simultaneously.
+  * [ ] The Spread Mechanic
 * [ ] Items
 * [ ] Adversaries
   * [ ] Nature
@@ -11,5 +16,7 @@
 ## Release 0.2
 
 * [ ] Physiology
+* [ ] Challengaes
+  * [ ] Creation / Transformation Mechanic
 * [ ] Adversaries
   * [ ] Conditions (Physiological)
