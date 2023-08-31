@@ -10,6 +10,7 @@
 * [ ] Items
 * [ ] Adversaries
   * [ ] Nature
+    * [ ] Fire
   * [ ] Conditions (Just psychological, not physiological)
   * [ ] Inner demons - beyond ordinary
 
