@@ -29,7 +29,8 @@
     * [ ] Robustness
     * [ ] Movement Speed
     * [ ] Strength
-* [ ] Challengaes
+* [ ] Challenges
+  * [ ] Expand on ties
   * [ ] Creation / Transformation Mechanic
   * [ ] Breakdown Mechanic
   * [ ] Complex Competition - Races
