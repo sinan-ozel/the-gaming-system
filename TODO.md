@@ -5,12 +5,14 @@
 * [x] Character Creation
   * [x] Character Advancement
 * [ ] Challenges
-  * [ ] 3rd & 4th die
+  * [x] 3rd & 4th die
+  * [x] Bonuses, only one type of bonus
   * [x] Character Advancement - rolling 1's in a row for increasing the smaller die, or simultaneously for increasing the larger die.
   * [ ] The Spread Mechanic
   * [ ] Preparation / Research / Aiming Mechanic
 * [ ] Items
   * [ ] Technological
+    * [ ] Cell phone, also add a link in the challenges chapter above.
   * [ ] Magical
 * [ ] Adversaries
   * [ ] Nature

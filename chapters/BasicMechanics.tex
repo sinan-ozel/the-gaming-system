@@ -16,13 +16,56 @@
 
 \begin{formula}{The Basic Game Mechanic}
 	\Large
-	Roll \termCore{Capability} + Add \termBonus{Bonus} \\ Against \termDifficultyLevel{Difficulty Level}
+	Roll \termCore{Dice} + Add \termBonus{Bonus} \\ Against \termDifficultyLevel{Difficulty Level}
 \end{formula}
 
 
 For basic challenges, the actor rolls a \termCore{core capability}.
 Add a \termBonus{bonus} \termBonus{species} or \termBonus{expertise}, whichever is higher.
 The result of the roll has to be greater than the \termDifficultyLevel{difficulty level (DL)} to succeed.
+
+\paragraph{The Dice \& The Bonus}
+
+First two dice are determined by the actor's \termCore{core capabilities}.
+(See Section \nameref{sec:character_creation}.) The exception to having two dice
+is when playing teenagers --- teenagers will have one die only in their
+\termCore{core capabilities}, and the ``earning'' of a new dice can be
+roleplayed as a rite of passage --- See \nameref{subsec:character_advancement}.
+
+
+In addition to the dice from the actor's \termCore{core capabilities},
+magical items, extraordinary situations can \emph{add} more dice to the pool.
+These dice are for representing different types of extraordinary elements, such
+as inspiration bonus from an extraordinary speech or a magical bonus coming
+from being a vampire or werewolf. Mechanically, these dice increase the
+probability of \emph{both a success, and suffering a misfortune} --- see below for the
+``\term{double one}'' mechanic. The purpose
+of this mechanic is to be able to create powerful actors, either as PC or NPCs that
+are also vulnerable due to various misfortunes.
+
+\begin{emphasisParagraph}
+	The \termCore{dice} stack and add up, while only the highest \termBonus{bonus} is used.
+	Increasing the number \termCore{dice} increases the probability of success, but
+	also increases the probability of a misfortune. For \termBonus{bonuses},
+	items and circumstances are important for actors with limited \termBonus{expertise},
+	and make no difference for actors with high levels of \termBonus{expertise}.
+\end{emphasisParagraph}
+
+
+\termBonus{Bonuses} do not stack.
+They can come from either \termBonus{expertise} of the character,
+non-magical or technological items, or from circumstances.
+
+For example, consider the situation where we roll to find out if
+an actor can determine if the seeds of a particular plant are
+poisonous for a particular animal or beast. The character may have a
+bonus from their expertise --- see the Section \nameref{sec:character_creation}.
+Or, the character may be receiving a bonus by using a cell phone connected to the Internet.
+% TODO: Add a link here when the Items chapter is finished.
+Alternatively, they can invest time in research in a library to learn more
+--- see Section \nameref{sec:research_mechanic}.
+
+
 
 
 \paragraph*{Ties}
@@ -114,6 +157,25 @@ If desired, the level up mechanism applies can apply to all actors, including NP
 \section{Competition: Opposing Rolls}
 
 \section{The Spread Mechnanic}
+
+\section{Knowledge \& Research Mechanics}
+
+\label{sec:research_mechanic}
+
+\begin{marginNote}
+	\input{inc/beyond_mundane_duration_difficulty.tex}
+\end{marginNote}
+
+Consider the situations where we roll to find out if an actor knows the answer
+to a particular question. For example, in an ordinary setting, we might need
+to roll to see if the actor knows the name of a director of a local charity.
+In fantasy settings, they might need to roll to see if they know the name of
+a particular demon.
+
+In these cases, decleare \emph{ahead of the roll} if you want to do research and how
+much time to spend on the research. Based on the time spent, the actor gets a \termBonus{bonus}
+to their roll. If this \termBonus{bonus} exceeds other bonuses, then they use this
+\termBonus{bonus}.
 
 \section*{Credits, References \& Bibliography}
 
