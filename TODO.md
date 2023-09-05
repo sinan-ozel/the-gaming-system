@@ -13,6 +13,7 @@
 * [x] Items
   * [ ] Technological
     * [ ] Cell phone, also add a link in the challenges chapter above.
+  * [ ] Update the chapter image
   * [ ] Magical
 * [ ] Adversaries
   * [ ] Nature
