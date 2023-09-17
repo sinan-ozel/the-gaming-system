@@ -13,7 +13,8 @@
   * [x] Preparation / Research / Aiming Mechanic
 * [x] Items
   * [ ] Technological
-    * [ ] Cell phone, also add a link in the challenges chapter above.
+    * [x] Cell phone, also add a link in the challenges chapter above.
+    * [ ] Alcohol
   * [ ] Update the chapter image
   * [ ] Magical
 * [ ] Adversaries
@@ -23,6 +24,7 @@
     * [ ] Dazed
     * [ ] Stunned
     * [ ] Intoxicated
+  * [ ] Mental challenges
   * [ ] Inner demons - beyond ordinary
 
 ## Release 0.2
@@ -40,6 +42,11 @@
   * [ ] Complex Competition - Races
     * [ ] Sprint
     * [ ] Marathon
+  * [ ] Divide-and-conquer mechanic
+    * [ ] Climbing, with and without modern gear
+* [ ] Items
+  * [ ] Climbing gear
+  * [ ] Weapons
 * [ ] Adversaries
   * [ ] Conditions
     * [ ] Physiological
@@ -55,6 +62,7 @@
       * [ ] Hypnotized
       * [ ] Depressed
       * [ ] Paranoid
+      * [ ] Guilty Consciounce
   * [ ] Small Mammals
 
 
@@ -63,11 +71,15 @@
   * [ ] Other Humanoid Species
   * [ ] Other Sentient Species
   * [ ] Powers
-  * [ ] Magic
+  * [ ] Weaknesses
+  * [ ] Magic - Domains
   * [ ] Lycantrophy
   * [ ] Vampirism
   * [ ] Narrative Magic - Wishes & Curses
 * [ ] Challenges
+  * [ ] Conditions
+    * [ ] Mental
+      * [ ] Possessed
 * [ ] Items
   * [ ] Magical
     * [ ] Possessed Items
