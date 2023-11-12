@@ -11,6 +11,7 @@
   * [x] How the lower die increases.
   * [ ] The Spread Mechanic
   * [x] Preparation / Research / Aiming Mechanic
+  * [x] Character creation by dice.
 * [x] Items
   * [ ] Technological
     * [x] Cell phone, also add a link in the challenges chapter above.
@@ -29,6 +30,21 @@
 
 ## Release 0.2
 
+* [ ] Introduction
+  * [ ] "You can skip this section and quick start with the character creation."
+  * [ ] Advantages
+    * [ ] Roleplaying as kids, or flashbacks to childhood or teenage years
+    * [ ] Incoporating internal conflicts
+    * [ ] Non-violent conflict is a "first-class citizen"
+    * [ ] Metaverse consistency
+    * [ ] You can start without fully fleshing out the character
+    * [ ] You can create overpowered characters
+  * [ ] Themes
+    * [ ] Magic is figurative and literal
+    * [ ] Consistency between magic, technology and literary drama.
+    * [ ] Roll guides role
+    * [ ] GM is not the final referee.
+    * [ ] Rejection of fairness
 * [ ] Character Creation
   * [ ] Physiology
     * [ ] Natural Armor
@@ -76,6 +92,8 @@
   * [ ] Lycantrophy
   * [ ] Vampirism
   * [ ] Narrative Magic - Wishes & Curses
+  * [ ] Rolling to create the character
+  * [ ] Not rolling to determine wealth and looks
 * [ ] Challenges
   * [ ] Conditions
     * [ ] Mental

@@ -98,3 +98,7 @@ It should be easy to create a character that resembles the player themselves, or
 Fantasy elements should follow the mundane: first we lay the foundations to create relatable, approachable characters.
 Then we expand the rules to incorporate characters and challenges that go beyond the mundane.
 
+### Literary
+
+We build the system on concepts that we are all familiar from literature, fantasy or otherwise.
+These concepts include internal and external conflicts, rites of passage, and others.
