@@ -8,7 +8,7 @@
   * [x] 3rd & 4th die
   * [x] Bonuses, only one type of bonus
   * [x] Character Advancement - rolling 1's in a row for increasing the smaller die, or simultaneously for increasing the larger die.
-  * [ ] How the lower die increases.
+  * [x] How the lower die increases.
   * [ ] The Spread Mechanic
   * [x] Preparation / Research / Aiming Mechanic
 * [x] Items
