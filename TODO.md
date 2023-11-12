@@ -35,16 +35,20 @@
   * [ ] Advantages
     * [ ] Roleplaying as kids, or flashbacks to childhood or teenage years
     * [ ] Incoporating internal conflicts
+    * [ ] Incoporating human vs nature conflicts
     * [ ] Non-violent conflict is a "first-class citizen"
     * [ ] Metaverse consistency
     * [ ] You can start without fully fleshing out the character
     * [ ] You can create overpowered characters
-  * [ ] Themes
+  * [ ] Philosophy \& Themes
     * [ ] Magic is figurative and literal
     * [ ] Consistency between magic, technology and literary drama.
     * [ ] Roll guides role
     * [ ] GM is not the final referee.
-    * [ ] Rejection of fairness
+    * [ ] Rejection of fairness - FRP evolved from boardgaming into storytelling, and fairness is no longer compatible.
+    * [ ] Driving by consensus.
+    * [ ] Players and GM as entertainers
+    * [ ] Less linear storytelling
 * [ ] Character Creation
   * [ ] Physiology
     * [ ] Natural Armor
@@ -60,6 +64,9 @@
     * [ ] Marathon
   * [ ] Divide-and-conquer mechanic
     * [ ] Climbing, with and without modern gear
+* [ ] Supernatural Powers \& Magic
+  * [ ] Magic - Domains
+  * [ ] Narrative Magic - Wishes & Curses
 * [ ] Items
   * [ ] Climbing gear
   * [ ] Weapons
@@ -88,10 +95,8 @@
   * [ ] Other Sentient Species
   * [ ] Powers
   * [ ] Weaknesses
-  * [ ] Magic - Domains
   * [ ] Lycantrophy
   * [ ] Vampirism
-  * [ ] Narrative Magic - Wishes & Curses
   * [ ] Rolling to create the character
   * [ ] Not rolling to determine wealth and looks
 * [ ] Challenges
@@ -111,3 +116,4 @@
 * [ ] Compatibility with Other Systems
   * [ ] Using D&D 5e Characters
 * [ ] Strategy
+* [ ] Incorporating cards - such as Tarot cards
