@@ -9,7 +9,6 @@
   * [x] Bonuses, only one type of bonus
   * [x] Character Advancement - rolling 1's in a row for increasing the smaller die, or simultaneously for increasing the larger die.
   * [x] How the lower die increases.
-  * [ ] The Spread Mechanic
   * [x] Preparation / Research / Aiming Mechanic
   * [x] Character creation by dice.
 * [x] Items
@@ -59,6 +58,7 @@
   * [ ] Expand on ties
   * [ ] Creation / Transformation Mechanic
   * [ ] Breakdown Mechanic
+  * [ ] The Spread Mechanic
   * [ ] Complex Competition - Races
     * [ ] Sprint
     * [ ] Marathon
