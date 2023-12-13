@@ -183,10 +183,9 @@
 	\setval{widthProperty = 25mm}
 	\setval{widthExpertise = 25mm}
 
-	% Not tested.
 	\renewcommand{\cardwidth}{#2}
 	\renewcommand{\sheetwidth}{#2}
-	% TODO: Add height if this works
+	% TODO: Add height
 
 	\begin{figure}[!h]
 
@@ -215,7 +214,8 @@
 
 \newenvironment{actorCardLetterSizeFitToPage}[3]{
 	\begin{actorSheet}{#1}{\textwidth}{1.29411764706 * \textwidth}{#2}{#3}
-	\setval{widthNature = 40mm}
+
+	\setval{widthNature = .3\sheetwidth}
 	\setval{widthCapability = 29.75mm}
 	\setval{widthBonus = 29.75mm}
 	\setval{widthProperty = 15mm}
@@ -238,7 +238,8 @@
 
 \newenvironment{actorCardMiniEuro}[3]{
 	\begin{actorSheet}{#1}{44mm}{68mm}{#2}{#3}
-	\setval{widthCapability = 32.5mm}
+	\setval{widthNature = \sheetwidth}
+	\setval{widthCapability = \sheetwidth}
 	\setval{widthExpertise = 20mm}
 }{
 	\end{actorSheet}
@@ -266,7 +267,7 @@
 }
 
 \NewEnviron{natureTable}[1]{
-	\begin{tabularx}{\getval{widthNature}}[t]{Xr}
+	\begin{tabularx}{\getval{widthNature} - 3pt}[t]{Xr}
 		\multicolumn{2}{c}{
 			\cellcolor{colorNatureDark}
 			\textcolor{colorNatureContour}{
@@ -283,7 +284,7 @@
 \NewEnviron{capabilitiesBox}[1]{
 	\node[
 			draw=colorCapabilityDark,
-			below left=11 mm and 0 in of #1_natureBox,
+			below left=4 mm and 0 mm of #1_natureBox.south west,
 			top color=colorCapability,
 			middle color=colorCapabilityLight,
 			bottom color=colorCapabilityContour,
@@ -310,7 +311,7 @@
 \NewEnviron{speciesBonusBox}[1]{
 	\node[
 			draw=colorBonusDark,
-			below left=4mm and 0mm of #1_capabilitiesBox,
+			below left=4 mm and 0 mm of #1_capabilitiesBox.south west,
 			top color=colorBonus,
 			middle color=colorBonusLight,
 			bottom color=colorBonusContour,
@@ -341,7 +342,7 @@
 		middle color=colorBonusLight,
 		bottom color=colorBonusContour,
 		font=\normalsize,
-		below left=4mm and 0mm of #1_capabilitiesBox,
+		below left=4mm and 0mm of #1_capabilitiesBox.south west,
 		anchor=north west,
 		line width=.5mm,
 		inner ysep=0mm,
