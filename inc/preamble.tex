@@ -253,14 +253,14 @@
 
 \NewEnviron{natureBox}[1]{
 	\node[
-			draw=colorNatureDark,
-			below left=11 mm and 0 in of #1_NW,
-			top color=colorNature,
-			middle color=colorNatureLight,
-			bottom color=colorNatureContour,
-			anchor=north west,
-			inner ysep=0mm,
-			inner xsep=0mm,
+		draw=colorNatureDark,
+		below left=11 mm and 0 in of #1_NW,
+		top color=colorNature,
+		middle color=colorNatureLight,
+		bottom color=colorNatureContour,
+		anchor=north west,
+		inner ysep=0mm,
+		inner xsep=0mm,
 	] (#1_natureBox){
 		\BODY
 	};
@@ -274,7 +274,7 @@
 				\comfortaa\footnotesize #1
 			}
 		} \\
-		\BODY \\
+		\BODY
 	\end{tabularx}
 }
 
@@ -292,7 +292,9 @@
 			inner ysep=0mm,
 			inner xsep=0mm,
 	] (#1_capabilitiesBox){
-		\BODY
+		\begin{minipage}[t]{\sheetwidth}
+			\BODY
+		\end{minipage}%
 	};
 }
 
@@ -304,7 +306,7 @@
 				\comfortaa\footnotesize #1
 			}
 		} \\
-		\BODY \\
+		\BODY
 	\end{tabularx}
 }
 
