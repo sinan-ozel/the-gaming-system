@@ -179,8 +179,6 @@
 \newenvironment{actorSheet}[5]{
 	\setval{widthNature = 40mm}
 	\setval{widthCapability = 25mm}
-	\setval{widthBonus = 25mm}
-	\setval{widthProperty = 25mm}
 	\setval{widthExpertise = 25mm}
 
 	\renewcommand{\cardwidth}{#2}
@@ -216,10 +214,8 @@
 	\begin{actorSheet}{#1}{\textwidth}{1.29411764706 * \textwidth}{#2}{#3}
 
 	\setval{widthNature = .3\sheetwidth}
-	\setval{widthCapability = 29.75mm}
-	\setval{widthBonus = 29.75mm}
-	\setval{widthProperty = 15mm}
-	\setval{widthExpertise = 26.75mm}
+	\setval{widthCapability = .24\sheetwidth}
+	\setval{widthExpertise = .215\sheetwidth}
 }{
 	\end{actorSheet}
 }
@@ -240,13 +236,14 @@
 	\begin{actorSheet}{#1}{44mm}{68mm}{#2}{#3}
 	\setval{widthNature = \sheetwidth}
 	\setval{widthCapability = \sheetwidth}
-	\setval{widthExpertise = 20mm}
 }{
 	\end{actorSheet}
 }
 
 \newenvironment{actorCardMiniAmerican}[3]{
 	\begin{actorSheet}{#1}{41mm}{63mm}{#2}{#3}
+	\setval{widthNature = \sheetwidth}
+	\setval{widthCapability = \sheetwidth}
 }{
 	\end{actorSheet}
 }
@@ -323,18 +320,6 @@
 	] (#1_speciesBonusBox){
 		\BODY
 	};
-}
-
-\NewEnviron{bonusTable}[1]{
-	\begin{tabularx}{\getval{widthBonus}}[t]{Xr}
-		\multicolumn{2}{c}{
-			\cellcolor{colorBonusDark}
-			\textcolor{colorBonusContour}{
-				\comfortaa\footnotesize #1
-			}
-		} \\
-		\BODY
-	\end{tabularx}
 }
 
 \NewEnviron{expertiseBox}[1]{
