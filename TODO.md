@@ -52,6 +52,7 @@
     * [ ] Players and GM as entertainers
     * [ ] Less linear storytelling
 * [ ] Character Creation
+  * [ ] Simplify
   * [ ] Physiology
     * [ ] Natural Armor
     * [X] Robustness
