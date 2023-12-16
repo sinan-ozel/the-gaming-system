@@ -20,6 +20,8 @@
 * [ ] Adversaries
   * [ ] Nature
     * [ ] Fire
+  * [ ] Small Mammals
+    * [ ] Squirrel
   * [ ] Conditions (Just mental, not physiological)
     * [ ] Dazed
     * [ ] Stunned
@@ -42,6 +44,7 @@
   * [ ] Philosophy \& Themes
     * [ ] Magic is figurative and literal
     * [ ] Consistency between magic, technology and literary drama.
+    * [ ] Extendable
     * [ ] Roll guides role
     * [ ] GM is not the final referee.
     * [ ] Rejection of fairness - FRP evolved from boardgaming into storytelling, and fairness is no longer compatible.
@@ -51,13 +54,17 @@
 * [ ] Character Creation
   * [ ] Physiology
     * [ ] Natural Armor
-    * [ ] Robustness
-    * [ ] Movement Speed
-    * [ ] Strength
+    * [X] Robustness
+    * [X] Movement Speed
+    * [X] Strength
+  * [ ] Species & Templates
+    * [ ] How to add new species & types
 * [ ] Challenges
   * [ ] Expand on ties
   * [ ] Creation / Transformation Mechanic
   * [ ] Breakdown Mechanic
+    * [ ] Combat
+    * [ ] Damage Types
   * [ ] The Spread Mechanic
   * [ ] Complex Competition - Races
     * [ ] Sprint
