@@ -6,55 +6,66 @@
 \chapter{Challenges}
 
 \begin{emphasisParagraph}
-	For basic challenges, the actor rolls a \term{core capability}.
-	A \term{physiology} or \term{expertise} bonus is added.
+	For basic challenges, the character rolls a \term{core capability}.
+	Adds an \term{expertise} bonus.
 	The result of the roll has to be greater than the \term{difficulty level (DL)} to succeed.
 \end{emphasisParagraph}
-\todo{Does the success level matter? Think on it.}
 
 \section{The Basic Mechanic}
 
 \begin{formula}{The Basic Game Mechanic}
 	\Large
-	Roll \termCore{Dice} + Add \termBonus{Bonus} \\ Against \termDifficultyLevel{Difficulty Level}
+	Roll \termCore{Capability} + Add \termBonus{Bonus} \\ Compare to \termDifficultyLevel{Difficulty Level}
 \end{formula}
 
 
-For basic challenges, the actor rolls a \termCore{core capability}.
-Add a \termBonus{bonus} \termBonus{species} or \termBonus{expertise}, whichever is higher.
+For basic challenges, the character rolls their two dice from their \termCore{core capability} and any other dice that comes from magical items or \termBeyond{extraordinary} powers.
+If applicable add the \termBonus{expertise bonus}, or \termBonus{bonus} from a technological item, whichever is higher.
 The result of the roll has to be greater than the \termDifficultyLevel{difficulty level (DL)} to succeed.
+
+The first two dice are always dependent on the character and their \termCore{core capabilities}.
+Supernatural powers, magical effects and magical items add a third die.
+Even more powerful magic adds a fourth die, but this is reserved for the ``forbidden'' or ``alien'' interpretations of magic.
+
+If \emph{any two} of the dice are both $1$, this is a \term{double one}.
+This means that something has gone wrong for the character.
+This is independent of whether the roll succeeded or not.
+See \nameref{sec:the_double_one} below.
+
 
 \paragraph{The Dice \& The Bonus}
 
-First two dice are determined by the actor's \termCore{core capabilities}.
-(See Section \nameref{sec:character_creation}.) The exception to having two dice
-is when playing teenagers --- teenagers will have one die only in their
-\termCore{core capabilities}, and the ``earning'' of a new dice can be
-roleplayed as a rite of passage --- See \nameref{subsec:character_advancement}.
-
-
+First two dice are determined by the character's \termCore{core capabilities}.
+(See Section \nameref{sec:character_creation}.)
 In addition to the dice from the actor's \termCore{core capabilities},
 magical items, extraordinary situations can \emph{add} more dice to the pool.
 These dice are for representing different types of extraordinary elements, such
 as inspiration bonus from an extraordinary speech or a magical bonus coming
 from being a vampire or werewolf. Mechanically, these dice increase the
-probability of \emph{both a success, and suffering a misfortune} --- see below for the
-``\term{double one}'' mechanic. The purpose
-of this mechanic is to be able to create powerful actors, either as PC or NPCs that
-are also vulnerable due to various misfortunes.
+probability of \emph{both a success, and rolling a double one} ---
+see \nameref{sec:the_double_one} below for the ``\term{double one}'' mechanic.
+The purpose of this mechanic is to be able to create powerful actors,
+either as PC or NPCs that are also vulnerable due to various misfortunes.
 
 \begin{emphasisParagraph}
-	The \termCore{dice} stack and add up, while only the highest \termBonus{bonus} is used.
-	Increasing the number \termCore{dice} increases the probability of success, but
-	also increases the probability of a misfortune. For \termBonus{bonuses},
-	items and circumstances are important for actors with limited \termBonus{expertise},
-	and make no difference for actors with high levels of \termBonus{expertise}.
+	\termCore{Dice} stack, but \termBonus{bonus} do not.
+	Sum up the \termCore{dice}, but use only the only the highest \termBonus{bonus}.
 \end{emphasisParagraph}
 
 
-\termBonus{Bonuses} do not stack.
+To the dice, we add a bonus. \termBonus{Bonuses} do not stack.
 They can come from either \termBonus{expertise} of the character,
 non-magical or technological items, or from circumstances.
+
+Overall, \termCore{dice} represent fantasy elements, magic and everything that is not readily explainable.
+In life, the \termCore{capabilities} of a character are not always objectively explainable, but they sometimes determine success.
+Inspiration from a bard can give us a boost in what we are trying to do.
+In faantasy, magical elements give characters extraordinary capabilities.
+All of these unexplainable, subjective, fantastical or seeminngly-fantastical elements are represented through dice.
+In contrast, \termBonus{the bonuses} are the objectively quantifiable, technological, reliable and predictable elements.
+The hard-earned experience of a character is an objective reality, and this experience helps them in rolls.
+Technological equipment and mass-produced items also confer \termBonus{bonuses}.
+
 
 For example, consider the situation where we roll to find out if
 an actor can determine if the seeds of a particular plant are
@@ -64,8 +75,7 @@ Or, the character may be receiving a bonus by using a cell phone connected to th
 % TODO: Add a link here when the Items chapter is finished.
 Alternatively, they can invest time in research in a library to learn more
 --- see Section \nameref{subsec:research_mechanic}.
-
-
+Their \termBonus{bonus} will depend on which action they take.
 
 
 \paragraph*{Ties}
@@ -83,21 +93,22 @@ Oftentimes in life, when we don't get it at first, it gets more and more difficu
 Within the same scene, increase the \acronymDL by one with each repetition.
 Reset at the scene's end.
 
-\paragraph*{Guideline on Deciding the Difficulty Level}
+% \paragraph*{Guideline on Deciding the Difficulty Level}
 
-\begin{marginNote}
-	\input{inc/difficulty_levels.tex}
-\end{marginNote}
+% \begin{marginNote}
+% 	\input{inc/difficulty_levels.tex}
+% \end{marginNote}
 
 
 
-Imagine a talented character (2d6 in their \term{core capability}) with 20 years of experience.
-This character's roll is $2d6 + 12$ without any additional bonuses.
-This means that they are approximately 50\% likely to overcome a challenge with \acronymDL 18.
-It also means that they can overcome a challenge with \acronymDL 24 with a lot of luck - only 1/36 of the time.\\
+% Imagine a talented character (2d6 in their \term{core capability}) with 20 years of experience.
+% This character's roll is $2d6 + 12$ without any additional bonuses.
+% This means that they are approximately 50\% likely to overcome a challenge with \acronymDL 18.
+% It also means that they can overcome a challenge with \acronymDL 24 with a lot of luck - only 1/36 of the time.\\
 
 
 \section{The Double One}
+\label{sec:the_double_one}
 
 Rolling and interpreting a \term{double one} is an important
 mechanic. It is used for balancing out otherwise powerful
@@ -133,9 +144,9 @@ to create adversaries that are effectively unbeatable,
 however, keep creating circumstances that players can exploit.
 
 In addition, if a \term{double one} is rolled and both of the ones
-come from the character's own dice (i.e. they are the first
-two dice in the dice pool) then the character increases either
-one of the two dice. This is the main levelling up mechanic of
+come from the character's \termCore{capability} dice (i.e. they are the first
+two dice in the dice pool) then the character increases the lower of
+one of the two \termCore{capability} dice. This is the main levelling up mechanic of
 the system --- see \nameref{subsec:character_advancement} below.
 
 \subsection{Storytelling the Double One}
@@ -145,11 +156,11 @@ The first two dice in the roll represent the actor's own, intrinsic \termCore{co
 If these dice are both $1$, then the character made a mistake, and something went wrong.
 They also learn something from this mistake --- see \nameref{subsec:character_advancement} below.
 
-The third dice is ``magic'' --- either in the literal sense of the word magic, as in a supernatural force,
-or the figurative sense, as in an inspiration or something that feels magical, unpredictable or almost unexplainable.
+The third die is ``magic'' --- either in the literal sense of the word magic, as in a supernatural force,
+or the figurative sense, as in an inspiration or anything that feels magical, unpredictable or almost unexplainable.
 If the third dice one of the $1$'s, interpret this as something happening beyond the actor's control, as a misfortune.
 
-The fourth dice is also ``magic'', but this time, it is the ``dark'' facet of magic.
+The fourth die is also ``magic'', but this time, it is the ``dark'' facet of magic.
 As a concept, this refers to everything that is beyond the human understanding.
 In literature, often times, storytellers incorporate teh unknowable: divine miracles, dangerous pacts with alien entities, or alien technology or intellect in science fiction.
 This is the sort of phenomenon that the fourth die represents.
@@ -183,13 +194,25 @@ This constitutes 10 levels of progress for each \termCore{core competency}.
 It also makes progress naturally slower.
 The characters that level up most are the ones that roll most, whether they are NPCs or player characters.
 
-\section{Complex Challenges}
 
 \section{Teamwork: Cooperative Challenges}
 
+For cooperative challenges, all characters roll and add their bonuses, and the determining outcome is the highest one.
+
 % TODO: The "flying city ritual" goes here..
 
-\section{Competition: Opposing Rolls}
+\section{Opposing Rolls}
+
+Both characters roll and add \termBonus{bonuses}. The highest value wins.
+
+In cases where there are more than two characters, they all roll and their successive \termBonus{bonuses}.
+The highest value wins.
+
+\section{Competition \& Races}
+
+\section{Complex Challenges}
+
+
 
 \section{The Spread Mechanic}
 

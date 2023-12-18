@@ -60,6 +60,8 @@
     * [X] Strength
   * [ ] Species & Templates
     * [ ] How to add new species & types
+* [ ] Mechanic
+  * [ ] Ties
 * [ ] Challenges
   * [ ] Expand on ties
   * [ ] Creation / Transformation Mechanic
